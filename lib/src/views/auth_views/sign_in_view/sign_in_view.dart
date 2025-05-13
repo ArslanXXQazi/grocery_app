@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/src/controller/components/apploader.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
@@ -38,12 +39,20 @@ class _SignInViewState extends State<SignInView> {
       setState(() {
 
       });
-
-
+      Get.offAndToNamed(AppRoutes.navBarView);
     }
     catch(e)
     {
-
+      isLoading=false;
+      setState(() {
+        
+      });
+      Get.snackbar(
+          "", "",
+          backgroundColor: Colors.red,
+        titleText: Text("Error",style: TextStyle(color: Colors.white),),
+        messageText: Text(e.toString(),style: TextStyle(color: Colors.white),)
+      );
     }
 
 
@@ -191,12 +200,12 @@ class _SignInViewState extends State<SignInView> {
                             ),
                           ),
                           SizedBox(height: screenHeight*.02),
-                          GreenButton(
+                        isLoading? Center(child: AppLoader()) :  GreenButton(
                             text: "Sign In",
                             onTap: () {
                               if (formKey.currentState!.validate())
                               {
-                                Get.toNamed(AppRoutes.navBarView);
+                               signIn();
                               }
                             },
                           ),

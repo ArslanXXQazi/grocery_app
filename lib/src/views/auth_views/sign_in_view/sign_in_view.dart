@@ -23,8 +23,8 @@ class _SignInViewState extends State<SignInView> {
   bool _isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    final screenHeight = MediaQuery.sizeOf(context).height;
+    final screenWidth = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -33,10 +33,11 @@ class _SignInViewState extends State<SignInView> {
           children: [
             Stack(
               children: [
+                //=======================>> first container for image
                 Stack(
                   children: [
                     Container(
-                      height: height * .5,
+                      height: screenHeight * .5,
                       width: double.infinity,
                       child: Image(
                         image: AssetImage(AppImages.signIn),
@@ -44,10 +45,10 @@ class _SignInViewState extends State<SignInView> {
                       ),
                     ),
                     Positioned(
-                      top: height*.05,
+                      top: screenHeight*.05,
                       child: Row(children: [
                         BackButton(color: Colors.white,),
-                        SizedBox(width: width*.25,),
+                        SizedBox(width: screenWidth*.25,),
                         BlackNormalText(
                           text: "Welcome",
                           fontSize: 18,
@@ -58,10 +59,11 @@ class _SignInViewState extends State<SignInView> {
                     )
                   ],
                 ),
+                //=======================>> 2nd container for body
                 Padding(
-                  padding: EdgeInsets.only(top: height * .47),
+                  padding: EdgeInsets.only(top: screenHeight * .47),
                   child: Container(
-                    height: height * .53,
+                    height: screenHeight * .53,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Color(0xffF4F5F9),
@@ -71,7 +73,7 @@ class _SignInViewState extends State<SignInView> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width * .04),
+                      padding: EdgeInsets.symmetric(horizontal: screenWidth * .04),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -85,8 +87,9 @@ class _SignInViewState extends State<SignInView> {
                             text: "Sign in to your account",
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
+                            textColor: Colors.grey,
                           ),
-                          const SizedBox(height: 10),
+                         SizedBox(height: screenHeight*.025),
                           Form(
                             key: formKey,
                             child: Column(
@@ -104,7 +107,7 @@ class _SignInViewState extends State<SignInView> {
                                     return null;
                                   },
                                 ),
-                                const SizedBox(height: 10),
+                                SizedBox(height: screenHeight*.01),
                                 TextFieldWidget(
                                   controller: passwordController,
                                   hintText: "Password",
@@ -135,7 +138,7 @@ class _SignInViewState extends State<SignInView> {
                                     return null;
                                   },
                                 ),
-                                const SizedBox(height: 5),
+                                SizedBox(height: screenHeight*.005),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
@@ -158,7 +161,7 @@ class _SignInViewState extends State<SignInView> {
                               ],
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          SizedBox(height: screenHeight*.02),
                           GreenButton(
                             text: "Sign In",
                             onTap: () {
@@ -168,7 +171,7 @@ class _SignInViewState extends State<SignInView> {
                               }
                             },
                           ),
-                          const SizedBox(height: 25),
+                          SizedBox(height: screenHeight*.025),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

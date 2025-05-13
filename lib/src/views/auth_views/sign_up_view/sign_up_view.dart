@@ -32,6 +32,7 @@ class _SignUpViewState extends State<SignUpView> {
           children: [
             Stack(
               children: [
+                //==========================>>1st container for image
                 Stack(
                   children: [
                     Container(
@@ -57,6 +58,7 @@ class _SignUpViewState extends State<SignUpView> {
                     )
                   ],
                 ),
+                //===========================>>2nd container for body
                 Padding(
                   padding: EdgeInsets.only(top: height * .47),
                   child: Container(
@@ -84,8 +86,9 @@ class _SignUpViewState extends State<SignUpView> {
                             text: "Quickly create account",
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
+                            textColor: Colors.grey,
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: height*.025),
                           Form(
                             key: formKey,
                             child: Column(
@@ -103,7 +106,7 @@ class _SignUpViewState extends State<SignUpView> {
                                     return null;
                                   },
                                 ),
-                                const SizedBox(height: 10),
+                                SizedBox(height: height*.01),
                                 TextFieldWidget(
                                   controller: phoneController,
                                   hintText: "Phone number",
@@ -118,7 +121,7 @@ class _SignUpViewState extends State<SignUpView> {
                                     return null;
                                   },
                                 ),
-                                const SizedBox(height: 10),
+                                SizedBox(height: height*.01),
                                 TextFieldWidget(
                                   controller: passwordController,
                                   hintText: "Password",
@@ -152,7 +155,7 @@ class _SignUpViewState extends State<SignUpView> {
                               ],
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          SizedBox(height: height*.02),
                           GreenButton(
                             text: "Sign Up",
                             onTap: () {
@@ -162,7 +165,7 @@ class _SignUpViewState extends State<SignUpView> {
                               }
                             },
                           ),
-                          const SizedBox(height: 25),
+                          SizedBox(height: height*.02),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

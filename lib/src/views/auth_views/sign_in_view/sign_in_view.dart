@@ -17,8 +17,7 @@ class SignInView extends StatefulWidget {
 class _SignInViewState extends State<SignInView> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool _isPasswordVisible = false;
   @override
@@ -95,14 +94,14 @@ class _SignInViewState extends State<SignInView> {
                             child: Column(
                               children: [
                                 TextFieldWidget(
-                                  controller: usernameController,
+                                  controller: emailController,
                                   hintText: "Email",
                                   prefixIcon: Image(
                                     image: AssetImage("assets/icons/email.png"),
                                   ),
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return "Please enter a username";
+                                      return "Please enter a email";
                                     }
                                     return null;
                                   },

@@ -49,7 +49,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               textColor: Colors.grey,
             ),
             SizedBox(height: height*.04),
-            Form(child: Column(children: [
+            Form(
+              key: formKey,
+                child: Column(children: [
               TextFieldWidget(
                 controller: emailController,
                 hintText: "Email Address",

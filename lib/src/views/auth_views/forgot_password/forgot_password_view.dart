@@ -41,16 +41,18 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               fontSize: 25,
               fontWeight: FontWeight.w600,
             ),
+            SizedBox(height: height*.015),
             BlackNormalText(
               text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
               fontSize: 15,
               fontWeight: FontWeight.w500,
               textColor: Colors.grey,
             ),
+            SizedBox(height: height*.04),
             Form(child: Column(children: [
               TextFieldWidget(
                 controller: emailController,
-                hintText: "Email",
+                hintText: "Email Adress",
                 prefixIcon: Image(
                   image: AssetImage(AppImages.email),
                 ),
@@ -61,18 +63,17 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   return null;
                 },
               ),
-              GreenButton(
-                text: "Send Link",
-                onTap: () {
-                  if (formKey.currentState!.validate())
-                  {
+            ],)),
+            SizedBox(height: height*.01),
+            GreenButton(
+              text: "Send Link",
+              onTap: () {
+                if (formKey.currentState!.validate())
+                {
 
-                  }
-                },
-              ),
-            ],))
-
-
+                }
+              },
+            ),
         ],),
       ),
     );

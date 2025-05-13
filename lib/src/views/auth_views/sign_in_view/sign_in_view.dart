@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
@@ -20,6 +21,35 @@ class _SignInViewState extends State<SignInView> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool _isPasswordVisible = false;
+  bool  isLoading = false;
+
+
+  void signIn() async {
+
+    try
+    {
+      isLoading=true;
+      setState(() {
+
+      });
+
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
+      isLoading=false;
+      setState(() {
+
+      });
+
+
+    }
+    catch(e)
+    {
+
+    }
+
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;

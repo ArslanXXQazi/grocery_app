@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/src/controller/components/apploader.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
@@ -14,12 +17,50 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-
+bool isLaoding=false;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool _isPasswordVisible = false;
+
+
+
+ void signUp () async
+ {
+   try{
+     isLaoding=true;
+     setState(() {
+
+     });
+     await FirebaseAuth.instance.createUserWithEmailAndPassword(
+         email: emailController.text.trim(), password: passwordController.text.trim());
+     String userId=await FirebaseAuth.instance.currentUser!.uid;
+     await FirebaseFirestore.instance.collection('userData').doc(userId).set({
+       'userName':'',
+       'userEmail':emailController.text.trim(),
+       'userAge':'',
+       'userPhone':phoneController.text,
+       'userPassword':passwordController.text.trim(),
+       'userImage' : '',
+       'userAccount':'',
+       'userAccountName':'',
+       'userGender':'',
+       'userCountry':'',
+       'userProvince':'',
+       'userCity' : ''
+     });
+     isLaoding=false;
+     Get.snackbar("Success", "Account Create Successfully",backgroundColor: Colors.green);
+     Get.offAndToNamed(AppRoutes.signInView);
+   }
+   catch(e){
+     isLaoding=false;
+     print(e.toString());
+   }
+ }
+
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
@@ -156,12 +197,12 @@ class _SignUpViewState extends State<SignUpView> {
                             ),
                           ),
                           SizedBox(height: screenHeight*.02),
-                          GreenButton(
+                         isLaoding?Center(child: AppLoader()): GreenButton(
                             text: "Sign Up",
-                            onTap: () {
+                            onTap: () async{
                               if (formKey.currentState!.validate())
                               {
-                                Get.toNamed(AppRoutes.signInView);
+                                signUp();
                               }
                             },
                           ),

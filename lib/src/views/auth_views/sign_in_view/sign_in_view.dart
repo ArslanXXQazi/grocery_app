@@ -166,7 +166,7 @@ class _SignInViewState extends State<SignInView> {
                             onTap: () {
                               if (formKey.currentState!.validate())
                               {
-                                Get.toNamed(AppRoutes.signUpView);
+                                Get.toNamed(AppRoutes.navBarView);
                               }
                             },
                           ),

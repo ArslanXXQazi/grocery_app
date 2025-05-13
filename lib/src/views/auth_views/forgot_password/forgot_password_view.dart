@@ -52,7 +52,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             Form(child: Column(children: [
               TextFieldWidget(
                 controller: emailController,
-                hintText: "Email Adress",
+                hintText: "Email Address",
                 prefixIcon: Image(
                   image: AssetImage(AppImages.email),
                 ),

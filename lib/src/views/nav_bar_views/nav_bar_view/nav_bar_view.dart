@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/views/auth_views/forgot_password/forgot_password_view.dart';
+import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 class NavBarView extends StatefulWidget {
@@ -17,7 +18,7 @@ class _NavBarViewState extends State<NavBarView> {
     ForgotPasswordView(),
     ForgotPasswordView(),
     ForgotPasswordView(),
-    ForgotPasswordView(),
+    SignInView(),
   ];
 
   @override
@@ -42,40 +43,63 @@ class _NavBarViewState extends State<NavBarView> {
         children: _tabs,
         onPageChanged: (index) => setState(() => _currentIndex = index),
       ),
-      bottomNavigationBar: StylishBottomBar(
-        option: DotBarOptions(
-          dotStyle: DotStyle.tile,
-          gradient: const LinearGradient(
-            colors: [
-              Colors.deepPurple,
-              Colors.pink,
+      bottomNavigationBar: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          StylishBottomBar(
+            option: AnimatedBarOptions(
+              barAnimation: BarAnimation.fade,
+              iconStyle: IconStyle.animated,
+              opacity: 0.3,
+            ),
+            items: [
+              BottomBarItem(
+                icon: const Icon(Icons.home_outlined,color: Colors.grey,),
+                title: const Text('Home',style: TextStyle(color: Colors.green),),
+                selectedIcon: const Icon(Icons.home,color: Colors.green,),
+              ),
+              BottomBarItem(
+                icon: const Icon(Icons.person_outline,color: Colors.grey,),
+                title: const Text('Profile',style: TextStyle(color: Colors.blue),),
+                selectedIcon: const Icon(Icons.person,color: Colors.blue,),
+              ),
+              BottomBarItem(
+                icon: const Icon(Icons.favorite_border,color: Colors.grey,),
+                title: const Text('Favorite',style: TextStyle(color: Colors.red),),
+                selectedIcon: const Icon(Icons.favorite,color: Colors.red,),
+              ),
+              // Placeholder for spacing, no icon here
+              BottomBarItem(
+                icon: const SizedBox.shrink(),
+                title: const SizedBox.shrink(),
+                backgroundColor: Colors.transparent,
+              ),
             ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            currentIndex: _currentIndex,
+            onTap: (index) {
+              // Prevent selecting the floating button slot
+              if (index == 3) return;
+              setState(() {
+                _currentIndex = index;
+                _pageController.jumpToPage(index);
+              });
+            },
           ),
-        ),
-
-        items: [
-          BottomBarItem(
-            icon: const Icon(Icons.abc),
-            title: const Text('Abc'),
-            backgroundColor: Colors.red,
-            selectedIcon: const Icon(Icons.read_more),
-          ),
-          BottomBarItem(
-            icon: const Icon(Icons.safety_divider),
-            title: const Text('Safety'),
-            backgroundColor: Colors.orange,
-          ),
-          BottomBarItem(
-            icon: const Icon(Icons.cabin),
-            title: const Text('Cabin'),
-            backgroundColor: Colors.purple,
-          ),
-          BottomBarItem(
-            icon: const Icon(Icons.cabin),
-            title: const Text('Cabin'),
-            backgroundColor: Colors.purple,
+          // Floating action button for the last item
+          Positioned(
+            right: 16,
+            bottom: 8,
+            child: FloatingActionButton(
+              backgroundColor: Colors.green,
+              elevation: 6,
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 3;
+                  _pageController.jumpToPage(3);
+                });
+              },
+              child: const Icon(Icons.shopping_cart,color: Colors.white,),
+            ),
           ),
         ],
       ),

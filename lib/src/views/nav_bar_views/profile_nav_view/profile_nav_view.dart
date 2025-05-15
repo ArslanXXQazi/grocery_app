@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
+import 'package:grocery_app/src/controller/components/profile_button.dart';
 
 import '../../../controller/constant/images.dart';
 class ProfileNavView extends StatelessWidget {
@@ -56,6 +57,21 @@ class ProfileNavView extends StatelessWidget {
               textColor: Colors.grey,
             ),
             SizedBox(height: screenHeight*.01),
+            ProfileButton(
+                onTap: (){},
+                text: "About Me",
+                image: AppImages.aboutMe
+            ),
+            ProfileButton(
+                onTap: (){},
+                text: "My Orders",
+                image: AppImages.orders
+            ),
+            ProfileButton(
+                onTap: (){},
+                text: "My Favorites",
+                image: AppImages.favorites
+            ),
 
 
           ],),

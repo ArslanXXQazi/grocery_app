@@ -16,6 +16,14 @@ class AppImages {
    static String phone='assets/icons/phone.png';
    static String lock='assets/icons/lock.png';
    static String camera='assets/icons/camera.png';
+   static String location='assets/icons/location.png';
+   static String credit='assets/icons/credit.png';
+   static String signOut='assets/icons/signout.png';
+   static String notification='assets/icons/notification.png';
+   static String transactions='assets/icons/transactions.png';
+   static String favorites='assets/icons/favorites.png';
+   static String orders='assets/icons/orders.png';
+   static String aboutMe='assets/icons/aboutMe.png';
 
 
 

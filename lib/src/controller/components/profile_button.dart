@@ -6,12 +6,12 @@ class ProfileButton extends StatelessWidget {
 
    VoidCallback onTap;
    String text;
-   IconData icon;
+   String image;
 
    ProfileButton({super.key,
      required this.onTap,
      required this.text,
-     required this.icon,
+     required this.image,
    });
 
   @override
@@ -23,7 +23,7 @@ class ProfileButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: screenHeight*.015),
         child: Row(children: [
-          ImageIcon(AssetImage(AppImages.lock),color: Colors.green,),
+          ImageIcon(AssetImage(image),color: Color(0xff28B446),),
           SizedBox(width: screenWidth*.02),
           BlackNormalText(
             text: text,
@@ -31,7 +31,7 @@ class ProfileButton extends StatelessWidget {
             fontWeight: FontWeight.w600 ,
           ),
           Spacer(),
-          Icon(icon,color: Colors.grey),
+          Icon(Icons.arrow_forward_ios_outlined,color: Colors.grey),
 
         ],),
       ),

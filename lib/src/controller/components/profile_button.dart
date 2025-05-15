@@ -24,7 +24,7 @@ class ProfileButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: screenHeight*.015),
         child: Row(children: [
           ImageIcon(AssetImage(image),color: Color(0xff28B446),),
-          SizedBox(width: screenWidth*.02),
+          SizedBox(width: screenWidth*.03),
           BlackNormalText(
             text: text,
             fontSize: 12,

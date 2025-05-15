@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/profile_button.dart';
 
-import '../../../controller/constant/images.dart';
+import '../../../../controller/constant/images.dart';
 class ProfileNavView extends StatelessWidget {
   const ProfileNavView({super.key});
 
@@ -20,7 +20,7 @@ class ProfileNavView extends StatelessWidget {
           color: Colors.white,
         ),
         Padding(
-          padding:  EdgeInsets.only(top: screenHeight*.12,left: screenWidth*.02,right: screenWidth*.02),
+          padding:  EdgeInsets.only(top: screenHeight*.12,left: screenWidth*.04,right: screenWidth*.04),
           child: Column(children: [
             Container(
               child: Stack(
@@ -31,10 +31,10 @@ class ProfileNavView extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: screenWidth*.57,top: screenHeight*.095,
+                    left: screenWidth*.54,top: screenHeight*.095,
                     child: CircleAvatar(
                       radius: 14,
-                      backgroundColor: Colors.green,
+                      backgroundColor: Color(0xff28B446),
                       child: Center(child: IconButton(
                         onPressed: (){},
                         icon: ImageIcon(AssetImage(AppImages.camera,),color: Colors.white,),

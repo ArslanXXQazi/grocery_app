@@ -22,7 +22,7 @@ class ProfileButton extends StatelessWidget {
             fontWeight: FontWeight.w600 ,
           ),
           Spacer(),
-          Icon(Icons.arrow_forward_ios_outlined,color: Colors.grey)
+          Icon(Icons.arrow_forward_ios_outlined,color: Colors.grey),
 
         ],),
       ),

@@ -19,7 +19,7 @@ class ProfileNavView extends StatelessWidget {
           color: Colors.white,
         ),
         Padding(
-          padding:  EdgeInsets.only(top: screenHeight*.12),
+          padding:  EdgeInsets.only(top: screenHeight*.12,left: screenWidth*.02,right: screenWidth*.02),
           child: Column(children: [
             Container(
               child: Stack(
@@ -56,20 +56,7 @@ class ProfileNavView extends StatelessWidget {
               textColor: Colors.grey,
             ),
             SizedBox(height: screenHeight*.01),
-            Container(
-              child: Row(children: [
-                ImageIcon(AssetImage(AppImages.lock),color: Colors.green,),
-                SizedBox(width: screenWidth*.02),
-                BlackNormalText(
-                  text: "About Me",
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600 ,
-                ),
-                Spacer(),
-                Icon(Icons.arrow_forward_ios_outlined)
 
-              ],),
-            )
 
           ],),
         )

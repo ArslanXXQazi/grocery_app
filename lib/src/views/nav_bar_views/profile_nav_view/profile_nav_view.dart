@@ -79,8 +79,8 @@ class ProfileNavView extends StatelessWidget {
             ),
             ProfileButton(
                 onTap: (){},
-                text: "My Address",
-                image: AppImages.location
+                text: "Credit Cards",
+                image: AppImages.credit
             ),
 
 

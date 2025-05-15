@@ -92,6 +92,11 @@ class ProfileNavView extends StatelessWidget {
                 text: "Notifications",
                 image: AppImages.notification
             ),
+            ProfileButton(
+                onTap: (){},
+                text: "Sign out",
+                image: AppImages.signOut
+            ),
 
 
           ],),

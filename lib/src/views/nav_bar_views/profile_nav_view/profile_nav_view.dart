@@ -58,7 +58,9 @@ class ProfileNavView extends StatelessWidget {
             SizedBox(height: screenHeight*.01),
             Container(
               child: Row(children: [
-
+                ImageIcon(AssetImage(AppImages.lock),color: Colors.green,),
+                SizedBox(height: screenHeight*.01),
+                
               ],),
             )
 

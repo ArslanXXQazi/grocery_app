@@ -72,6 +72,16 @@ class ProfileNavView extends StatelessWidget {
                 text: "My Favorites",
                 image: AppImages.favorites
             ),
+            ProfileButton(
+                onTap: (){},
+                text: "My Address",
+                image: AppImages.location
+            ),
+            ProfileButton(
+                onTap: (){},
+                text: "My Address",
+                image: AppImages.location
+            ),
 
 
           ],),

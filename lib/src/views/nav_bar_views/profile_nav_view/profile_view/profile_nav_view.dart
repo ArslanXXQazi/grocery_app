@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/profile_button.dart';
+import 'package:grocery_app/src/routs/app_routs.dart';
 
 import '../../../../controller/constant/images.dart';
 class ProfileNavView extends StatelessWidget {
@@ -73,7 +75,9 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.favorites
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.myAddressView);
+                },
                 text: "My Address",
                 image: AppImages.location
             ),

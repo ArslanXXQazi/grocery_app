@@ -59,8 +59,15 @@ class ProfileNavView extends StatelessWidget {
             Container(
               child: Row(children: [
                 ImageIcon(AssetImage(AppImages.lock),color: Colors.green,),
-                SizedBox(height: screenHeight*.01),
-                
+                SizedBox(width: screenWidth*.02),
+                BlackNormalText(
+                  text: "About Me",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600 ,
+                ),
+                Spacer(),
+                Icon(Icons.arrow_forward_ios_outlined)
+
               ],),
             )
 

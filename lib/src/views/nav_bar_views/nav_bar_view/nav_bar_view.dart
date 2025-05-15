@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/views/auth_views/forgot_password/forgot_password_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/profile_nav_view.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 class NavBarView extends StatefulWidget {
@@ -16,7 +17,7 @@ class _NavBarViewState extends State<NavBarView> {
 
   final List<Widget> _tabs = [
     ForgotPasswordView(),
-    ForgotPasswordView(),
+    ProfileNavView(),
     ForgotPasswordView(),
     SignInView(),
   ];

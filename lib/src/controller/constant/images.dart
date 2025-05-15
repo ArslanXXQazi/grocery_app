@@ -15,6 +15,7 @@ class AppImages {
    static String email='assets/icons/email.png';
    static String phone='assets/icons/phone.png';
    static String lock='assets/icons/lock.png';
+   static String camera='assets/icons/camera.png';
 
 
 

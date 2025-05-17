@@ -9,7 +9,7 @@ class GreenButton extends StatelessWidget {
   double? fontSize;
   double? borderRadius;
   String? image;
- // Color color;
+  Color? color;
   Color borderColor;
   Color textColor;
   FontWeight fontWeight;
@@ -21,7 +21,7 @@ class GreenButton extends StatelessWidget {
     this.height,
     this.width,
     this.fontSize,
-   // this.color = Colors.white,
+    this.color ,
     this.borderColor = Colors.white,
     this.textColor = Colors.black,
     this.fontWeight = FontWeight.w500,

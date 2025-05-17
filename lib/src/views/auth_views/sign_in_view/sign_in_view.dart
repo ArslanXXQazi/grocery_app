@@ -166,7 +166,7 @@ class SignInView extends StatelessWidget {
                               {
                             if (authController.emailController.text.trim()=="admin@gmail.com" && authController.passwordController.text.trim()=="123456")
                             {
-                              Get.offAndToNamed(AppRoutes.profileNavView);
+                              Get.offAndToNamed(AppRoutes.adminView);
                             }
                             else
                             {

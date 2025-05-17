@@ -7,6 +7,10 @@ class AppImages {
 
    static String signIn='assets/images/signin.png';
    static String signUp='assets/images/signup.png';
+   static String grapes='assets/images/grapes.png';
+   static String pineapple='assets/images/pineapple.png';
+   static String avacoda='assets/images/avacoda.png';
+   static String peach='assets/images/peach.png';
 
 
 

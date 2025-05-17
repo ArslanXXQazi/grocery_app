@@ -115,3 +115,64 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 }
+
+// Country select karne ke liye widget bana raha hoon
+class CountryFieldWidget extends StatelessWidget {
+  final List<String> countries;
+  final String? selectedCountry;
+  final ValueChanged<String?>? onChanged;
+  final String hintText;
+  final Color? borderColor;
+  final Color? focusBorderColor;
+  final Color? fillColor;
+
+  const CountryFieldWidget({
+    Key? key,
+    required this.countries,
+    this.selectedCountry,
+    this.onChanged,
+    this.hintText = 'Country',
+    this.borderColor,
+    this.focusBorderColor,
+    this.fillColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
+    return DropdownButtonFormField<String>(
+      value: selectedCountry,
+      items: countries.map((country) => DropdownMenuItem(
+        value: country,
+        child: Text(country),
+      )).toList(),
+      onChanged: onChanged,
+      dropdownColor: Colors.white,
+      decoration: InputDecoration(
+        hintText: hintText,
+        prefixIcon: Icon(Icons.public, color: Colors.grey),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.04,
+          vertical: isPortrait ? screenHeight * 0.015 : screenHeight * 0.025,
+        ),
+        filled: true,
+        fillColor: fillColor ?? Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(color: borderColor ?? Colors.white),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(color: borderColor ?? Colors.white),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(color: focusBorderColor ?? Colors.white),
+        ),
+      ),
+    );
+  }
+}

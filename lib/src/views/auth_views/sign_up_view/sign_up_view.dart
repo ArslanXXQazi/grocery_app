@@ -19,46 +19,12 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
 bool isLaoding=false;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+
   bool _isPasswordVisible = false;
 
 
 
- void signUp () async
- {
-   try{
-     isLaoding=true;
-     setState(() {
 
-     });
-     await FirebaseAuth.instance.createUserWithEmailAndPassword(
-         email: emailController.text.trim(), password: passwordController.text.trim());
-     String userId=await FirebaseAuth.instance.currentUser!.uid;
-     await FirebaseFirestore.instance.collection('userData').doc(userId).set({
-       'userName':'',
-       'userEmail':emailController.text.trim(),
-       'userAge':'',
-       'userPhone':phoneController.text,
-       'userPassword':passwordController.text.trim(),
-       'userImage' : '',
-       'userAccount':'',
-       'userAccountName':'',
-       'userGender':'',
-       'userCountry':'',
-       'userProvince':'',
-       'userCity' : ''
-     });
-     isLaoding=false;
-     Get.snackbar("Success", "Account Create Successfully",backgroundColor: Colors.green);
-     Get.offAndToNamed(AppRoutes.signInView);
-   }
-   catch(e){
-     isLaoding=false;
-     print(e.toString());
-   }
- }
 
 
   @override
@@ -202,7 +168,7 @@ bool isLaoding=false;
                             onTap: () async{
                               if (formKey.currentState!.validate())
                               {
-                                signUp();
+
                               }
                             },
                           ),

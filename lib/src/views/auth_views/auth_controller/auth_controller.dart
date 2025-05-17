@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_controller.dart';
 
  class AuthController extends GetxController
  {
@@ -10,36 +11,19 @@ import 'package:get/get.dart';
    final TextEditingController emailController = TextEditingController();
    final TextEditingController phoneController = TextEditingController();
    final TextEditingController passwordController = TextEditingController();
+    UserDataController userDataController=Get.put(UserDataController());
 
    void signUp () async
    {
      try{
        isLoading.value=true;
-
        String email = emailController.text.trim();
        String password = passwordController.text.trim();
+       String phone = phoneController.text.trim();
 
        await FirebaseAuth.instance.createUserWithEmailAndPassword(
            email: email, password:password);
-       String userId=await FirebaseAuth.instance.currentUser!.uid;
-
-       await FirebaseFirestore.instance.collection('userData').doc(userId).set({
-         'userName':'',
-         'userEmail':emailController.text.trim(),
-         'userAge':'',
-         'userPhone':phoneController.text,
-         'userPassword':passwordController.text.trim(),
-         'userImage' : '',
-         'userAccount':'',
-         'userAccountName':'',
-         'userGender':'',
-         'userCountry':'',
-         'userProvince':'',
-         'userCity' : ''
-       });
-       isLaoding=false;
-       Get.snackbar("Success", "Account Create Successfully",backgroundColor: Colors.green);
-       Get.offAndToNamed(AppRoutes.signInView);
+       userData(email, password, phone);
      }
      catch(e){
        isLoading.value=false;
@@ -47,15 +31,23 @@ import 'package:get/get.dart';
      }
    }
 
-   void userData() async
+   void userData(String email, String password, String phone) async
    {
      try
      {
-       String userId=FirebaseAuth.instance.currentUser!.uid;
-       await FirebaseFirestore.instance.collection("userData").doc().set({
-
-
-
+       await FirebaseFirestore.instance.collection("userData").doc(userDataController.userId.value).set({
+         'userName':'',
+         'userEmail':email,
+         'userAge':'',
+         'userPhone':phone,
+         'userPassword':phone,
+         'userImage' : '',
+         'userAccount':'',
+         'userAccountName':'',
+         'userGender':'',
+         'userCountry':'',
+         'userProvince':'',
+         'userCity' : ''
        });
      }
      catch(e)

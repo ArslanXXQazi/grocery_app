@@ -12,7 +12,7 @@ class UserDataController extends GetxController
  {
    try
    {
-     final  userId= await FirebaseAuth.instance.currentUser!.uid;
+     userId.value = await FirebaseAuth.instance.currentUser!.uid;
    }
    catch(e)
    {

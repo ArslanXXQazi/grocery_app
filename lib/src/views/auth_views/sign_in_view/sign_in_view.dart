@@ -7,57 +7,15 @@ import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
+import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
 
 
-class SignInView extends StatefulWidget {
-  const SignInView({super.key});
-
-  @override
-  State<SignInView> createState() => _SignInViewState();
-}
-
-class _SignInViewState extends State<SignInView> {
+class SignInView extends StatelessWidget {
+   SignInView({super.key});
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  bool _isPasswordVisible = false;
-  bool  isLoading = false;
 
-
-  void signIn() async {
-
-    try
-    {
-      isLoading=true;
-      setState(() {
-
-      });
-
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
-      isLoading=false;
-      setState(() {
-
-      });
-      Get.offAndToNamed(AppRoutes.navBarView);
-    }
-    catch(e)
-    {
-      isLoading=false;
-      setState(() {
-        
-      });
-      Get.snackbar(
-          "", "",
-          backgroundColor: Colors.red,
-        titleText: Text("Error",style: TextStyle(color: Colors.white),),
-        messageText: Text(e.toString(),style: TextStyle(color: Colors.white),)
-      );
-    }
-
-
-  }
-
+  AuthController authController=Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +91,7 @@ class _SignInViewState extends State<SignInView> {
                             child: Column(
                               children: [
                                 TextFieldWidget(
-                                  controller: emailController,
+                                  controller: authController.emailController,
                                   hintText: "Email",
                                   prefixIcon: Image(
                                     image: AssetImage("assets/icons/email.png"),
@@ -146,36 +104,34 @@ class _SignInViewState extends State<SignInView> {
                                   },
                                 ),
                                 SizedBox(height: screenHeight*.01),
-                                TextFieldWidget(
-                                  controller: passwordController,
-                                  hintText: "Password",
-                                  prefixIcon: Image(
-                                    image: AssetImage("assets/icons/lock.png"),
-                                  ),
-                                  isPassword: !_isPasswordVisible,
-                                  suffixIcon: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        _isPasswordVisible = !_isPasswordVisible;
-                                      });
-                                    },
-                                    icon: Icon(
-                                      _isPasswordVisible
-                                          ? Icons.remove_red_eye
-                                          : Icons.visibility_off,
-                                      color: Colors.grey,
+                                Obx((){
+                                  return  TextFieldWidget(
+                                    controller:authController.passwordController,
+                                    hintText: "Password",
+                                    prefixIcon: Image(
+                                      image: AssetImage(AppImages.lock),
                                     ),
-                                  ),
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Please enter a password";
-                                    }
-                                    if (value.length < 6) {
-                                      return "Password must be at least 6 characters";
-                                    }
-                                    return null;
-                                  },
-                                ),
+                                    isPassword: passwordFieldController.isPasswordVisible.value,
+                                    suffixIcon:  IconButton(onPressed: (){
+                                      passwordFieldController.togglePasswordVisibility();},
+                                      icon: Icon(
+                                        passwordFieldController.isPasswordVisible.value
+                                            ? Icons.remove_red_eye
+                                            : Icons.visibility_off,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return "Please enter a password";
+                                      }
+                                      if (value.length < 6) {
+                                        return "Password must be at least 6 characters";
+                                      }
+                                      return null;
+                                    },
+                                  );
+                                }),
                                 SizedBox(height: screenHeight*.005),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,15 +156,28 @@ class _SignInViewState extends State<SignInView> {
                             ),
                           ),
                           SizedBox(height: screenHeight*.02),
-                        isLoading? Center(child: AppLoader()) :  GreenButton(
+
+                        Obx((){
+                          return authController.isLoading.value ? AppLoader():
+                          GreenButton(
                             text: "Sign In",
                             onTap: () {
                               if (formKey.currentState!.validate())
                               {
-                               signIn();
+                            if (authController.emailController.text.trim()=="admin@gmail.com" && authController.passwordController.text.trim()=="123456")
+                            {
+                              Get.offAndToNamed(AppRoutes.profileNavView);
+                            }
+                            else
+                            {
+                             authController.signIn();
+                            }
+
                               }
                             },
-                          ),
+                          );
+                        }),
+
                           SizedBox(height: screenHeight*.025),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

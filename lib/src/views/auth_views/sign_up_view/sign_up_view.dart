@@ -9,30 +9,24 @@ import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
+import 'package:grocery_app/src/views/auth_views/password_field_controller/password_field_controller.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({super.key});
-
-  @override
-  State<SignUpView> createState() => _SignUpViewState();
-}
-
-class _SignUpViewState extends State<SignUpView> {
+class SignUpView extends StatelessWidget {
+  SignUpView({super.key});
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   AuthController authController=Get.put(AuthController());
+
+  PasswordFieldController passwordFieldController= Get.put(PasswordFieldController());
+
   bool _isPasswordVisible = false;
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
     final screenWidth = MediaQuery.sizeOf(context).width;
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -130,41 +124,40 @@ class _SignUpViewState extends State<SignUpView> {
                                   },
                                 ),
                                 SizedBox(height: screenHeight*.01),
-                                TextFieldWidget(
-                                  controller:authController.passwordController,
-                                  hintText: "Password",
-                                  prefixIcon: Image(
-                                    image: AssetImage(AppImages.lock),
-                                  ),
-                                  isPassword: !_isPasswordVisible,
-                                  suffixIcon: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        _isPasswordVisible = !_isPasswordVisible;
-                                      });
-                                    },
-                                    icon: Icon(
-                                      _isPasswordVisible
-                                          ? Icons.remove_red_eye
-                                          : Icons.visibility_off,
-                                      color: Colors.grey,
+
+                                Obx((){
+                                  return  TextFieldWidget(
+                                    controller:authController.passwordController,
+                                    hintText: "Password",
+                                    prefixIcon: Image(
+                                      image: AssetImage(AppImages.lock),
                                     ),
-                                  ),
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Please enter a password";
-                                    }
-                                    if (value.length < 6) {
-                                      return "Password must be at least 6 characters";
-                                    }
-                                    return null;
-                                  },
-                                ),
+                                    isPassword: passwordFieldController.isPasswordVisible.value,
+                                    suffixIcon:  IconButton(onPressed: (){
+                                      passwordFieldController.togglePasswordVisibility();},
+                                      icon: Icon(
+                                        passwordFieldController.isPasswordVisible.value
+                                            ? Icons.remove_red_eye
+                                            : Icons.visibility_off,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return "Please enter a password";
+                                      }
+                                      if (value.length < 6) {
+                                        return "Password must be at least 6 characters";
+                                      }
+                                      return null;
+                                    },
+                                  );
+                                })
                               ],
                             ),
                           ),
                           SizedBox(height: screenHeight*.02),
-                         
+
                          Obx((){
                            return authController.isLoading.value ? AppLoader():
                            GreenButton(

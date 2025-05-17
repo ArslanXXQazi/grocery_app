@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:grocery_app/src/views/auth_views/password_field_controller/password_field_controller.dart';
+
+
+PasswordFieldController passwordFieldController=Get.put(PasswordFieldController());
 
 class TextFieldWidget extends StatelessWidget {
+
+
+
   final TextEditingController controller;
   final String hintText;
   final bool isPassword;
@@ -46,30 +55,18 @@ class TextFieldWidget extends StatelessWidget {
       children: [
         TextFormField(
           controller: controller,
-          obscureText: isPassword,
+          obscureText: passwordFieldController.isPasswordVisible.value,
           keyboardType: keyboardType,
           validator: validator,
           onChanged: onChanged,
           maxLength: maxLength,
           style: TextStyle(
             color: textColor ?? Colors.black,
-            // fontSize: ResponsiveBreakpoints.getResponsiveValue(
-            //   context: context,
-            //   mobile: 16.0,
-            //   tablet: 18.0,
-            //   desktop: 20.0,
-            // ),
           ),
           decoration: InputDecoration(
             hintText: hintText,
             hintStyle: TextStyle(
               color: hintColor ?? Colors.grey,
-              // fontSize: ResponsiveBreakpoints.getResponsiveValue(
-              //   context: context,
-              //   mobile: 14.0,
-              //   tablet: 16.0,
-              //   desktop: 18.0,
-              // ),
             ),
             contentPadding: EdgeInsets.symmetric(
               horizontal: screenWidth * 0.04,

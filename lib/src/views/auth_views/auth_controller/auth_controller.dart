@@ -15,6 +15,35 @@ import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
    final TextEditingController passwordController = TextEditingController();
     UserDataController userDataController=Get.put(UserDataController());
 
+
+
+
+
+   void signIn() async {
+
+     try
+     {
+       isLoading.value=true;
+       await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
+       isLoading.value=false;
+       clear();
+       Get.offAndToNamed(AppRoutes.navBarView);
+
+     }
+     catch(e)
+     {
+       isLoading.value=false;
+       NotificationMessage.show(
+         title: "Error",
+         description: e.toString(),
+         backGroundColor: Colors.red,
+         textColor: Colors.white,
+       );
+     }
+
+
+   }
+
    void signUp () async
    {
      try{
@@ -70,8 +99,8 @@ import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
      }
    }
 
-
-   void clear(){
+   void clear()
+   {
      emailController.clear();
      phoneController.clear();
      phoneController.clear();

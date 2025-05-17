@@ -8,6 +8,7 @@ import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
+import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -17,9 +18,9 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-bool isLaoding=false;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AuthController authController=Get.put(AuthController());
   bool _isPasswordVisible = false;
 
 
@@ -101,7 +102,7 @@ bool isLaoding=false;
                             child: Column(
                               children: [
                                 TextFieldWidget(
-                                  controller: emailController,
+                                  controller: authController.emailController,
                                   hintText: "Email",
                                   prefixIcon: Image(
                                     image: AssetImage(AppImages.email),
@@ -115,7 +116,7 @@ bool isLaoding=false;
                                 ),
                                 SizedBox(height: screenHeight*.01),
                                 TextFieldWidget(
-                                  controller: phoneController,
+                                  controller:authController.phoneController,
                                   hintText: "Phone number",
                                   prefixIcon: Image(
                                     image: AssetImage(AppImages.phone),
@@ -130,7 +131,7 @@ bool isLaoding=false;
                                 ),
                                 SizedBox(height: screenHeight*.01),
                                 TextFieldWidget(
-                                  controller: passwordController,
+                                  controller:authController.passwordController,
                                   hintText: "Password",
                                   prefixIcon: Image(
                                     image: AssetImage(AppImages.lock),
@@ -163,15 +164,19 @@ bool isLaoding=false;
                             ),
                           ),
                           SizedBox(height: screenHeight*.02),
-                         isLaoding?Center(child: AppLoader()): GreenButton(
-                            text: "Sign Up",
-                            onTap: () async{
-                              if (formKey.currentState!.validate())
-                              {
-
-                              }
-                            },
-                          ),
+                         
+                         Obx((){
+                           return authController.isLoading.value ? AppLoader():
+                           GreenButton(
+                             text: "Sign Up",
+                             onTap: () async{
+                               if (formKey.currentState!.validate())
+                               {
+                                 authController.signUp();
+                               }
+                             },
+                           );
+                         }),
                           SizedBox(height: screenHeight*.02),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

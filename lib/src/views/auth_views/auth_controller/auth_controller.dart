@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/src/controller/components/notifications.dart';
+import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_controller.dart';
 
  class AuthController extends GetxController
@@ -24,10 +26,22 @@ import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
        await FirebaseAuth.instance.createUserWithEmailAndPassword(
            email: email, password:password);
        userData(email, password, phone);
+       clear();
+       NotificationMessage.show(
+         title: "Success",
+         description: "Account Created Successfully",
+       );
+       Get.offAndToNamed(AppRoutes.navBarView);
+
      }
      catch(e){
        isLoading.value=false;
-       print(e.toString());
+       NotificationMessage.show(
+         title: "Error",
+         description: e.toString(),
+         backGroundColor: Colors.red,
+         textColor: Colors.white,
+       );
      }
    }
 
@@ -54,6 +68,13 @@ import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
      {
 
      }
+   }
+
+
+   void clear(){
+     emailController.clear();
+     phoneController.clear();
+     phoneController.clear();
    }
 
 

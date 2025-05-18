@@ -32,17 +32,21 @@ class AdminView extends StatelessWidget {
          Row(
            mainAxisAlignment: MainAxisAlignment.spaceAround,
            children: [
-           CatagoryButton(
-              ontap: ()
-              {
-                Get.to(ShowAllFruits());
-              },
-               image: AppImages.peach, name: "Furites"),
-           CatagoryButton(
-              ontap: ()
-              {
-              },
-               image: AppImages.peach, name: "Furites"),
+           Expanded(
+             child: CatagoryButton(
+                ontap: ()
+                {
+                  Get.to(ShowAllFruits());
+                },
+                 image: AppImages.peach, name: "Furites"),
+           ),
+           Expanded(
+             child: CatagoryButton(
+                ontap: ()
+                {
+                },
+                 image: AppImages.peach, name: "Furites"),
+           ),
          ],)
         ]
       )

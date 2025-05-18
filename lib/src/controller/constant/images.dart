@@ -28,6 +28,14 @@ class AppImages {
    static String favorites='assets/icons/favorites.png';
    static String orders='assets/icons/orders.png';
    static String aboutMe='assets/icons/aboutMe.png';
+   static String household='assets/icons/household.png';
+   static String edibleOil='assets/icons/edibleOil.png';
+   static String beverages='assets/icons/beverages.png';
+   static String grocery='assets/icons/grocery.png';
+   static String fruits='assets/icons/fruits.png';
+   static String vegetables='assets/icons/vegetables.png';
+   static String heart='assets/icons/heart.png';
+   static String heartFill='assets/icons/heartFill.png';
 
 
 

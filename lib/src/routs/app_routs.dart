@@ -1,6 +1,8 @@
 
 import 'package:get/get.dart';
 import 'package:grocery_app/src/admin_views/admin_view.dart';
+import 'package:grocery_app/src/admin_views/fruits_view/add_data.dart';
+import 'package:grocery_app/src/admin_views/fruits_view/show_fruit.dart';
 import 'package:grocery_app/src/views/auth_views/forgot_password/forgot_password_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/nav_bar_view/nav_bar_view.dart';
@@ -19,6 +21,8 @@ class AppRoutes{
   static String profileNavView='/profileNavView';
   static String myAddressView='/myAddressView';
   static String adminView='/adminView';
+  static String showFruit='/showFruit';
+  static String addData='/addData';
 
 
   static final routes=
@@ -53,9 +57,20 @@ class AppRoutes{
         name: myAddressView,
         page: ()=>MyAddressView(),
     ),
+
     GetPage(
         name: adminView,
         page: ()=>AdminView(),
+    ),
+
+    GetPage(
+      name: showFruit,
+      page: ()=>ShowAllFruits(),
+    ),
+
+    GetPage(
+      name: addData,
+      page: ()=>AddData(),
     ),
 
 

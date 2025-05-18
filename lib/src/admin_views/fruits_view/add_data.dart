@@ -11,8 +11,8 @@ import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import '../../controller/components/notifications.dart';
 
 
-class AddFruit extends StatelessWidget {
-   AddFruit({super.key});
+class AddData extends StatelessWidget {
+   AddData({super.key});
 
   AdminController adminController=Get.put(AdminController());
 
@@ -22,6 +22,11 @@ class AddFruit extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greyColor,
+      appBar: AppBar(
+        backgroundColor: AppColors.greyColor,
+        leading: BackButton(color: Colors.black,),
+
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(

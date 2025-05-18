@@ -23,6 +23,7 @@ class CatagoryButton extends StatelessWidget {
       onTap: ontap,
       child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+          margin: const EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
             color:Colors.white,
             borderRadius: BorderRadius.circular(10),

@@ -46,9 +46,45 @@ class AdminView extends StatelessWidget {
                   ontap: ()
                   {
                   },
-                   image: AppImages.peach, name: "Vegetables"),
+                   image: AppImages.vegetables, name: "Vegetables"),
              ),
-           ],)
+           ],),
+           Row(
+             children: [
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                  },
+                   image: AppImages.beverages, name: "Beverages"),
+             ),
+             const SizedBox(width: 20),
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                  },
+                   image: AppImages.grocery, name: "Grocery"),
+             ),
+           ],),
+           Row(
+             children: [
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                  },
+                   image: AppImages.edibleOil, name: "Edible Oil"),
+             ),
+             const SizedBox(width: 20),
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                  },
+                   image: AppImages.household, name: "household"),
+             ),
+           ],),
           ]
         ),
       )

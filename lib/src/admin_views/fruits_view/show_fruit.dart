@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:grocery_app/src/admin_views/admin_views_widgets/update_data_button/update_data_button.dart';
+import 'package:grocery_app/src/admin_views/fruits_view/add_fruit.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
@@ -13,9 +14,13 @@ class ShowAllFruits extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){
-
-      }),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: (){
+          Get.to(AddFruit());
+        },
+        child: BlackNormalText(text: "Add Data",textColor: Colors.white,fontSize: 13,fontWeight: FontWeight.w700,),
+      ),
       backgroundColor: AppColors.greyColor,
       appBar: AppBar(
         backgroundColor: AppColors.greyColor,

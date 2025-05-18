@@ -16,6 +16,8 @@ class AddFruit extends StatelessWidget {
 
   AdminController adminController=Get.put(AdminController());
 
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,17 +32,53 @@ class AddFruit extends StatelessWidget {
               fontWeight: FontWeight.w700,
               fontSize: 18,
             ),
-            SizedBox(height: 20),
-            TextFieldWidget(controller: adminController.nameController, hintText: "Fruit Name"),
-            SizedBox(height: 20),
-            TextFieldWidget(controller: adminController.priceController, hintText: "Fruit Price",keyboardType: TextInputType.number,),
-            SizedBox(height: 20),
-            TextFieldWidget(controller: adminController.quantityController, hintText: "Fruit Quantity"),
-            SizedBox(height: 20),
+           Form(
+             key: formKey,
+               child: Column(children: [
+             SizedBox(height: 20),
+             TextFieldWidget(
+               controller: adminController.nameController,
+               hintText: "Fruit Name",
+               validator: (value){
+                 if (value == null || value== "")
+                 {
+                   return "Enter Fruit Name";
+                 }
+                 return null;
+               },
+             ),
+             SizedBox(height: 20),
+             TextFieldWidget(
+               controller: adminController.priceController,
+               hintText: "Fruit Price",
+               validator: (value){
+                 if (value == null || value== "")
+                 {
+                   return "Enter Fruit Price";
+                 }
+                 return null;
+               },
+             ),
+             SizedBox(height: 20),
+             TextFieldWidget(
+               controller: adminController.quantityController,
+               hintText: "Fruit Quantity",
+               validator: (value){
+                 if (value == null || value== "")
+                 {
+                   return "Enter Fruit Quantity";
+                 }
+                 return null;
+               },
+             ),
+             SizedBox(height: 20),
+           ],)),
             Obx((){
               return adminController.isLoading.value==true ? AppLoader() :
                   GreenButton(onTap: (){
-                    adminController.addData();
+                    if(formKey.currentState!.validate()){
+                      adminController.addData();
+                    }
                   }, text: "Add Data");
             })
         ],),

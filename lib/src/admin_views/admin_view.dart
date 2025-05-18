@@ -26,29 +26,31 @@ class AdminView extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-      body:Column(
-        children:[
-          SizedBox(height: 30,),
-         Row(
-           mainAxisAlignment: MainAxisAlignment.spaceAround,
-           children: [
-           Expanded(
-             child: CatagoryButton(
-                ontap: ()
-                {
-                  Get.to(ShowAllFruits());
-                },
-                 image: AppImages.peach, name: "Furites"),
-           ),
-           Expanded(
-             child: CatagoryButton(
-                ontap: ()
-                {
-                },
-                 image: AppImages.peach, name: "Furites"),
-           ),
-         ],)
-        ]
+      body:Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
+        child: Column(
+          children:[
+           Row(
+             children: [
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                    Get.to(ShowAllFruits());
+                  },
+                   image: AppImages.peach, name: "Fruits"),
+             ),
+             const SizedBox(width: 20),
+             Expanded(
+               child: CatagoryButton(
+                  ontap: ()
+                  {
+                  },
+                   image: AppImages.peach, name: "Vegetables"),
+             ),
+           ],)
+          ]
+        ),
       )
     );
   }

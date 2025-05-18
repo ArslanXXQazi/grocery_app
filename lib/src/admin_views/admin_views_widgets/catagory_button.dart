@@ -28,7 +28,7 @@ class CatagoryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child:Center(child:Column(children:[
-            Image(image: AssetImage(image)),
+            Image(image: AssetImage(image),width: 80,),
             SizedBox(height: 15),
             BlackNormalText(
               text: name,

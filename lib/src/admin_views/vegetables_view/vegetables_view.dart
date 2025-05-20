@@ -44,9 +44,10 @@ class VegetablesView extends StatelessWidget {
                       crossAxisSpacing: 20,
                       childAspectRatio: .7
                     ),
+                    itemCount:  snapshot.data!.docs.length,
                     itemBuilder: (context, index)
                     {
-                      var vegetables= snapshot.
+                      var vegetables= snapshot.data!.
                     }
                 );
               }

@@ -47,7 +47,8 @@ class VegetablesView extends StatelessWidget {
                     itemCount:  snapshot.data!.docs.length,
                     itemBuilder: (context, index)
                     {
-                      var vegetables= snapshot.data!.
+                      var vegetables= snapshot.data!.docs[index];
+                      return
                     }
                 );
               }

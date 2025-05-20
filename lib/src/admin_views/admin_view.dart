@@ -28,67 +28,68 @@ class AdminView extends StatelessWidget {
           ),
         ),
       body:Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-           Row(
-             children: [
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                    Get.toNamed(AppRoutes.showFruit);
-                  },
-                   image: AppImages.fruits, name: "Fruits"),
-             ),
-             const SizedBox(width: 20),
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                    Get.toNamed(AppRoutes.vegetableView);
-                  },
-                   image: AppImages.vegetables, name: "Vegetables"),
-             ),
-           ],),
-           Row(
-             children: [
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                  },
-                   image: AppImages.beverages, name: "Beverages"),
-             ),
-             const SizedBox(width: 20),
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                  },
-                   image: AppImages.grocery, name: "Grocery"),
-             ),
-           ],),
-           Row(
-             children: [
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                  },
-                   image: AppImages.edibleOil, name: "Edible Oil"),
-             ),
-             const SizedBox(width: 20),
-             Expanded(
-               child: CatagoryButton(
-                  ontap: ()
-                  {
-                  },
-                   image: AppImages.household, name: "household"),
-             ),
-           ],),
-          ]
+        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 80),
+        child: SingleChildScrollView(
+          child: Column(
+            children:[
+             Row(
+               children: [
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                      Get.toNamed(AppRoutes.showFruit);
+                    },
+                     image: AppImages.fruits, name: "Fruits"),
+               ),
+               const SizedBox(width: 20),
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                      Get.toNamed(AppRoutes.vegetableView);
+                    },
+                     image: AppImages.vegetables, name: "Vegetables"),
+               ),
+             ],),
+             Row(
+               children: [
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                    },
+                     image: AppImages.beverages, name: "Beverages"),
+               ),
+               const SizedBox(width: 20),
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                    },
+                     image: AppImages.grocery, name: "Grocery"),
+               ),
+             ],),
+             Row(
+               children: [
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                    },
+                     image: AppImages.edibleOil, name: "Edible Oil"),
+               ),
+               const SizedBox(width: 20),
+               Expanded(
+                 child: CatagoryButton(
+                    ontap: ()
+                    {
+                    },
+                     image: AppImages.household, name: "household"),
+               ),
+             ],),
+            ]
+          ),
         ),
       )
     );

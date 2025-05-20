@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../controller/components/black_text.dart';
@@ -18,6 +19,12 @@ class VegetablesView extends StatelessWidget {
           fontSize: 22,
           fontWeight: FontWeight.w700,
         ),
+      ),
+      body: StreamBuilder(
+          stream: FirebaseFirestore.instance.collection('Vegetable').snapshots(),
+          builder: (context, snapshot){
+           
+          }
       ),
     );
   }

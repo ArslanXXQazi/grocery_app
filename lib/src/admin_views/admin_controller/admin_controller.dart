@@ -17,7 +17,10 @@ class AdminController extends GetxController
 
   var isLoading= false.obs;
 
-  void addData() async
+
+
+  //===========================>> Fruit Data Insert
+  void addFruit() async
   {
     try
     {
@@ -49,6 +52,43 @@ class AdminController extends GetxController
       );
     }
   }
+
+  //===========================>> Fruit Data Insert
+  void addVegetable() async
+  {
+    try
+    {
+      isLoading.value=true;
+      String id=DateTime.now().microsecond.toString();
+      await FirebaseFirestore.instance.collection('Vegetable').doc(id).set({
+        'id':id,
+        'vegetableName':nameController.text,
+        'quantity':quantityController.text,
+        'price':priceController.text,
+        'enable':'1',
+        'url':'d'
+      });
+      isLoading.value=false;
+      Get.back();
+      NotificationMessage.show(
+        title: "Success",
+        description: "Data Added Successfully",
+      );
+    }
+    catch(e)
+    {
+      isLoading.value=false;
+      NotificationMessage.show(
+        title: "Error",
+        description: e.toString(),
+        backGroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
+  }
+
+
+
 
 
   void deleteData( String fruitId ) async

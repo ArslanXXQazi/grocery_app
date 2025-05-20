@@ -33,7 +33,7 @@ class UpdateDataView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlackNormalText(
-              text: "Enter Your Fruit Data",
+              text: "Update Your Data ",
               fontWeight: FontWeight.w700,
               fontSize: 18,
             ),

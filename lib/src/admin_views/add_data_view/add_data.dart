@@ -82,7 +82,8 @@ class AddData extends StatelessWidget {
               return adminController.isLoading.value==true ? AppLoader() :
                   GreenButton(onTap: (){
                     if(formKey.currentState!.validate()){
-                      adminController.addFruit();
+                     // adminController.addFruit();
+                      adminController.addVegetable();
                     }
                   }, text: "Add Data");
             })

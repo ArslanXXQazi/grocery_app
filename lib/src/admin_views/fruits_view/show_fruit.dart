@@ -2,12 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:grocery_app/src/admin_views/add_data_view/add_data.dart';
 import 'package:grocery_app/src/controller/components/apploader.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
-import 'package:grocery_app/src/controller/constant/images.dart';
 
 import '../../routs/app_routs.dart';
 import '../admin_views_widgets/update_data_button.dart';

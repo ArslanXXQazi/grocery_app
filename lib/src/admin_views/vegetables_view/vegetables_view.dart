@@ -72,6 +72,7 @@ class VegetablesView extends StatelessWidget {
                         return UpdateDataButton(
                             upDateOnTap: (){},
                             deleteOnTap: (){
+                              Get.back();
                               adminController.deleteData(vegetables.id);
                             },
                             price: vegetables["price"]??"N/A",

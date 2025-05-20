@@ -29,7 +29,7 @@ class AdminController extends GetxController
         'quantity':quantityController.text,
         'price':priceController.text,
         'enable':'1',
-        'url':''
+        'url':'d'
       });
       isLoading.value=false;
       Get.back();
@@ -49,5 +49,13 @@ class AdminController extends GetxController
       );
     }
   }
+
+
+  // void deleteData() async
+  // {
+  //   Get.back();
+  //  await FirebaseFirestore.instance.collection("Fruits").doc(fruit.id).delete();
+  // }
+
 
 }

@@ -2,26 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../controller/components/black_text.dart' show BlackNormalText;
-import '../../../controller/components/green_button.dart';
-import '../../../controller/constant/images.dart';
+import '../../controller/components/black_text.dart' show BlackNormalText;
+import '../../controller/components/green_button.dart';
+import '../../controller/constant/images.dart';
 
 class UpdateDataButton extends StatelessWidget {
 
-  String image;
+  String? image;
   String price;
   String name;
   String kg;
+  String itemCount;
   VoidCallback upDateOnTap;
   VoidCallback deleteOnTap;
 
    UpdateDataButton({super.key,
      required this.upDateOnTap,
      required this.deleteOnTap,
-     required this.image,
+     this.image,
      required this.price,
      required this.name,
      required this.kg,
+     required this.itemCount
    });
 
   @override
@@ -48,16 +50,24 @@ class UpdateDataButton extends StatelessWidget {
         );
       },
       child: Container(
-       height: 180,
         margin: EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10)
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: AssetImage(image)),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.black,
+                  radius: 15,
+                  child: BlackNormalText(text: itemCount,textColor: Colors.white,fontSize: 10,fontWeight: FontWeight.w700,),
+                ),
+              ],
+            ),
+            Image(image: AssetImage(AppImages.pineapple)),
             BlackNormalText(
               text: "\$$price",
               fontWeight: FontWeight.w500,

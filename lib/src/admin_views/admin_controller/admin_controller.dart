@@ -94,7 +94,8 @@ class AdminController extends GetxController
   void deleteData( String id ) async
   {
     Get.back();
-   await FirebaseFirestore.instance.collection("Fruits").doc(id).delete();
+  // await FirebaseFirestore.instance.collection("Fruits").doc(id).delete();
+   await FirebaseFirestore.instance.collection("Vegetable").doc(id).delete();
   }
 
 

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/src/admin_views/admin_views_widgets/update_data_button.dart';
 import 'package:grocery_app/src/controller/components/apploader.dart';
 
 import '../../controller/components/black_text.dart';
@@ -34,7 +35,7 @@ class VegetablesView extends StatelessWidget {
               }
             else if (!snapshot.hasData || snapshot.data!.docs.isEmpty)
             {
-              return Center(child: BlackNormalText(text: "No Fruits Found",fontWeight: FontWeight.w700,fontSize: 25,));
+              return Center(child: BlackNormalText(text: "No Vegetable Found",fontWeight: FontWeight.w700,fontSize: 25,));
             }
             else
               {
@@ -48,7 +49,14 @@ class VegetablesView extends StatelessWidget {
                     itemBuilder: (context, index)
                     {
                       var vegetables= snapshot.data!.docs[index];
-                      return
+                      return UpdateDataButton(
+                          upDateOnTap: (){},
+                          deleteOnTap: (){},
+                          price: vegetables["price"]??"N/A",
+                          name:  vegetables["vegetableName"]??"N/A",
+                          kg:  vegetables["quantity"]??"N/A",
+                          itemCount: (index+1).toString()
+                      );
                     }
                 );
               }

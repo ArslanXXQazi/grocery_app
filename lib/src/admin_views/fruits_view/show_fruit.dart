@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:grocery_app/src/admin_views/admin_controller/admin_controller.dart';
 import 'package:grocery_app/src/controller/components/apploader.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
@@ -10,7 +11,9 @@ import '../../routs/app_routs.dart';
 import '../admin_views_widgets/update_data_button.dart';
 
 class ShowAllFruits extends StatelessWidget {
-  const ShowAllFruits({super.key});
+   ShowAllFruits({super.key});
+
+  AdminController adminController = Get.put(AdminController());
 
   @override
   Widget build(BuildContext context) {
@@ -37,44 +40,51 @@ class ShowAllFruits extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
       ),
-      body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('Fruits').snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return AppLoader();
-          } else if (snapshot.hasError) {
-            return Center(child: BlackNormalText(text: "Error ${snapshot.hasError}"));
-          } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-            return Center(child: BlackNormalText(text: "No Fruits Found",fontWeight: FontWeight.w700,fontSize: 25,));
-          } else {
-            return GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                // 2 columns for 2 items per row
-                crossAxisSpacing: 20,
-                // No extra spacing, margin will handle it
-                mainAxisSpacing: 0,
-                // No extra spacing
-                 childAspectRatio: 0.7, // Adjust for your container's size
-              ),
-              itemCount: snapshot.data!.docs.length,
-              itemBuilder: (context, index) {
-                var fruit = snapshot.data!.docs[index];
-                return UpdateDataButton(
-                  upDateOnTap: () {},
-                  deleteOnTap: () {
-                    Get.back();
-                    FirebaseFirestore.instance.collection("Fruits").doc(fruit.id).delete();
-                  },
-                 itemCount: (index+1).toString(),
-                  price: fruit['price'] ?? 'n/a',
-                  name: fruit['fruitName'] ?? 'N/A',
-                  kg: fruit['quantity'] ?? "N/A",
-                );
-              },
-            );
-          }
-        },
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        child: StreamBuilder(
+          stream: FirebaseFirestore.instance.collection('Fruits').snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return AppLoader();
+            } else if (snapshot.hasError) {
+              return Center(child: BlackNormalText(text: "Error ${snapshot.hasError}"));
+            } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+              return Center(child: BlackNormalText(text: "No Fruits Found",fontWeight: FontWeight.w700,fontSize: 25,));
+            } else {
+              return GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  // 2 columns for 2 items per row
+                  crossAxisSpacing: 20,
+                  // No extra spacing, margin will handle it
+                  mainAxisSpacing: 0,
+                  // No extra spacing
+                   childAspectRatio: 0.7, // Adjust for your container's size
+                ),
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  var fruit = snapshot.data!.docs[index];
+                  return UpdateDataButton(
+
+                    upDateOnTap: () {
+                      Get.back();
+                      Get.toNamed(AppRoutes.updateData);
+                    },
+
+                    deleteOnTap: () {
+                      adminController.deleteData(fruit.id);
+                    },
+                   itemCount: (index+1).toString(),
+                    price: fruit['price'] ?? 'n/a',
+                    name: fruit['fruitName'] ?? 'N/A',
+                    kg: fruit['quantity'] ?? "N/A",
+                  );
+                },
+              );
+            }
+          },
+        ),
       ),
     );
   }

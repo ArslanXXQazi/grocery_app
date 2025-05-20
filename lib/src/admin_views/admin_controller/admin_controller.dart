@@ -51,11 +51,11 @@ class AdminController extends GetxController
   }
 
 
-  // void deleteData() async
-  // {
-  //   Get.back();
-  //  await FirebaseFirestore.instance.collection("Fruits").doc(fruit.id).delete();
-  // }
+  void deleteData( String fruitId ) async
+  {
+    Get.back();
+   await FirebaseFirestore.instance.collection("Fruits").doc(fruitId).delete();
+  }
 
 
 }

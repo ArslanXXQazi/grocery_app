@@ -84,7 +84,7 @@ class UpdateDataView extends StatelessWidget {
                 if(formKey.currentState!.validate()){
 
                 }
-              }, text: "Add Data");
+              }, text: "Update Data");
             })
           ],),
       ),

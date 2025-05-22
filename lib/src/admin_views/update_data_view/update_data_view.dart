@@ -59,7 +59,7 @@ class _UpdateDataViewState extends State<UpdateDataView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlackNormalText(
-              text: "Update Your Data ",
+              text: "Update ${widget.collection} Data ",
               fontWeight: FontWeight.w700,
               fontSize: 18,
             ),

@@ -32,7 +32,7 @@ class _FetchDataState extends State<FetchData> {
         backgroundColor: AppColors.greyColor,
         centerTitle: true,
         title: BlackNormalText(
-          text: "Fruit Data",
+          text: "${widget.category} Data",
           fontSize: 22,
           fontWeight: FontWeight.w700,
         ),
@@ -95,6 +95,7 @@ class _FetchDataState extends State<FetchData> {
                     deleteOnTap: () {
                       adminController.deleteData(data.id,widget.category);
                     },
+
                     itemCount: (index+1).toString(),
                     price: data['price'] ?? 'n/a',
                     name: data['name'] ?? 'N/A',

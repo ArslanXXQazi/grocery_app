@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/routs/app_routs.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView
 ({super.key});
 
   @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 3), () {
+      Get.toNamed(AppRoutes.signInView);
+    });
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -17,16 +31,25 @@ class SplashView extends StatelessWidget {
           child: Image(image: AssetImage(AppImages.splash)),
          ),
          Center(
-           child: Column(
-             crossAxisAlignment: CrossAxisAlignment.center,
-             children: [
-            BlackNormalText(
-              text: "Welcome to",
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-            ),
-            Image(image: AssetImage(AppImages.bigCart))
-           ],),
+           child: Padding(
+             padding: const EdgeInsets.only(top: 90),
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.center,
+               children: [
+              BlackNormalText(
+                text: "Welcome to",
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+              ),
+              Image(image: AssetImage(AppImages.bigCart)),
+              BlackNormalText(
+                text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                textColor: Colors.grey,
+              )
+             ],),
+           ),
          )
         ],
       ),

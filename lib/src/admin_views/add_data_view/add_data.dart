@@ -79,7 +79,7 @@ class AddData extends StatelessWidget {
              SizedBox(height: 20),
            ],)),
             Obx((){
-              return adminController.isLoading.value==true ? AppLoader() :
+              return adminController.isLoading.value==true ? Apploader2() :
                   GreenButton(onTap: (){
                     if(formKey.currentState!.validate()){
                  adminController.addVegetable(collection);

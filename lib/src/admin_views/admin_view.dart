@@ -78,6 +78,10 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
+                      Get.toNamed(AppRoutes.fetchDataView,
+                          arguments: {
+                            'category':"Grocery"
+                          });
                     },
                      image: AppImages.grocery, name: "Grocery"),
                ),

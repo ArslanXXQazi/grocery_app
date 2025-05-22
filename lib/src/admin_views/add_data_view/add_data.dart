@@ -54,6 +54,7 @@ class AddData extends StatelessWidget {
              SizedBox(height: 20),
              TextFieldWidget(
                controller: adminController.priceController,
+               keyboardType: TextInputType.number,
                hintText: "${collection} Price",
                validator: (value){
                  if (value == null || value== "")

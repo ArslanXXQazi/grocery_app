@@ -39,7 +39,10 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
-                      Get.to(()=>FetchData(category: 'Fruits'));
+                     Get.toNamed(AppRoutes.fetchDataView,
+                         arguments: {
+                      'category':"Fruits"
+                     });
                       //Get.toNamed(AppRoutes.showFruit);
                     },
                      image: AppImages.fruits, name: "Fruits"),
@@ -49,7 +52,10 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
-                      Get.to(()=>FetchData(category: 'Vegetables'));
+                      Get.toNamed(AppRoutes.fetchDataView,
+                          arguments: {
+                            'category':"Vegetables"
+                          });
                       //Get.toNamed(AppRoutes.vegetableView);
                     },
                      image: AppImages.vegetables, name: "Vegetables"),

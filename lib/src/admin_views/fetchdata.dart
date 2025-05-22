@@ -8,10 +8,16 @@ import 'package:grocery_app/src/controller/components/apploader.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 
+import '../controller/constant/App_colors.dart';
+
 
 class FetchData extends StatefulWidget {
   final String category;
-  const FetchData({super.key, required this.category});
+  final String collectionName;
+  const FetchData({super.key,
+    required this.category,
+    required this.collectionName
+  });
 
   @override
   State<FetchData> createState() => _FetchDataState();
@@ -22,8 +28,15 @@ class _FetchDataState extends State<FetchData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyColor,
       appBar: AppBar(
-        title: Text('${widget.category} Data'),
+        backgroundColor: AppColors.greyColor,
+        centerTitle: true,
+        title: BlackNormalText(
+          text: "Fruit Data",
+          fontSize: 22,
+          fontWeight: FontWeight.w700,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
@@ -57,7 +70,7 @@ class _FetchDataState extends State<FetchData> {
                   // No extra spacing, margin will handle it
                   mainAxisSpacing: 0,
                   // No extra spacing
-                  childAspectRatio: 0.7, // Adjust for your container's size
+                  childAspectRatio: 0.8, // Adjust for your container's size
                 ),
                 itemCount: snapshot.data!.docs.length,
                 itemBuilder: (context, index) {

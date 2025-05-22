@@ -5,6 +5,8 @@ import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/profile_button.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 
+import '../../../../controller/components/green_button.dart';
+import '../../../../controller/constant/App_colors.dart';
 import '../../../../controller/constant/images.dart';
 class ProfileNavView extends StatelessWidget {
   const ProfileNavView({super.key});
@@ -97,7 +99,42 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.notification
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                    Get.dialog(
+                      AlertDialog(
+                        backgroundColor: AppColors.greyColor,
+                        title: BlackNormalText(
+                          text: "Logout",
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                        ),
+                        content: BlackNormalText(
+                          text: "Kya aap logout karna chahte hain?",
+                          fontSize: 16,
+                        ),
+                        actions: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              GreenButton(
+                                onTap: () {
+                                },
+                                text: "Logout",
+                                width: 100, // Smaller width for dialog buttons
+                              ),
+                              GreenButton(
+                                onTap: () {
+                                  Get.back(); // Close dialog
+                                },
+                                text: "Go Back",
+                                width: 100,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 text: "Sign out",
                 image: AppImages.signOut
             ),

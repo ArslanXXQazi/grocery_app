@@ -12,6 +12,7 @@ class AppImages {
    static String avacoda='assets/images/avacoda.png';
    static String peach='assets/images/peach.png';
    static String splash='assets/images/splash.png';
+   static String bigCart='assets/images/bigCart.png';
 
 
 

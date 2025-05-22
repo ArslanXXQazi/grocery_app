@@ -16,15 +16,18 @@ class SplashView extends StatelessWidget {
           width: double.infinity,
           child: Image(image: AssetImage(AppImages.splash)),
          ),
-         Column(
-           crossAxisAlignment: CrossAxisAlignment.center,
-           children: [
-          BlackNormalText(
-            text: "Welcome to",
-            fontSize: 30,
-            fontWeight: FontWeight.w700,
-          ),
-         ],)
+         Center(
+           child: Column(
+             crossAxisAlignment: CrossAxisAlignment.center,
+             children: [
+            BlackNormalText(
+              text: "Welcome to",
+              fontSize: 30,
+              fontWeight: FontWeight.w700,
+            ),
+            Image(image: AssetImage(AppImages.bigCart))
+           ],),
+         )
         ],
       ),
     );

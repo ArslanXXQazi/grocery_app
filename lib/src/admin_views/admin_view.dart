@@ -43,7 +43,6 @@ class AdminView extends StatelessWidget {
                          arguments: {
                       'category':"Fruits"
                      });
-                      //Get.toNamed(AppRoutes.showFruit);
                     },
                      image: AppImages.fruits, name: "Fruits"),
                ),

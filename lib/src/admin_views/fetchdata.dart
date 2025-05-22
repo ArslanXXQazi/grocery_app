@@ -13,10 +13,9 @@ import '../controller/constant/App_colors.dart';
 
 class FetchData extends StatefulWidget {
   final String category;
-  final String collectionName;
   const FetchData({super.key,
     required this.category,
-    required this.collectionName
+
   });
 
   @override

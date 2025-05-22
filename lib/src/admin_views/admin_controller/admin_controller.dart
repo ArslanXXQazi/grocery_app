@@ -20,22 +20,23 @@ class AdminController extends GetxController
 
 
   //===========================>> Fruit Data Insert
-  void addFruit() async
+  void addFruit( String collection) async
   {
     try
     {
       isLoading.value=true;
       String id=DateTime.now().microsecond.toString();
-      await FirebaseFirestore.instance.collection('Fruits').doc(id).set({
+      await FirebaseFirestore.instance.collection(collection).doc(id).set({
         'id':id,
-        'fruitName':nameController.text,
+        'name':nameController.text,
         'quantity':quantityController.text,
         'price':priceController.text,
         'enable':'1',
-        'url':'d'
+        'url':''
       });
       isLoading.value=false;
       Get.back();
+      clear();
       NotificationMessage.show(
         title: "Success",
         description: "Data Added Successfully",
@@ -53,23 +54,24 @@ class AdminController extends GetxController
     }
   }
 
-  //===========================>> Fruit Data Insert
-  void addVegetable() async
+  //===========================>> Vegetables Data Insert
+  void addVegetable(String collection) async
   {
     try
     {
       isLoading.value=true;
       String id=DateTime.now().microsecond.toString();
-      await FirebaseFirestore.instance.collection('Vegetable').doc(id).set({
+      await FirebaseFirestore.instance.collection(collection).doc(id).set({
         'id':id,
-        'vegetableName':nameController.text,
+        'name':nameController.text,
         'quantity':quantityController.text,
         'price':priceController.text,
         'enable':'1',
-        'url':'d'
+        'url':''
       });
       isLoading.value=false;
       Get.back();
+      clear();
       NotificationMessage.show(
         title: "Success",
         description: "Data Added Successfully",
@@ -90,13 +92,55 @@ class AdminController extends GetxController
 
 
 
+  void updateData(String id, String collection) async {
+    try {
+      isLoading.value = true;
+      Map<String, dynamic> updateData = {
+        'name':nameController.text,
+        'quantity': quantityController.text,
+        'price': priceController.text,
+      };
+      await FirebaseFirestore.instance.collection(collection).doc(id).update(updateData);
+      isLoading.value = false;
+      Get.back();
+      clear();
+      NotificationMessage.show(
+        title: "Success",
+        description: "Data Updated Successfully",
+      );
+    } catch (e) {
+      isLoading.value = false;
+      NotificationMessage.show(
+        title: "Error",
+        description: e.toString(),
+        backGroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
+  }
 
-  void deleteData( String id ) async
+
+
+
+
+
+  //===========================>> Delete Data
+
+  void deleteData( String id,String collection ) async
   {
     Get.back();
-  // await FirebaseFirestore.instance.collection("Fruits").doc(id).delete();
-   await FirebaseFirestore.instance.collection("Vegetable").doc(id).delete();
+   await FirebaseFirestore.instance.collection(collection).doc(id).delete();
   }
+
+
+//===========================>> Clear Fields
+
+void clear()
+{
+  nameController.clear();
+  priceController.clear();
+  quantityController.clear();
+}
 
 
 }

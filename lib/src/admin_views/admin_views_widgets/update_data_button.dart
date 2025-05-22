@@ -60,11 +60,27 @@ class UpdateDataButton extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                CircleAvatar(
-                  backgroundColor: Colors.black,
-                  radius: 15,
-                  child: BlackNormalText(text: itemCount,textColor: Colors.white,fontSize: 10,fontWeight: FontWeight.w700,),
-                ),
+                Container(
+                  height: 30,
+                  width: 30,
+                 decoration: BoxDecoration(
+                   color: Colors.green,
+                   borderRadius: BorderRadius.only(
+                     bottomRight: Radius.circular(10),
+                   )
+                 ),
+                  child: Center(child:  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BlackNormalText(text: itemCount,textColor: Colors.white,fontSize: 10,fontWeight: FontWeight.w700,),
+                    ],
+                  ),),
+                )
+                // CircleAvatar(
+                //   backgroundColor: Colors.green,
+                //   radius: 15,
+                //   child: BlackNormalText(text: itemCount,textColor: Colors.white,fontSize: 10,fontWeight: FontWeight.w700,),
+                // ),
               ],
             ),
             Image(image: AssetImage(AppImages.pineapple)),

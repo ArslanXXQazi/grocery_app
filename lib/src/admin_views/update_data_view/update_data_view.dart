@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/src/admin_views/admin_controller/admin_controller.dart';
@@ -11,12 +10,39 @@ import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import '../../controller/components/notifications.dart';
 
 
-class UpdateDataView extends StatelessWidget {
-  UpdateDataView({super.key});
+class UpdateDataView extends StatefulWidget {
+  final String itemId;
+  final String itemName;
+  final String itemPrice;
+  final String itemQuantity;
+  final String collection;
 
+  UpdateDataView({
+    super.key,
+    required this.itemId,
+    required this.itemName,
+    required this.itemPrice,
+    required this.itemQuantity,
+    required this.collection
+  });
+
+  @override
+  State<UpdateDataView> createState() => _UpdateDataViewState();
+}
+
+class _UpdateDataViewState extends State<UpdateDataView> {
   AdminController adminController=Get.put(AdminController());
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    adminController.quantityController.text=widget.itemQuantity;
+    adminController.priceController.text=widget.itemPrice;
+    adminController.nameController.text=widget.itemName;
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +69,11 @@ class UpdateDataView extends StatelessWidget {
                   SizedBox(height: 20),
                   TextFieldWidget(
                     controller: adminController.nameController,
-                    hintText: "Fruit Name",
+                    hintText: "Name",
                     validator: (value){
                       if (value == null || value== "")
                       {
-                        return "Enter Fruit Name";
+                        return "Enter Name";
                       }
                       return null;
                     },
@@ -55,11 +81,11 @@ class UpdateDataView extends StatelessWidget {
                   SizedBox(height: 20),
                   TextFieldWidget(
                     controller: adminController.priceController,
-                    hintText: "Fruit Price",
+                    hintText: "Price",
                     validator: (value){
                       if (value == null || value== "")
                       {
-                        return "Enter Fruit Price";
+                        return "Enter Price";
                       }
                       return null;
                     },
@@ -67,11 +93,11 @@ class UpdateDataView extends StatelessWidget {
                   SizedBox(height: 20),
                   TextFieldWidget(
                     controller: adminController.quantityController,
-                    hintText: "Fruit Quantity",
+                    hintText: "Quantity",
                     validator: (value){
                       if (value == null || value== "")
                       {
-                        return "Enter Fruit Quantity";
+                        return "Enter Quantity";
                       }
                       return null;
                     },
@@ -82,7 +108,7 @@ class UpdateDataView extends StatelessWidget {
               return adminController.isLoading.value==true ? AppLoader() :
               GreenButton(onTap: (){
                 if(formKey.currentState!.validate()){
-
+                 adminController.updateData(widget.itemId, widget.collection);
                 }
               }, text: "Update Data");
             })

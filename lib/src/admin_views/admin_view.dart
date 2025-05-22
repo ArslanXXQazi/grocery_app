@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:grocery_app/src/admin_views/admin_views_widgets/catagory_button.dart';
 
 import 'package:grocery_app/src/admin_views/add_data_view/add_data.dart';
+import 'package:grocery_app/src/admin_views/fetchdata.dart';
 import 'package:grocery_app/src/admin_views/fruits_view/show_fruit.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
@@ -38,7 +39,8 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
-                      Get.toNamed(AppRoutes.showFruit);
+                      Get.to(()=>FetchData(category: 'Fruits'));
+                      //Get.toNamed(AppRoutes.showFruit);
                     },
                      image: AppImages.fruits, name: "Fruits"),
                ),
@@ -47,7 +49,8 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
-                      Get.toNamed(AppRoutes.vegetableView);
+                      Get.to(()=>FetchData(category: 'Vegetables'));
+                      //Get.toNamed(AppRoutes.vegetableView);
                     },
                      image: AppImages.vegetables, name: "Vegetables"),
                ),

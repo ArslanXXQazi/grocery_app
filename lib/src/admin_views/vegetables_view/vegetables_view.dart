@@ -31,7 +31,7 @@ class VegetablesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         onPressed: () {
-          Get.toNamed(AppRoutes.addData);
+          Get.toNamed(AppRoutes.addData, arguments: {'collection':'Vegetables'});
         },
         child: BlackNormalText(
           text: "Add Data",
@@ -43,7 +43,7 @@ class VegetablesView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
         child: StreamBuilder(
-            stream: FirebaseFirestore.instance.collection('Vegetable').snapshots(),
+            stream: FirebaseFirestore.instance.collection('Vegetables').snapshots(),
             builder: (context, snapshot){
               if(snapshot.connectionState == ConnectionState.waiting)
                 {
@@ -70,10 +70,28 @@ class VegetablesView extends StatelessWidget {
                       {
                         var vegetables= snapshot.data!.docs[index];
                         return UpdateDataButton(
-                            upDateOnTap: (){},
-                            deleteOnTap: (){
-                              adminController.deleteData(vegetables.id);
+
+                          //================================>>> Update OnTap
+                            upDateOnTap: (){
+                              Get.back();
+                              Get.toNamed(
+                                AppRoutes.updateDataView,
+                                arguments: {
+                                  'id': vegetables.id,
+                                  'name': vegetables['vegetableName'] ?? 'N/A',
+                                  'price': vegetables['price'] ?? 'N/A',
+                                  'quantity': vegetables['quantity'] ?? 'N/A',
+                                  'collection': 'Vegetables',
+                                },
+                              );
                             },
+
+                            //================================>>> Delete OnTap
+                            deleteOnTap: (){
+                              Get.back();
+                              adminController.deleteData(vegetables.id,'Vegetables');
+                            },
+
                             price: vegetables["price"]??"N/A",
                             name:  vegetables["vegetableName"]??"N/A",
                             kg:  vegetables["quantity"]??"N/A",

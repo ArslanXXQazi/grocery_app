@@ -25,7 +25,7 @@ class AppRoutes{
   static String adminView='/adminView';
   static String showFruit='/showFruit';
   static String addData='/addData';
-  static String updateData='/updateData';
+  static String updateDataView='/updateData';
   static String vegetableView='/vegetables';
 
 
@@ -74,12 +74,28 @@ class AppRoutes{
 
     GetPage(
       name: addData,
-      page: ()=>AddData(),
+     page: (){
+       final arguments = Get.arguments as Map<String, dynamic>?;
+       return AddData(collection: arguments?['collection']);
+     }
     ),
 
     GetPage(
-      name: updateData,
-      page: ()=>UpdateDataView(),
+      name: updateDataView,
+      page: () {
+        // Retrieve parameters from Get.arguments
+        final arguments = Get.arguments as Map<String, dynamic>?;
+        return
+          UpdateDataView(
+            itemId: arguments?['id'] ?? '',
+            itemName: arguments?['name'] ?? '',
+            itemPrice: arguments?['price'] ?? '',
+            itemQuantity: arguments?['quantity'] ?? '',
+            collection: arguments?['collection'] ?? '',
+          );
+
+
+      },
     ),
 
     GetPage(

@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/src/admin_views/admin_controller/admin_controller.dart';
@@ -8,11 +7,11 @@ import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 
-import '../../controller/components/notifications.dart';
 
 
 class AddData extends StatelessWidget {
-   AddData({super.key});
+  String collection;
+   AddData({super.key,required this.collection});
 
   AdminController adminController=Get.put(AdminController());
 
@@ -33,7 +32,7 @@ class AddData extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlackNormalText(
-              text: "Enter Your Fruit Data",
+              text: "Enter Your ${collection} Data",
               fontWeight: FontWeight.w700,
               fontSize: 18,
             ),
@@ -43,11 +42,11 @@ class AddData extends StatelessWidget {
              SizedBox(height: 20),
              TextFieldWidget(
                controller: adminController.nameController,
-               hintText: "Fruit Name",
+               hintText: "${collection} Name",
                validator: (value){
                  if (value == null || value== "")
                  {
-                   return "Enter Fruit Name";
+                   return "Enter ${collection} Name";
                  }
                  return null;
                },
@@ -55,11 +54,11 @@ class AddData extends StatelessWidget {
              SizedBox(height: 20),
              TextFieldWidget(
                controller: adminController.priceController,
-               hintText: "Fruit Price",
+               hintText: "${collection} Price",
                validator: (value){
                  if (value == null || value== "")
                  {
-                   return "Enter Fruit Price";
+                   return "Enter ${collection} Price";
                  }
                  return null;
                },
@@ -67,11 +66,11 @@ class AddData extends StatelessWidget {
              SizedBox(height: 20),
              TextFieldWidget(
                controller: adminController.quantityController,
-               hintText: "Fruit Quantity",
+               hintText: "${collection} Quantity",
                validator: (value){
                  if (value == null || value== "")
                  {
-                   return "Enter Fruit Quantity";
+                   return "Enter ${collection} Quantity";
                  }
                  return null;
                },
@@ -82,8 +81,14 @@ class AddData extends StatelessWidget {
               return adminController.isLoading.value==true ? AppLoader() :
                   GreenButton(onTap: (){
                     if(formKey.currentState!.validate()){
-                     // adminController.addFruit();
-                      adminController.addVegetable();
+                   if (collection=='Fruits')
+                     {
+                       adminController.addFruit(collection);
+                     }
+                  else if(collection=='Vegetables')
+                    {
+                      adminController.addVegetable(collection);
+                    }
                     }
                   }, text: "Add Data");
             })

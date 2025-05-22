@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.signInView,
+      initialRoute: AppRoutes.splash,
       getPages: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
      // home: SignInView()

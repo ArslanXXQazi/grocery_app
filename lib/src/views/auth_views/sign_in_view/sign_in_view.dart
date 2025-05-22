@@ -158,7 +158,7 @@ class SignInView extends StatelessWidget {
                           SizedBox(height: screenHeight*.02),
 
                         Obx((){
-                          return authController.isLoading.value ? AppLoader():
+                          return authController.isLoading.value ? Apploader2():
                           GreenButton(
                             text: "Sign In",
                             onTap: () {

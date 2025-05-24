@@ -3,6 +3,7 @@ import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/add_cart_widget.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -117,6 +118,21 @@ TextEditingController searchController=TextEditingController();
                   color: Colors.blueAccent,
               ),
             ],),
+
+            const SizedBox(height: 20),
+           Row(children: [
+             AddCartWidget(addChartOnTap: (){},
+                 image: AppImages.pineapple,
+                 name: "Pine Apple",
+                 price: "212",
+                 quantity: "kg"),
+             SizedBox(width: 5,),
+             AddCartWidget(addChartOnTap: (){},
+                 image: AppImages.pineapple,
+                 name: "Pine Apple",
+                 price: "212",
+                 quantity: "kg"),
+           ],)
 
 
 

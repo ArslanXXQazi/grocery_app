@@ -54,6 +54,7 @@ class AddCartWidget extends StatelessWidget {
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ImageIcon(AssetImage(AppImages.shopingBag),color: AppColors.greenColor,),
                   const SizedBox(width: 5),

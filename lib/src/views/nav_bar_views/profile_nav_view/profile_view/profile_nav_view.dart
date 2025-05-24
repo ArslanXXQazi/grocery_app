@@ -4,14 +4,16 @@ import 'package:get/get.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/profile_button.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
+import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
 
 import '../../../../controller/components/green_button.dart';
 import '../../../../controller/constant/App_colors.dart';
 import '../../../../controller/constant/images.dart';
 class ProfileNavView extends StatelessWidget {
-  const ProfileNavView({super.key});
+   ProfileNavView({super.key});
 
   @override
+  AuthController authController =Get.put(AuthController());
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
     final screenWidth = MediaQuery.sizeOf(context).width;
@@ -104,30 +106,36 @@ class ProfileNavView extends StatelessWidget {
                       AlertDialog(
                         backgroundColor: AppColors.greyColor,
                         title: BlackNormalText(
-                          text: "Logout",
+                          text: "Logout?",
                           fontWeight: FontWeight.w700,
                           fontSize: 18,
+                          textColor: Colors.red,
                         ),
                         content: BlackNormalText(
-                          text: "Kya aap logout karna chahte hain?",
+                          text: "Are you sure you want to logout?",
                           fontSize: 16,
                         ),
                         actions: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              GreenButton(
-                                onTap: () {
-                                },
-                                text: "Logout",
-                                width: 100, // Smaller width for dialog buttons
+                              Expanded(
+                                child: RedButton(
+                                  onTap: ()
+                                  {
+                                    authController.logout();
+                                  },
+                                  text: "Logout",
+                                ),
                               ),
-                              GreenButton(
-                                onTap: () {
-                                  Get.back(); // Close dialog
-                                },
-                                text: "Go Back",
-                                width: 100,
+                              SizedBox(width: 20,),
+                              Expanded(
+                                child: GreenButton(
+                                  onTap: () {
+                                 Get.back();
+                                  },
+                                  text: "Go Back",
+                                ),
                               ),
                             ],
                           ),

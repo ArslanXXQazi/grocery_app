@@ -3,9 +3,7 @@ import 'package:get/get.dart';
 import 'package:grocery_app/src/admin_views/admin_view.dart';
 import 'package:grocery_app/src/admin_views/add_data_view/add_data.dart';
 import 'package:grocery_app/src/admin_views/fetchdata.dart';
-import 'package:grocery_app/src/admin_views/fruits_view/show_fruit.dart';
 import 'package:grocery_app/src/admin_views/update_data_view/update_data_view.dart';
-import 'package:grocery_app/src/admin_views/vegetables_view/vegetables_view.dart';
 import 'package:grocery_app/src/views/auth_views/forgot_password/forgot_password_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/nav_bar_view/nav_bar_view.dart';
@@ -25,10 +23,8 @@ static String   splash ='/';
   static String profileNavView='/profileNavView';
   static String myAddressView='/myAddressView';
   static String adminView='/adminView';
-  static String showFruit='/showFruit';
   static String addData='/addData';
   static String updateDataView='/updateData';
-  static String vegetableView='/vegetables';
   static String fetchDataView='/fetchData';
 
 
@@ -39,12 +35,24 @@ static String   splash ='/';
         name: splash,
         page: ()=>SplashView(),
     ),
-
+    GetPage(
+      name: updateDataView,
+      page: () {
+        // Retrieve parameters from Get.arguments
+        final arguments = Get.arguments as Map<String, dynamic>?;
+        return
+          UpdateDataView(
+            itemId: arguments?['id'] ?? '',
+            itemName: arguments?['name'] ?? '',
+            itemPrice: arguments?['price'] ?? '',
+            itemQuantity: arguments?['quantity'] ?? '',
+            collection: arguments?['collection'] ?? '',
+          );
+      },),
     GetPage(
         name: signInView,
         page: ()=>SignInView()
     ),
-
     GetPage(
         name: signUpView,
         page: ()=>SignUpView(),
@@ -76,39 +84,11 @@ static String   splash ='/';
     ),
 
     GetPage(
-      name: showFruit,
-      page: ()=>ShowAllFruits(),
-    ),
-
-    GetPage(
       name: addData,
      page: (){
        final arguments = Get.arguments as Map<String, dynamic>?;
        return AddData(collection: arguments?['collection']);
      }
-    ),
-
-    GetPage(
-      name: updateDataView,
-      page: () {
-        // Retrieve parameters from Get.arguments
-        final arguments = Get.arguments as Map<String, dynamic>?;
-        return
-          UpdateDataView(
-            itemId: arguments?['id'] ?? '',
-            itemName: arguments?['name'] ?? '',
-            itemPrice: arguments?['price'] ?? '',
-            itemQuantity: arguments?['quantity'] ?? '',
-            collection: arguments?['collection'] ?? '',
-          );
-
-
-      },
-    ),
-
-    GetPage(
-      name: vegetableView,
-      page: ()=>VegetablesView(),
     ),
 
     GetPage(

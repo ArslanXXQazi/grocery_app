@@ -5,7 +5,6 @@ import 'package:grocery_app/src/admin_views/admin_views_widgets/catagory_button.
 
 import 'package:grocery_app/src/admin_views/add_data_view/add_data.dart';
 import 'package:grocery_app/src/admin_views/fetchdata.dart';
-import 'package:grocery_app/src/admin_views/fruits_view/show_fruit.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';

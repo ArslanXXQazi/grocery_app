@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../controller/components/black_text.dart' show BlackNormalText;
 import '../../controller/components/green_button.dart';
+import '../../controller/constant/App_colors.dart';
 import '../../controller/constant/images.dart';
 
 class UpdateDataButton extends StatelessWidget {
@@ -32,20 +33,34 @@ class UpdateDataButton extends StatelessWidget {
       onLongPress: ()
       {
         Get.dialog(
-            Dialog(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 50),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
+            AlertDialog(
+              backgroundColor: AppColors.greyColor,
+              title: BlackNormalText(
+                text: "Changes",
+                fontWeight: FontWeight.w700,
+              ),
+              actions: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Row(children: [
-                      Expanded(child: GreenButton(onTap: upDateOnTap, text: "Update")),
-                      SizedBox(width: 20),
-                      Expanded(child: GreenButton(onTap: deleteOnTap, text: "Delete")),
-                    ],),
+                    Expanded(
+                      child: GreenButton(
+                        onTap: upDateOnTap,
+                        text: "Update",
+                        height: 50,
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Expanded(
+                      child: RedButton(
+                        onTap: deleteOnTap,
+                        text: "Delete",
+                        height: 50,
+                      ),
+                    ),
                   ],
                 ),
-              ),
+              ],
             )
         );
       },

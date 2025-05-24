@@ -12,7 +12,7 @@ class AppImages {
    static String avacoda='assets/images/avacoda.png';
    static String peach='assets/images/peach.png';
    static String splash='assets/images/splash.png';
-   static String bigCart='assets/images/bigCart.png';
+   static String bigCart='assets/images/bigcart.png';
 
 
 
@@ -38,6 +38,8 @@ class AppImages {
    static String vegetables='assets/icons/vegetables.png';
    static String heart='assets/icons/heart.png';
    static String heartFill='assets/icons/heartFill.png';
+   static String search='assets/icons/search.png';
+   static String gear='assets/icons/gear.png';
 
 
 

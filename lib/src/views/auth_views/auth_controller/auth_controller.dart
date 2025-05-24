@@ -99,6 +99,17 @@ import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
      }
    }
 
+
+   Future<void> logout() async {
+     try {
+       await FirebaseAuth.instance.signOut();
+       Get.offAllNamed(AppRoutes.signInView);
+     } catch (e) {
+       Get.snackbar('Error', 'Logout failed: $e');
+     }
+   }
+
+
    void clear()
    {
      emailController.clear();

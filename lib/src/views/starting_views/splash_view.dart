@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -18,9 +19,24 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Get.toNamed(AppRoutes.signInView);
+      loginCheck();
     });
   }
+
+  void loginCheck () async
+  {
+    User? user = await FirebaseAuth.instance.currentUser;
+    if (user!=null)
+      {
+        Get.toNamed(AppRoutes.navBarView);
+      }
+    else
+      {
+        Get.offAndToNamed(AppRoutes.signInView);
+      }
+  }
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -41,7 +57,7 @@ class _SplashViewState extends State<SplashView> {
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
               ),
-              Image(image: AssetImage(AppImages.bigCart)),
+              Image(image: AssetImage('assets/images/bigcart.png')),
               BlackNormalText(
                 text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
                 fontSize: 15,

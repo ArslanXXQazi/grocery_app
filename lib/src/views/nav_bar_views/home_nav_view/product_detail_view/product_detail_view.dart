@@ -15,11 +15,21 @@ class ProductDetailView extends StatelessWidget {
           color: Colors.white,
           child: Image(image: AssetImage(AppImages.peach)),
         ),
-        Container(
-          height: 400,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            
+        Padding(
+          padding: const EdgeInsets.only(top: 380),
+          child: Container(
+            height: 500,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColors.greyColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              )
+            ),
+            child: Column(children: [
+              
+            ],),
           ),
         ),
 

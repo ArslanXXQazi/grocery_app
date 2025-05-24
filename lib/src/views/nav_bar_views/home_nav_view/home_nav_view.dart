@@ -84,40 +84,48 @@ TextEditingController searchController=TextEditingController();
             ],),
 
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              CategoriesButton(
-                  onTap: (){},
-                  name: "Vegetables",
-                  image: AppImages.vegetables,
-                  color: Colors.green
-              ),
-              CategoriesButton(
-                  onTap: (){},
-                  name: "Beverages",
-                  image: AppImages.beverages,
-                  color: Colors.orange
-              ),
-              CategoriesButton(
-                  onTap: (){},
-                  name: "Fruits",
-                  image: AppImages.fruits,
-                  color: Colors.red
-              ),
-              CategoriesButton(
-                  onTap: (){},
-                  name: "Grocery",
-                  image: AppImages.grocery,
-                  color: Colors.purple
-              ),
-              CategoriesButton(
-                  onTap: (){},
-                  name: "Edible oil",
-                  image: AppImages.edibleOil,
-                  color: Colors.blueAccent,
-              ),
-            ],),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                CategoriesButton(
+                    onTap: (){},
+                    name: "Vegetables",
+                    image: AppImages.vegetables,
+                    color: Colors.green
+                ),
+                CategoriesButton(
+                    onTap: (){},
+                    name: "Beverages",
+                    image: AppImages.beverages,
+                    color: Colors.orange
+                ),
+                CategoriesButton(
+                    onTap: (){},
+                    name: "Fruits",
+                    image: AppImages.fruits,
+                    color: Colors.red
+                ),
+                CategoriesButton(
+                    onTap: (){},
+                    name: "Grocery",
+                    image: AppImages.grocery,
+                    color: Colors.purple
+                ),
+                CategoriesButton(
+                    onTap: (){},
+                    name: "Edible oil",
+                    image: AppImages.edibleOil,
+                    color: Colors.blueAccent,
+                ),
+                CategoriesButton(
+                    onTap: (){},
+                    name: "House Hold",
+                    image: AppImages.household,
+                    color: Colors.pinkAccent,
+                ),
+              ],),
+            ),
 
             const SizedBox(height: 20),
            Row(children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 
@@ -27,9 +28,45 @@ class ProductDetailView extends StatelessWidget {
                 topRight: Radius.circular(15),
               )
             ),
-            child: Column(children: [
-              
-            ],),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BlackNormalText(
+                      text: "\$2.22",
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      textColor: AppColors.greenColor,
+                    ),
+                    InkWell(
+                      onTap: (){},
+                        child: Image(image: AssetImage(AppImages.heart)))
+                  ],
+                ),
+                BlackNormalText(
+                  text: "Organic Lemons",
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                  const SizedBox(height: 5),
+                BlackNormalText(
+                  text: "1.50 lbs",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  textColor: Colors.grey,
+                ),
+                  const SizedBox(height: 20),
+                  Row(children: [
+                    
+                  ],)
+
+              ],),
+            ),
           ),
         ),
 

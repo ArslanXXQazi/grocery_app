@@ -62,8 +62,31 @@ class ProductDetailView extends StatelessWidget {
                 ),
                   const SizedBox(height: 20),
                   Row(children: [
-                    
-                  ],)
+                    BlackNormalText(
+                      text: "4.5",
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
+                    Icon(Icons.star,color: Colors.yellow.shade700,size: 20,),
+                    Icon(Icons.star,color: Colors.yellow.shade700,size: 20,),
+                    Icon(Icons.star,color: Colors.yellow.shade700,size: 20,),
+                    Icon(Icons.star,color: Colors.yellow.shade700,size: 20,),
+                    Icon(Icons.star,color: Colors.yellow.shade700,size: 20,),
+                    BlackNormalText(
+                      text: "(89 reviews)",
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                    ),
+                  ],),
+                  const SizedBox(height: 20),
+                  BlackNormalText(
+                    text: "Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world's finest lemon for juicing",
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    textColor: Colors.grey,
+                    textAlign: TextAlign.start,
+                  )
 
               ],),
             ),

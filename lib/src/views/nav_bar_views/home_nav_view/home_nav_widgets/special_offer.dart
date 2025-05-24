@@ -12,8 +12,6 @@ class SpecialOffer extends StatelessWidget {
      required this.text
    });
 
-
-
   @override
   Widget build(BuildContext context) {
     return   Stack(

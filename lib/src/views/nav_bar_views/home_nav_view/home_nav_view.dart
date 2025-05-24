@@ -3,6 +3,7 @@ import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -81,7 +82,20 @@ TextEditingController searchController=TextEditingController();
           ],),
 
           const SizedBox(height: 10),
-
+          Row(children: [
+            CategoriesButton(
+                onTap: (){},
+                name: "Vegetables",
+                image: AppImages.vegetables,
+                color: Colors.green
+            ),
+            CategoriesButton(
+                onTap: (){},
+                name: "Vegetables",
+                image: AppImages.beverages,
+                color: Colors.green
+            ),
+          ],)
 
 
 

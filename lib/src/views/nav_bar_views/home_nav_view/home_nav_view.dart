@@ -6,6 +6,7 @@ import 'package:grocery_app/src/controller/constant/images.dart';
 class HomeNavView extends StatelessWidget {
    HomeNavView({super.key});
 TextEditingController searchController=TextEditingController();
+PageController pageController= PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +20,11 @@ TextEditingController searchController=TextEditingController();
               prefixIcon: ImageIcon(AssetImage(AppImages.search)),
               suffixIcon: ImageIcon( AssetImage(AppImages.gear)),
           ),
+          const SizedBox(height: 10),
+          Container(
+            height: 283,
+            width: double.infinity,
+          )
         ],),
       ),
     );

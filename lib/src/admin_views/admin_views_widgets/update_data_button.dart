@@ -91,11 +91,6 @@ class UpdateDataButton extends StatelessWidget {
                     ],
                   ),),
                 )
-                // CircleAvatar(
-                //   backgroundColor: Colors.green,
-                //   radius: 15,
-                //   child: BlackNormalText(text: itemCount,textColor: Colors.white,fontSize: 10,fontWeight: FontWeight.w700,),
-                // ),
               ],
             ),
             Image(image: AssetImage(AppImages.pineapple)),

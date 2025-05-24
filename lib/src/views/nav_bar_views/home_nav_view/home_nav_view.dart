@@ -3,12 +3,14 @@ import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeNavView extends StatelessWidget {
    HomeNavView({super.key});
 TextEditingController searchController=TextEditingController();
-PageController pageController= PageController();
+   PageController pageController= PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,32 +25,34 @@ PageController pageController= PageController();
               suffixIcon: ImageIcon( AssetImage(AppImages.gear)),
           ),
           const SizedBox(height: 10),
-          Container(
-            height: 283,
-            width: double.infinity,
-            color: Colors.red,
-            child: Stack(children: [
-              PageView(
-                controller: pageController,
-                children: [
-
+        Container(
+          height: 283,
+          width: double.infinity,
+          color: Colors.red,
+          child: Stack(children: [
+            PageView(
+              controller: pageController,
+              children: [
+                SpecialOffer(
+                    image: AppImages.splash,
+                    text: "20% off on your \nfirst purchase"
+                )
               ],),
-              Positioned(
-                top: 250,left: 40,
-                child: SmoothPageIndicator(
-                    controller: pageController,
-                    count: 4,
-                  effect: ExpandingDotsEffect(
+            Positioned(
+              top: 250,left: 40,
+              child: SmoothPageIndicator(
+                controller: pageController,
+                count: 4,
+                effect: ExpandingDotsEffect(
                     dotWidth: 8,
                     dotHeight: 8,
                     activeDotColor: Colors.green,
                     dotColor: Colors.white
-                  ),
                 ),
               ),
-
-            ],),
-          )
+            ),
+          ],),
+        )
         ],),
       ),
     );

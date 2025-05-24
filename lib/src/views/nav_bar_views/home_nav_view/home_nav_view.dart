@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeNavView extends StatelessWidget {
    HomeNavView({super.key});
@@ -24,6 +26,28 @@ PageController pageController= PageController();
           Container(
             height: 283,
             width: double.infinity,
+            color: Colors.red,
+            child: Stack(children: [
+              PageView(
+                controller: pageController,
+                children: [
+
+              ],),
+              Positioned(
+                top: 250,left: 40,
+                child: SmoothPageIndicator(
+                    controller: pageController,
+                    count: 4,
+                  effect: ExpandingDotsEffect(
+                    dotWidth: 8,
+                    dotHeight: 8,
+                    activeDotColor: Colors.green,
+                    dotColor: Colors.white
+                  ),
+                ),
+              ),
+
+            ],),
           )
         ],),
       ),

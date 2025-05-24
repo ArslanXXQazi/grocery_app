@@ -22,6 +22,7 @@ class CategoriesButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        margin: const EdgeInsets.only(right: 15),
         child: Column(children: [
           CircleAvatar(
               radius: 26,

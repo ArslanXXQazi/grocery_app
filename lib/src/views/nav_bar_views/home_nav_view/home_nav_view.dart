@@ -82,7 +82,9 @@ TextEditingController searchController=TextEditingController();
           ],),
 
           const SizedBox(height: 10),
-          Row(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
             CategoriesButton(
                 onTap: (){},
                 name: "Vegetables",
@@ -91,9 +93,27 @@ TextEditingController searchController=TextEditingController();
             ),
             CategoriesButton(
                 onTap: (){},
-                name: "Vegetables",
+                name: "Beverages",
                 image: AppImages.beverages,
-                color: Colors.green
+                color: Colors.orange
+            ),
+            CategoriesButton(
+                onTap: (){},
+                name: "Fruits",
+                image: AppImages.fruits,
+                color: Colors.red
+            ),
+            CategoriesButton(
+                onTap: (){},
+                name: "Grocery",
+                image: AppImages.grocery,
+                color: Colors.purple
+            ),
+            CategoriesButton(
+                onTap: (){},
+                name: "Edible oil",
+                image: AppImages.edibleOil,
+                color: Colors.blueAccent,
             ),
           ],)
 

@@ -20,12 +20,17 @@ class SpecialOffer extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
+          height: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 2),
           child: Image(image: AssetImage(image),fit: BoxFit.cover,),
         ),
-        BlackNormalText(
-          text: text,
-          fontWeight: FontWeight.w600,
-          fontSize: 16,
+        Positioned(
+          top: 150,left: 40,
+          child: BlackNormalText(
+            text: text,
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+          ),
         )
       ],
     );

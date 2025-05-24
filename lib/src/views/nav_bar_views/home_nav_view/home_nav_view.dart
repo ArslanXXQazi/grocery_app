@@ -28,15 +28,26 @@ TextEditingController searchController=TextEditingController();
         Container(
           height: 283,
           width: double.infinity,
-          color: Colors.red,
           child: Stack(children: [
             PageView(
               controller: pageController,
               children: [
                 SpecialOffer(
+                    image: AppImages.specail1,
+                    text: "20% off on your \nfirst purchase"
+                ),
+                SpecialOffer(
                     image: AppImages.splash,
                     text: "20% off on your \nfirst purchase"
-                )
+                ),
+                SpecialOffer(
+                    image: AppImages.splash,
+                    text: "20% off on your \nfirst purchase"
+                ),
+                SpecialOffer(
+                    image: AppImages.specail1,
+                    text: "20% off on your \nfirst purchase"
+                ),
               ],),
             Positioned(
               top: 250,left: 40,
@@ -52,7 +63,28 @@ TextEditingController searchController=TextEditingController();
               ),
             ),
           ],),
-        )
+        ),
+
+        const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            BlackNormalText(
+              text: "Categories",
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+            IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.arrow_forward_ios_outlined,size: 20,color: Colors.grey,),
+            )
+          ],),
+
+          const SizedBox(height: 10),
+
+
+
+
         ],),
       ),
     );

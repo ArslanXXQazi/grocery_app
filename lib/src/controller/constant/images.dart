@@ -13,6 +13,7 @@ class AppImages {
    static String peach='assets/images/peach.png';
    static String splash='assets/images/splash.png';
    static String bigCart='assets/images/bigcart.png';
+   static String specail1='assets/images/specail1.png';
 
 
 

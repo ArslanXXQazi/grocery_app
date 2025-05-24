@@ -8,16 +8,21 @@ class ProductDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.greyColor,
-      body: Column(children: [
+      body: Stack(children: [
         Container(
           height: 400,
           width: double.infinity,
           color: Colors.white,
           child: Image(image: AssetImage(AppImages.peach)),
         ),
-        const SizedBox(height: 20),
-        
+        Container(
+          height: 400,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            
+          ),
+        ),
+
 
       ],),
     );

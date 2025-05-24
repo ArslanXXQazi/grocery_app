@@ -14,8 +14,7 @@ class AppImages {
    static String splash='assets/images/splash.png';
    static String bigCart='assets/images/bigcart.png';
    static String specail1='assets/images/specail1.png';
-   static String heart='assets/images/heart.png';
-   static String heart='assets/images/heart.png';
+
 
 
 
@@ -43,6 +42,8 @@ class AppImages {
    static String heartFill='assets/icons/heartFill.png';
    static String search='assets/icons/search.png';
    static String gear='assets/icons/gear.png';
+   static String shopingBag='assets/icons/shopingBag.png';
+
 
 
 

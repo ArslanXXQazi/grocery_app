@@ -118,52 +118,7 @@ TextEditingController searchController=TextEditingController();
               ),
             ],),
 
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              width: 181,
-              margin: EdgeInsets.only(bottom: 20),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Column(
-                children: [
-                  Image(image: AssetImage(AppImages.pineapple)),
-                  BlackNormalText(
-                    text: "\$price",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                    textColor: Colors.green,
-                  ),
-                  BlackNormalText(
-                    text: "name",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
-                  ),
-                  BlackNormalText(
-                    text: "kg",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                  const SizedBox(height: 20),
-                  Divider(),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                    ImageIcon(AssetImage(AppImages.gear),color: AppColors.greenColor,),
-                    const SizedBox(width: 10),
-                    BlackNormalText(
-                      text: "Add to cart",
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    )
 
-                  ],)
-
-                ],),
-
-            )
 
 
 

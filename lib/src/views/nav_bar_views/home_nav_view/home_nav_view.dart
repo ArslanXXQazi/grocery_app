@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/add_cart_widget.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_row.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
@@ -78,7 +81,9 @@ TextEditingController searchController=TextEditingController();
                 fontWeight: FontWeight.w600,
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.categoriesView);
+                },
                   child: Icon(Icons.arrow_forward_ios_outlined)),
             ],),
 

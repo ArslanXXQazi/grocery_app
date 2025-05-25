@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart' show Get;
+import 'package:grocery_app/src/routs/app_routs.dart';
 
 import '../../../../controller/components/black_text.dart';
 import '../../../../controller/constant/images.dart';
@@ -20,7 +23,11 @@ class CategoriesButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: (){
+        Get.toNamed(AppRoutes.productDetailView,arguments: {
+          'image':
+        });
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 15),
         child: Column(children: [

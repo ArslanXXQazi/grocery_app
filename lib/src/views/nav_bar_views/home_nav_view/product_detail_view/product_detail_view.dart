@@ -5,7 +5,20 @@ import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 
 class ProductDetailView extends StatelessWidget {
-  const ProductDetailView({super.key});
+
+  String name;
+  String price;
+  String image;
+  String quantity;
+
+
+
+  ProductDetailView({super.key,
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.quantity,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +28,7 @@ class ProductDetailView extends StatelessWidget {
           height: 400,
           width: double.infinity,
           color: Colors.white,
-          child: Image(image: AssetImage(AppImages.peach)),
+          child: Image(image: AssetImage(image)),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 380),
@@ -39,7 +52,7 @@ class ProductDetailView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     BlackNormalText(
-                      text: "\$2.22",
+                      text: "\$$price",
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       textColor: AppColors.greenColor,
@@ -50,13 +63,13 @@ class ProductDetailView extends StatelessWidget {
                   ],
                 ),
                 BlackNormalText(
-                  text: "Organic Lemons",
+                  text: name,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
                   const SizedBox(height: 5),
                 BlackNormalText(
-                  text: "1.50 lbs",
+                  text: quantity,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   textColor: Colors.grey,

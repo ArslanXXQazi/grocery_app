@@ -39,20 +39,7 @@ static String   splash ='/';
         name: splash,
         page: ()=>SplashView(),
     ),
-    GetPage(
-      name: updateDataView,
-      page: () {
-        // Retrieve parameters from Get.arguments
-        final arguments = Get.arguments as Map<String, dynamic>?;
-        return
-          UpdateDataView(
-            itemId: arguments?['id'] ?? '',
-            itemName: arguments?['name'] ?? '',
-            itemPrice: arguments?['price'] ?? '',
-            itemQuantity: arguments?['quantity'] ?? '',
-            collection: arguments?['collection'] ?? '',
-          );
-      },),
+
     GetPage(
         name: signInView,
         page: ()=>SignInView()
@@ -105,17 +92,36 @@ static String   splash ='/';
       }),
 
     GetPage(
+      name: updateDataView,
+      page: () {
+        // Retrieve parameters from Get.arguments
+        final arguments = Get.arguments as Map<String, dynamic>?;
+        return
+          UpdateDataView(
+            itemId: arguments?['id'] ?? '',
+            itemName: arguments?['name'] ?? '',
+            itemPrice: arguments?['price'] ?? '',
+            itemQuantity: arguments?['quantity'] ?? '',
+            collection: arguments?['collection'] ?? '',
+          );
+      },),
+
+    GetPage(
        name: homeNavView,
        page: ()=>HomeNavView()
    ),
 
     GetPage(
         name: productDetailView,
-        page: ()=>ProductDetailView()
-    ),
-
-
+        page: (){
+          final arguments = Get.arguments as Map<String,dynamic>?;
+          return ProductDetailView(
+              image: arguments?['image'],
+              name: arguments?['name']??"",
+              price: arguments?['price']??"",
+              quantity: arguments?['quantity'],
+          );
+        }
+    )
   ];
-
-
 }

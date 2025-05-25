@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_detail_view.dart';
 import '../../../../controller/components/black_text.dart';
 import '../../../../controller/constant/App_colors.dart';
@@ -26,7 +27,11 @@ class AddCartWidget extends StatelessWidget {
     return  Stack(
       children: [
         GestureDetector(
-          onTap: (){Get.to(ProductDetailView());},
+         onTap: (){
+           Get.toNamed(AppRoutes.productDetailView,arguments: [
+
+           ]);
+         },
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 20),
             width: 181,

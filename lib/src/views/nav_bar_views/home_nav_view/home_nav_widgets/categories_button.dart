@@ -8,10 +8,12 @@ class CategoriesButton extends StatelessWidget {
 
   String image;
   String name;
+  Color color;
 
    CategoriesButton({super.key,
      required this.image,
-     required this.name
+     required this.name,
+     required this.color,
    });
 
   @override
@@ -25,12 +27,12 @@ class CategoriesButton extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 33,
-            backgroundColor: AppColors.greenColor.withOpacity(0.1),
-            child: ImageIcon(AssetImage(AppImages.vegetables),size: 40,color: AppColors.greenColor,),
+            backgroundColor: color.withOpacity(0.1),
+            child: ImageIcon(AssetImage(image),size: 40,color: color,),
           ),
           SizedBox(height: 10),
           BlackNormalText(
-            text: "Vegetables ",
+            text: name,
             fontSize: 10,
             fontWeight: FontWeight.w500,
             textColor: Colors.grey,

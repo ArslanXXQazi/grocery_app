@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
+import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 
 class CategoriesView extends StatelessWidget {
@@ -8,6 +9,7 @@ class CategoriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: AppBar(
@@ -25,6 +27,31 @@ class CategoriesView extends StatelessWidget {
           ],
         ),
       ),
+      body: Column(children: [
+        SizedBox(height: 20),
+        Center(
+          child: Container(
+         padding: const EdgeInsets.symmetric(vertical: 15),
+            width: 120,
+            color: Color(0xffFFFBFB),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              CircleAvatar(
+                radius: 33,
+                child: ImageIcon(AssetImage(AppImages.vegetables),size: 80,),
+              ),
+                SizedBox(height: 10),
+              BlackNormalText(
+                text: "Vegetables ",
+                fontSize: 10,
+                fontWeight: FontWeight.w500,
+                textColor: Colors.grey,
+              )
+            ],),
+          ),
+        )
+      ],),
     );
   }
 }

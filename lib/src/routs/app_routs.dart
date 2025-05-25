@@ -6,6 +6,8 @@ import 'package:grocery_app/src/admin_views/fetchdata.dart';
 import 'package:grocery_app/src/admin_views/update_data_view/update_data_view.dart';
 import 'package:grocery_app/src/views/auth_views/forgot_password/forgot_password_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_detail_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/nav_bar_view/nav_bar_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/my_address_view/my_address_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/profile_view/profile_nav_view.dart';
@@ -26,6 +28,8 @@ static String   splash ='/';
   static String addData='/addData';
   static String updateDataView='/updateData';
   static String fetchDataView='/fetchData';
+  static String homeNavView='/homeNav';
+  static String productDetailView='/product';
 
 
   static final routes=
@@ -98,7 +102,17 @@ static String   splash ='/';
         return FetchData(
             category: arguments?['category']??'');
 
-      })
+      }),
+
+    GetPage(
+       name: homeNavView,
+       page: ()=>HomeNavView()
+   ),
+
+    GetPage(
+        name: productDetailView,
+        page: ()=>ProductDetailView()
+    ),
 
 
   ];

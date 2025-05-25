@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
+import 'package:grocery_app/src/controller/components/green_button.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 
@@ -86,7 +87,53 @@ class ProductDetailView extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     textColor: Colors.grey,
                     textAlign: TextAlign.start,
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(children: [
+                        BlackNormalText(
+                          text: "Quantity",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          textColor: Colors.grey,
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: (){},
+                            icon: Icon(Icons.remove),color: AppColors.greenColor,),
+                        Container(
+                          height: 60,
+                          width: 2,
+                          color: AppColors.greyColor,
+                        ),
+                        const SizedBox(width: 20),
+                        BlackNormalText(
+                          text: "3",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        const SizedBox(width: 20),
+                        Container(
+                          height: 60,
+                          width: 2,
+                          color: AppColors.greyColor,
+                        ),
+                        IconButton(
+                          onPressed: (){},
+                          icon: Icon(Icons.add),color: AppColors.greenColor,),
+                      ],),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  GreenButton(onTap: (){}, text: "Add to cart"),
 
               ],),
             ),

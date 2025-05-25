@@ -28,7 +28,15 @@ class ProductDetailView extends StatelessWidget {
           height: 400,
           width: double.infinity,
           color: Colors.white,
-          child: Image.asset(image),
+          child: Column(
+            children: [
+              Container(
+                height: 370,
+                width: double.infinity,
+                child: Image.asset(image),
+              ),
+            ],
+          )
         ),
         Padding(
           padding: const EdgeInsets.only(top: 380),

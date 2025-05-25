@@ -6,14 +6,14 @@ import 'package:grocery_app/src/routs/app_routs.dart';
 import '../../../../controller/components/black_text.dart';
 import '../../../../controller/constant/images.dart';
 
-class CategoriesButton extends StatelessWidget {
+class CategoriesRow extends StatelessWidget {
 
   String name;
   String image;
   VoidCallback onTap;
   Color color;
 
-   CategoriesButton({super.key,
+   CategoriesRow({super.key,
      required this.onTap,
      required this.name,
      required this.image,

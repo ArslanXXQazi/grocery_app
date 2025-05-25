@@ -4,7 +4,7 @@ import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/constant/App_colors.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/add_cart_widget.dart';
-import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
+import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_row.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -68,7 +68,7 @@ TextEditingController searchController=TextEditingController();
             ],),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -77,48 +77,47 @@ TextEditingController searchController=TextEditingController();
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
-              IconButton(
-                  onPressed: (){},
-                  icon: Icon(Icons.arrow_forward_ios_outlined,size: 20,color: Colors.grey,),
-              )
+              InkWell(
+                onTap: (){},
+                  child: Icon(Icons.arrow_forward_ios_outlined)),
             ],),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "Vegetables",
                     image: AppImages.vegetables,
                     color: Colors.green
                 ),
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "Beverages",
                     image: AppImages.beverages,
                     color: Colors.orange
                 ),
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "Fruits",
                     image: AppImages.fruits,
                     color: Colors.red
                 ),
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "Grocery",
                     image: AppImages.grocery,
                     color: Colors.purple
                 ),
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "Edible oil",
                     image: AppImages.edibleOil,
                     color: Colors.blueAccent,
                 ),
-                CategoriesButton(
+                CategoriesRow(
                     onTap: (){},
                     name: "House Hold",
                     image: AppImages.household,

@@ -119,14 +119,20 @@ TextEditingController searchController=TextEditingController();
                 CategoriesRow(
                     onTap: (){},
                     name: "Edible oil",
-                    image: AppImages.edibleOil,
+                    image: AppImages.oil,
                     color: Colors.blueAccent,
                 ),
                 CategoriesRow(
                     onTap: (){},
                     name: "House Hold",
-                    image: AppImages.household,
+                    image: AppImages.house,
                     color: Colors.pinkAccent,
+                ),
+                CategoriesRow(
+                    onTap: (){},
+                    name: "Baby care",
+                    image: AppImages.babyCare,
+                    color: Colors.blueAccent,
                 ),
               ],),
             ),

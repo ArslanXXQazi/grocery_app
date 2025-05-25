@@ -43,6 +43,9 @@ class AppImages {
    static String search='assets/icons/search.png';
    static String gear='assets/icons/gear.png';
    static String shopingBag='assets/icons/shopingBag.png';
+   static String babyCare='assets/icons/babycare.png';
+   static String house='assets/icons/house.png';
+   static String oil='assets/icons/oil.png';
 
 
 

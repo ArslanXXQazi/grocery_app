@@ -28,7 +28,7 @@ class ProductDetailView extends StatelessWidget {
           height: 400,
           width: double.infinity,
           color: Colors.white,
-          child: Image(image: AssetImage(image)),
+          child: Image.asset(image),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 380),
@@ -120,6 +120,7 @@ class ProductDetailView extends StatelessWidget {
                         ),
                         Spacer(),
                         IconButton(
+
                             onPressed: (){},
                             icon: Icon(Icons.remove),color: AppColors.greenColor,),
                         Container(
@@ -147,13 +148,10 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   GreenButton(onTap: (){}, text: "Add to cart"),
-
               ],),
             ),
           ),
         ),
-
-
       ],),
     );
   }

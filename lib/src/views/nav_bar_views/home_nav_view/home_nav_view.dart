@@ -135,11 +135,12 @@ TextEditingController searchController=TextEditingController();
                  price: "212",
                  quantity: "kg"),
              SizedBox(width: 5,),
-             AddCartWidget(addChartOnTap: (){},
-                 image: AppImages.pineapple,
-                 name: "Pine Apple",
-                 price: "212",
-                 quantity: "kg"),
+             AddCartWidget(
+                 addChartOnTap: (){},
+                 image: AppImages.fruits,
+                 name: "Apple",
+                 price: "22",
+                 quantity: "kg34"),
            ],)
 
 

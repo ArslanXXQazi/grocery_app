@@ -28,9 +28,12 @@ class AddCartWidget extends StatelessWidget {
       children: [
         GestureDetector(
          onTap: (){
-           Get.toNamed(AppRoutes.productDetailView,arguments: [
-
-           ]);
+           Get.toNamed(AppRoutes.productDetailView,arguments: {
+             'image': image,
+             'name':name,
+             'price':price,
+             'quantity':quantity,
+           });
          },
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 20),
@@ -42,7 +45,12 @@ class AddCartWidget extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Image(image: AssetImage(image)),
+                Container(
+                  height: 70,
+                  width: 70,
+                  child: Image(image: AssetImage(image)),
+                ),
+               // Image(image: AssetImage(image),width: 60,),
                 BlackNormalText(
                   text: "\$$price",
                   fontWeight: FontWeight.w500,

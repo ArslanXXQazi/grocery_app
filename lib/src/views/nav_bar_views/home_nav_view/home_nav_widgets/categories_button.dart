@@ -23,11 +23,7 @@ class CategoriesButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Get.toNamed(AppRoutes.productDetailView,arguments: {
-          'image':
-        });
-      },
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(right: 15),
         child: Column(children: [

@@ -31,6 +31,7 @@ export 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
 export 'package:grocery_app/src/controller/components/profile_button.dart';
+export 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
 
 
 

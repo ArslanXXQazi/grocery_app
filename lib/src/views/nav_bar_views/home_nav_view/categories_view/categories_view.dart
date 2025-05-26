@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/constant/App_colors.dart';
-import 'package:grocery_app/src/controller/constant/images.dart';
-import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
 class CategoriesView extends StatelessWidget {
    CategoriesView({super.key});

@@ -32,6 +32,11 @@ export 'package:firebase_auth/firebase_auth.dart';
 export 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
 export 'package:grocery_app/src/controller/components/profile_button.dart';
 export 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_button.dart';
+export 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/add_cart_widget.dart';
+export 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/categories_row.dart';
+export 'package:grocery_app/src/views/nav_bar_views/home_nav_view/home_nav_widgets/special_offer.dart';
+export 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 
 
 

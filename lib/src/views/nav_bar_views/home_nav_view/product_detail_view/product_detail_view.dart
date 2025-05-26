@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/components/green_button.dart';
-import 'package:grocery_app/src/controller/constant/App_colors.dart';
-import 'package:grocery_app/src/controller/constant/images.dart';
+
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
 class ProductDetailView extends StatelessWidget {
 

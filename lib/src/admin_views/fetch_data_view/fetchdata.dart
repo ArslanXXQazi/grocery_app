@@ -1,14 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:grocery_app/src/admin_views/admin_controller/admin_controller.dart';
-import 'package:grocery_app/src/admin_views/admin_views_widgets/update_data_button.dart';
-import 'package:grocery_app/src/controller/components/apploader.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/routs/app_routs.dart';
 
-import '../controller/constant/App_colors.dart';
+
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
 class FetchData extends StatefulWidget {

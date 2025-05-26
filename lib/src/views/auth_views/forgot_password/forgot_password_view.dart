@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
-import '../../../controller/components/black_text.dart';
-import '../../../controller/components/custom_text_field.dart';
-import '../../../controller/components/green_button.dart';
-import '../../../controller/constant/images.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});

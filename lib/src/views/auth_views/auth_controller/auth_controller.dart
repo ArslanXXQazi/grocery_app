@@ -1,12 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery_app/src/controller/components/notifications.dart';
-import 'package:grocery_app/src/routs/app_routs.dart';
-import 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_controller.dart';
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
- class AuthController extends GetxController
+
+class AuthController extends GetxController
  {
 
    var isLoading = false.obs;

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 
 class PasswordFieldController extends GetxController {
   // Reactive boolean for password visibility

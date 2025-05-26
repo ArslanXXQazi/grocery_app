@@ -1,13 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:grocery_app/src/controller/components/apploader.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/components/custom_text_field.dart';
-import 'package:grocery_app/src/controller/components/green_button.dart';
-import 'package:grocery_app/src/controller/constant/images.dart';
-import 'package:get/get.dart';
-import 'package:grocery_app/src/routs/app_routs.dart';
-import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
+
+import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
 class SignInView extends StatelessWidget {

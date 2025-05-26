@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery_app/src/admin_views/admin_controller/admin_controller.dart';
-import 'package:grocery_app/src/controller/components/apploader.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/components/custom_text_field.dart';
-import 'package:grocery_app/src/controller/components/green_button.dart';
-import 'package:grocery_app/src/controller/constant/App_colors.dart';
-
-import '../../controller/components/notifications.dart';
-
+import 'package:grocery_app/src/controller/constant/linker.dart';
 
 class UpdateDataView extends StatefulWidget {
   final String itemId;

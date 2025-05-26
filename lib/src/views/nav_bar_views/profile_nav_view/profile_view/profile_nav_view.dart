@@ -1,14 +1,5 @@
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery_app/src/controller/components/black_text.dart';
-import 'package:grocery_app/src/controller/components/profile_button.dart';
-import 'package:grocery_app/src/routs/app_routs.dart';
-import 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
-
-import '../../../../controller/components/green_button.dart';
-import '../../../../controller/constant/App_colors.dart';
-import '../../../../controller/constant/images.dart';
+import  'package:grocery_app/src/controller/constant/linker.dart';
 class ProfileNavView extends StatelessWidget {
    ProfileNavView({super.key});
 

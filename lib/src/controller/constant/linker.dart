@@ -30,6 +30,8 @@ export 'package:grocery_app/src/admin_views/admin_views_widgets/update_data_butt
 export 'package:grocery_app/src/views/auth_views/user_data_controller/user_data_controller.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:grocery_app/src/views/auth_views/auth_controller/auth_controller.dart';
+export 'package:grocery_app/src/controller/components/profile_button.dart';
+
 
 
 

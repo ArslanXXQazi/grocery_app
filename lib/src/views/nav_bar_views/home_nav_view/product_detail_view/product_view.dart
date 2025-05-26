@@ -2,7 +2,10 @@
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
 class ProductView extends StatelessWidget {
-  const ProductView({super.key});
+
+  String name;
+
+  ProductView({super.key, required this.name });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class ProductView extends StatelessWidget {
           backgroundColor: Colors.white,
           centerTitle: true,
           title: BlackNormalText(
-            text: "Categories",
+            text: "Product View",
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),

@@ -13,10 +13,8 @@ class AdminController extends GetxController
 
   var isLoading= false.obs;
 
-
-
-  //===========================>> Fruit Data Insert
-  void addFruit( String collection) async
+  //===========================Add Data
+  void addData(String collection) async
   {
     try
     {
@@ -50,44 +48,7 @@ class AdminController extends GetxController
     }
   }
 
-  //===========================>> Vegetables Data Insert
-  void addVegetable(String collection) async
-  {
-    try
-    {
-      isLoading.value=true;
-      String id=DateTime.now().microsecond.toString();
-      await FirebaseFirestore.instance.collection(collection).doc(id).set({
-        'id':id,
-        'name':nameController.text,
-        'quantity':quantityController.text,
-        'price':priceController.text,
-        'enable':'1',
-        'url':''
-      });
-      isLoading.value=false;
-      Get.back();
-      clear();
-      NotificationMessage.show(
-        title: "Success",
-        description: "Data Added Successfully",
-      );
-    }
-    catch(e)
-    {
-      isLoading.value=false;
-      NotificationMessage.show(
-        title: "Error",
-        description: e.toString(),
-        backGroundColor: Colors.red,
-        textColor: Colors.white,
-      );
-    }
-  }
-
-
-
-
+  //==================>>> Update Data
   void updateData(String id, String collection) async {
     try {
       isLoading.value = true;
@@ -116,10 +77,6 @@ class AdminController extends GetxController
   }
 
 
-
-
-
-
   //===========================>> Delete Data
 
   void deleteData( String id,String collection ) async
@@ -127,7 +84,6 @@ class AdminController extends GetxController
     Get.back();
    await FirebaseFirestore.instance.collection(collection).doc(id).delete();
   }
-
 
 //===========================>> Clear Fields
 

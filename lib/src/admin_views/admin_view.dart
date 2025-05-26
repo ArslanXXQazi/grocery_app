@@ -15,6 +15,11 @@ class AdminView extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.greenColor,
+          onPressed: (){Get.toNamed(AppRoutes.signInView);},
+        child: Icon(Icons.logout,color: Colors.white,),
+      ),
       body:Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 80),
         child: SingleChildScrollView(
@@ -79,6 +84,12 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
+                      Get.toNamed(AppRoutes.fetchDataView,
+                        arguments:
+                        {
+                          'category':"EdibleOil"
+                        }
+                      );
                     },
                      image: AppImages.edibleOil, name: "Edible Oil"),
                ),
@@ -87,8 +98,14 @@ class AdminView extends StatelessWidget {
                  child: CatagoryButton(
                     ontap: ()
                     {
+                      Get.toNamed(AppRoutes.fetchDataView,
+                          arguments:
+                          {
+                            'category':"Household"
+                          }
+                      );
                     },
-                     image: AppImages.household, name: "household"),
+                     image: AppImages.household, name: "House hold"),
                ),
              ],),
             ]

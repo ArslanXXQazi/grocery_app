@@ -10,13 +10,14 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
           title: BlackNormalText(
-            text: "Product View",
+            text: name,
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),

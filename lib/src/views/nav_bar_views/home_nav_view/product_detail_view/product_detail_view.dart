@@ -1,15 +1,12 @@
 
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
-class ProductDetailView extends StatelessWidget {
+class ProductDetailView extends StatefulWidget {
 
   String name;
   String price;
   String image;
   String quantity;
-
-
-
   ProductDetailView({super.key,
     required this.image,
     required this.name,
@@ -17,6 +14,12 @@ class ProductDetailView extends StatelessWidget {
     required this.quantity,
   });
 
+  @override
+  State<ProductDetailView> createState() => _ProductDetailViewState();
+}
+
+class _ProductDetailViewState extends State<ProductDetailView> {
+  int itemCount=1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +33,7 @@ class ProductDetailView extends StatelessWidget {
               Container(
                 height: 370,
                 width: double.infinity,
-                child: Image.asset(image),
+                child: Image.asset(widget.image),
               ),
             ],
           )
@@ -57,7 +60,7 @@ class ProductDetailView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     BlackNormalText(
-                      text: "\$$price",
+                      text: "\$${widget.price}",
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       textColor: AppColors.greenColor,
@@ -68,13 +71,13 @@ class ProductDetailView extends StatelessWidget {
                   ],
                 ),
                 BlackNormalText(
-                  text: name,
+                  text: widget.name,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
                   const SizedBox(height: 5),
                 BlackNormalText(
-                  text: quantity,
+                  text: widget.quantity,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   textColor: Colors.grey,
@@ -126,7 +129,13 @@ class ProductDetailView extends StatelessWidget {
                         Spacer(),
                         IconButton(
 
-                            onPressed: (){},
+                            onPressed: (){
+                              setState(() {
+                                if (itemCount > 1) {
+                                  itemCount--;
+                                }
+                              });
+                            },
                             icon: Icon(Icons.remove),color: AppColors.greenColor,),
                         Container(
                           height: 60,
@@ -135,7 +144,7 @@ class ProductDetailView extends StatelessWidget {
                         ),
                         const SizedBox(width: 20),
                         BlackNormalText(
-                          text: "3",
+                          text: itemCount.toString(),
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
@@ -146,7 +155,10 @@ class ProductDetailView extends StatelessWidget {
                           color: AppColors.greyColor,
                         ),
                         IconButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            setState(() {});
+                            itemCount ++;
+                          },
                           icon: Icon(Icons.add),color: AppColors.greenColor,),
                       ],),
                     ),

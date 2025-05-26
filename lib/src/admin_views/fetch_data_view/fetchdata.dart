@@ -47,7 +47,7 @@ class _FetchDataState extends State<FetchData> {
           stream: FirebaseFirestore.instance.collection(widget.category).snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return AppLoader();
+              return Apploader3();
             } else if (snapshot.hasError) {
               return Center(child: BlackNormalText(text: "Error ${snapshot.hasError}"));
             } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {

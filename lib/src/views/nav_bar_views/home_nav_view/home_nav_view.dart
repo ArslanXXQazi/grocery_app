@@ -14,121 +14,123 @@ TextEditingController searchController=TextEditingController();
         padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
         child: SingleChildScrollView(
           child: Column(children: [
+
+
             TextFieldWidget(
-                controller: searchController,
-                hintText: "Search keywords..",
-                prefixIcon: ImageIcon(AssetImage(AppImages.search)),
-                suffixIcon: ImageIcon( AssetImage(AppImages.gear)),
+              controller: searchController,
+              hintText: "Search keywords..",
+              prefixIcon: ImageIcon(AssetImage(AppImages.search)),
+              suffixIcon: ImageIcon( AssetImage(AppImages.gear)),
             ),
             const SizedBox(height: 10),
-          Container(
-            height: 283,
-            width: double.infinity,
-            child: Stack(children: [
-              PageView(
-                controller: pageController,
-                children: [
-                  SpecialOffer(
-                      image: AppImages.specail1,
-                      text: "20% off on your \nfirst purchase"
-                  ),
-                  SpecialOffer(
-                      image: AppImages.splash,
-                      text: "20% off on your \nfirst purchase"
-                  ),
-                  SpecialOffer(
-                      image: AppImages.splash,
-                      text: "20% off on your \nfirst purchase"
-                  ),
-                  SpecialOffer(
-                      image: AppImages.specail1,
-                      text: "20% off on your \nfirst purchase"
-                  ),
-                ],),
-              Positioned(
-                top: 250,left: 40,
-                child: SmoothPageIndicator(
+            Container(
+              height: 283,
+              width: double.infinity,
+              child: Stack(children: [
+                PageView(
                   controller: pageController,
-                  count: 4,
-                  effect: ExpandingDotsEffect(
-                      dotWidth: 8,
-                      dotHeight: 8,
-                      activeDotColor: Colors.green,
-                      dotColor: Colors.white
+                  children: [
+                    SpecialOffer(
+                        image: AppImages.specail1,
+                        text: "20% off on your \nfirst purchase"
+                    ),
+                    SpecialOffer(
+                        image: AppImages.splash,
+                        text: "20% off on your \nfirst purchase"
+                    ),
+                    SpecialOffer(
+                        image: AppImages.splash,
+                        text: "20% off on your \nfirst purchase"
+                    ),
+                    SpecialOffer(
+                        image: AppImages.specail1,
+                        text: "20% off on your \nfirst purchase"
+                    ),
+                  ],),
+                Positioned(
+                  top: 250,left: 40,
+                  child: SmoothPageIndicator(
+                    controller: pageController,
+                    count: 4,
+                    effect: ExpandingDotsEffect(
+                        dotWidth: 8,
+                        dotHeight: 8,
+                        activeDotColor: Colors.green,
+                        dotColor: Colors.white
+                    ),
                   ),
                 ),
-              ),
-            ],),
-          ),
+              ],),
+            ),
 
-          const SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              BlackNormalText(
-                text: "Categories",
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-              InkWell(
-                onTap: (){
-                  Get.toNamed(AppRoutes.categoriesView);
-                },
-                  child: Icon(Icons.arrow_forward_ios_outlined)),
-            ],),
+                BlackNormalText(
+                  text: "Categories",
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.categoriesView);
+                    },
+                    child: Icon(Icons.arrow_forward_ios_outlined)),
+              ],),
 
             const SizedBox(height: 20),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                CategoriesRow(
-                    onTap: (){},
-                    name: "Vegetables",
-                    image: AppImages.vegetables,
-                    color: Colors.green
-                ),
-                CategoriesRow(
-                    onTap: (){},
-                    name: "Beverages",
-                    image: AppImages.beverages,
-                    color: Colors.orange
-                ),
-                CategoriesRow(
-                    onTap: (){},
-                    name: "Fruits",
-                    image: AppImages.fruits,
-                    color: Colors.red
-                ),
-                CategoriesRow(
-                    onTap: (){},
-                    name: "Grocery",
-                    image: AppImages.grocery,
-                    color: Colors.purple
-                ),
-                CategoriesRow(
+                  CategoriesRow(
+                      onTap: (){},
+                      name: "Vegetables",
+                      image: AppImages.vegetables,
+                      color: Colors.green
+                  ),
+                  CategoriesRow(
+                      onTap: (){},
+                      name: "Beverages",
+                      image: AppImages.beverages,
+                      color: Colors.orange
+                  ),
+                  CategoriesRow(
+                      onTap: (){},
+                      name: "Fruits",
+                      image: AppImages.fruits,
+                      color: Colors.red
+                  ),
+                  CategoriesRow(
+                      onTap: (){},
+                      name: "Grocery",
+                      image: AppImages.grocery,
+                      color: Colors.purple
+                  ),
+                  CategoriesRow(
                     onTap: (){},
                     name: "Edible oil",
                     image: AppImages.oil,
                     color: Colors.blueAccent,
-                ),
-                CategoriesRow(
+                  ),
+                  CategoriesRow(
                     onTap: (){},
                     name: "House Hold",
                     image: AppImages.house,
                     color: Colors.pinkAccent,
-                ),
-                CategoriesRow(
+                  ),
+                  CategoriesRow(
                     onTap: (){},
                     name: "Baby care",
                     image: AppImages.babyCare,
                     color: Colors.blueAccent,
-                ),
-              ],),
+                  ),
+                ],),
             ),
 
             const SizedBox(height: 20),
-           Row(children: [
+            Row(children: [
              AddCartWidget(addChartOnTap: (){},
                  image: AppImages.pineapple,
                  name: "Pine Apple",
@@ -141,10 +143,70 @@ TextEditingController searchController=TextEditingController();
                  name: "Apple",
                  price: "22",
                  quantity: "kg34"),
-           ],)
+           ],),
+
+            Dismissible(
+              key: Key("item_key"),
+              direction: DismissDirection.endToStart,
+              background: Container(
+                color: Colors.red,
+                alignment: Alignment.centerRight,
+                padding: EdgeInsets.only(right: 20),
+                child: Icon(Icons.delete, color: Colors.white),
+              ),
+              onDismissed: (direction) {
+
+                print("Item deleted");
+              },
+              child: Container(
+                width: double.infinity,
+                color: Colors.white,
+                child: Row(children: [
+                  Container(
+                    height: 100,
+                    width: 100,
+                   child: Image(image: AssetImage(AppImages.avacoda)),
+                  ),
+                  const SizedBox(width: 15),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      BlackNormalText(
+                        text: "2.22 x 4",
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        textColor: AppColors.greenColor,
+                      ),
+                      BlackNormalText(
+                        text: "Black Grapes",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                      ),
+                      BlackNormalText(
+                        text: "5.0 lbs",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        textColor: Colors.grey,
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(children: [
+                    IconButton(onPressed: (){}, icon: Icon(Icons.add),color: AppColors.greenColor,),
+                    BlackNormalText(
+                      text: "5",
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      textColor: Colors.grey,
+                    ),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.remove),color: AppColors.greenColor,)
+                  ],)
+                ],),
+              )
+            ),
 
 
-
+            const SizedBox(height: 20),
 
 
 

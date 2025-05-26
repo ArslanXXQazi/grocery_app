@@ -6,11 +6,12 @@ class CategoriesView extends StatelessWidget {
   final List<Map<String,dynamic>> categoriesList =
   [
     {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
-    {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
-    {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
-    {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
-    {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
-    {"image": AppImages.vegetables,"name":"Vegetables","color": Colors.green,},
+    {"image": AppImages.fruits,"name":"Fruits","color": Colors.red,},
+    {"image": AppImages.beverages,"name":"Beverages","color": Colors.orange,},
+    {"image": AppImages.grocery,"name":"Grocery","color": Colors.purple,},
+    {"image": AppImages.oil,"name":"Edible oil","color": Colors.blue,},
+    {"image": AppImages.house,"name":"House hold","color": Colors.pink,},
+    {"image": AppImages.babyCare,"name":"Baby care","color": Colors.blue},
   ];
 
   @override

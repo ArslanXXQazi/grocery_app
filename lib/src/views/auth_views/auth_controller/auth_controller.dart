@@ -7,6 +7,10 @@ class AuthController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController zipController = TextEditingController();
   UserDataController userDataController = Get.put(UserDataController());
 
 
@@ -66,7 +70,7 @@ class AuthController extends GetxController {
       await FirebaseFirestore.instance.collection("userData").doc(
           userDataController.userId.value).set({
         'userId':userDataController.userId.value,
-        'userName': '',
+        'userName': nameController.text,
         'userEmail': email,
         'userAge': '',
         'userPhone': phone,
@@ -97,7 +101,7 @@ class AuthController extends GetxController {
         'userProvince': '',
         'userCity': '',
         'zipCode': '',
-        'userPhone': 'phone',
+        'userPhone': '',
         'userAddress':'',
 
       });

@@ -1,5 +1,6 @@
 
 import  'package:grocery_app/src/controller/constant/linker.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/about_me/about_me.dart';
 class ProfileNavView extends StatelessWidget {
    ProfileNavView({super.key});
 
@@ -55,7 +56,9 @@ class ProfileNavView extends StatelessWidget {
             ),
             SizedBox(height: screenHeight*.01),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.to(AboutMe());
+                },
                 text: "About Me",
                 image: AppImages.aboutMe
             ),
@@ -114,7 +117,7 @@ class ProfileNavView extends StatelessWidget {
                                 child: RedButton(
                                   onTap: ()
                                   {
-                                    authController.logout();
+                                    //authController.logout();
                                   },
                                   text: "Logout",
                                 ),

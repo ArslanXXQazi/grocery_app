@@ -1,116 +1,125 @@
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
-class AuthController extends GetxController
- {
+class AuthController extends GetxController {
 
-   var isLoading = false.obs;
-   final TextEditingController emailController = TextEditingController();
-   final TextEditingController phoneController = TextEditingController();
-   final TextEditingController passwordController = TextEditingController();
-    UserDataController userDataController=Get.put(UserDataController());
-
+  var isLoading = false.obs;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  UserDataController userDataController = Get.put(UserDataController());
 
 
+  void signIn() async {
+    try {
+      isLoading.value = true;
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim());
+      isLoading.value = false;
+ //     clear();
+      Get.offAndToNamed(AppRoutes.navBarView);
+    }
+    catch (e) {
+      isLoading.value = false;
+      NotificationMessage.show(
+        title: "Error",
+        description: e.toString(),
+        backGroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
+  }
+
+  void signUp() async
+  {
+    try {
+      isLoading.value = true;
+      String email = emailController.text.trim();
+      String password = passwordController.text.trim();
+      String phone = phoneController.text.trim();
+
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email, password: password);
+      userData(email, password, phone);
+      //clear();
+      NotificationMessage.show(
+        title: "Success",
+        description: "Account Created Successfully",
+      );
+      Get.offAndToNamed(AppRoutes.navBarView);
+    }
+    catch (e) {
+      isLoading.value = false;
+      NotificationMessage.show(
+        title: "Error",
+        description: e.toString(),
+        backGroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
+  }
+
+  void userData(String email, String password, String phone) async
+  {
+    try {
+      await FirebaseFirestore.instance.collection("userData").doc(
+          userDataController.userId.value).set({
+        'userId':userDataController.userId.value,
+        'userName': '',
+        'userEmail': email,
+        'userAge': '',
+        'userPhone': phone,
+        'userImage': '',
+        'userBankAccount': '',
+        'userAccountName': '',
+        'userGender': '',
+
+      });
+      adduserAddressData();
+    }
+    catch (e) {
+
+    }
+  }
+
+  void adduserAddressData() async
+  {
+    try {
+      String id = DateTime
+          .now()
+          .microsecondsSinceEpoch
+          .toString();
+
+      await FirebaseFirestore.instance.collection("userAddresses").doc(id).set({
+        'userId':userDataController.userId,
+        'userCountry': '',
+        'userProvince': '',
+        'userCity': '',
+        'zipCode': '',
+        'userPhone': 'phone',
+        'userAddress':'',
+
+      });
+    }
+    catch (e) {
+
+    }
+
+    Future<void> logout() async {
+      try {
+        await FirebaseAuth.instance.signOut();
+        Get.offAllNamed(AppRoutes.signInView);
+      } catch (e) {
+        Get.snackbar('Error', 'Logout failed: $e');
+      }
+    }
 
 
-   void signIn() async {
-
-     try
-     {
-       isLoading.value=true;
-       await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
-       isLoading.value=false;
-       clear();
-       Get.offAndToNamed(AppRoutes.navBarView);
-
-     }
-     catch(e)
-     {
-       isLoading.value=false;
-       NotificationMessage.show(
-         title: "Error",
-         description: e.toString(),
-         backGroundColor: Colors.red,
-         textColor: Colors.white,
-       );
-     }
-
-
-   }
-
-   void signUp () async
-   {
-     try{
-       isLoading.value=true;
-       String email = emailController.text.trim();
-       String password = passwordController.text.trim();
-       String phone = phoneController.text.trim();
-
-       await FirebaseAuth.instance.createUserWithEmailAndPassword(
-           email: email, password:password);
-       userData(email, password, phone);
-       clear();
-       NotificationMessage.show(
-         title: "Success",
-         description: "Account Created Successfully",
-       );
-       Get.offAndToNamed(AppRoutes.navBarView);
-
-     }
-     catch(e){
-       isLoading.value=false;
-       NotificationMessage.show(
-         title: "Error",
-         description: e.toString(),
-         backGroundColor: Colors.red,
-         textColor: Colors.white,
-       );
-     }
-   }
-
-   void userData(String email, String password, String phone) async
-   {
-     try
-     {
-       await FirebaseFirestore.instance.collection("userData").doc(userDataController.userId.value).set({
-         'userName':'',
-         'userEmail':email,
-         'userAge':'',
-         'userPhone':phone,
-         'userPassword':phone,
-         'userImage' : '',
-         'userAccount':'',
-         'userAccountName':'',
-         'userGender':'',
-         'userCountry':'',
-         'userProvince':'',
-         'userCity' : ''
-       });
-     }
-     catch(e)
-     {
-
-     }
-   }
-
-
-   Future<void> logout() async {
-     try {
-       await FirebaseAuth.instance.signOut();
-       Get.offAllNamed(AppRoutes.signInView);
-     } catch (e) {
-       Get.snackbar('Error', 'Logout failed: $e');
-     }
-   }
-
-
-   void clear()
-   {
-     emailController.clear();
-     phoneController.clear();
-     phoneController.clear();
-   }
-
-
- }
+    void clear() {
+      emailController.clear();
+      phoneController.clear();
+      phoneController.clear();
+    }
+  }
+}

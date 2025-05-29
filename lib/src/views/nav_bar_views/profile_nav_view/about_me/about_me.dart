@@ -3,19 +3,8 @@ import  'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/controller/components/custom_text_field.dart';
 import 'package:grocery_app/src/controller/components/green_button.dart';
 
-class AboutMe extends StatefulWidget {
-  const AboutMe({super.key});
-
-
-
-
-  @override
-  State<AboutMe> createState() => _AboutMeState();
-}
-
-class _AboutMeState extends State<AboutMe> {
-  bool _isPasswordVisible = false;
-
+class AboutMe extends StatelessWidget {
+   AboutMe({super.key});
   AuthController authController= Get.put(AuthController());
 
   @override
@@ -105,56 +94,6 @@ class _AboutMeState extends State<AboutMe> {
                text: 'Save settings',
              );
            })
-
-            // const SizedBox(height: 30),
-            // BlackNormalText(
-            //   text: 'Change Password',
-            //   fontWeight: FontWeight.w600,
-            //   fontSize: 16,
-            // ),
-            // const SizedBox(height: 15),
-            // TextFieldWidget(
-            //   controller: _currentPasswordController,
-            //   hintText: 'Current password',
-            //   prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[600]),
-            //   isPassword: true,
-            // ),
-            // const SizedBox(height: 15),
-            // TextFieldWidget(
-            //   controller: _newPasswordController,
-            //   hintText: 'Enter new password',
-            //   prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[600]),
-            //   isPassword: !_isPasswordVisible,
-            //   suffixIcon: IconButton(
-            //     icon: Icon(
-            //       _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-            //       color: Colors.grey[600],
-            //     ),
-            //     onPressed: () {
-            //       setState(() {
-            //         _isPasswordVisible = !_isPasswordVisible;
-            //       });
-            //     },
-            //   ),
-            // ),
-            //  const SizedBox(height: 15),
-            // TextFieldWidget(
-            //   controller: _confirmPasswordController,
-            //   hintText: 'Confirm password',
-            //   prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[600]),
-            //   isPassword: !_isPasswordVisible,
-            //   suffixIcon: IconButton(
-            //     icon: Icon(
-            //        _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-            //       color: Colors.grey[600],
-            //     ),
-            //      onPressed: () {
-            //       setState(() {
-            //         _isPasswordVisible = !_isPasswordVisible;
-            //       });
-            //     },
-            //   ),
-            // ),
           ],
         ),
       ),

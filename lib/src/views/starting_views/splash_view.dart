@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
 import 'package:grocery_app/src/controller/constant/images.dart';
+import 'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 
 class SplashView extends StatefulWidget {
@@ -16,6 +17,9 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   @override
+
+  UserDataController userDataController =UserDataController();
+
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
@@ -28,6 +32,7 @@ class _SplashViewState extends State<SplashView> {
     User? user = await FirebaseAuth.instance.currentUser;
     if (user!=null)
       {
+        userDataController.getUserData();
         Get.toNamed(AppRoutes.navBarView);
       }
     else

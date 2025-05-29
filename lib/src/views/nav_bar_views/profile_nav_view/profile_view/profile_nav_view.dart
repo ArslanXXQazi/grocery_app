@@ -1,4 +1,3 @@
-
 import  'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/about_me/about_me.dart';
 class ProfileNavView extends StatelessWidget {
@@ -6,6 +5,9 @@ class ProfileNavView extends StatelessWidget {
 
   @override
   AuthController authController =Get.put(AuthController());
+
+  UserDataController userDataController= Get.put(UserDataController());
+
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
     final screenWidth = MediaQuery.sizeOf(context).width;
@@ -20,40 +22,44 @@ class ProfileNavView extends StatelessWidget {
         Padding(
           padding:  EdgeInsets.only(top: screenHeight*.12,left: screenWidth*.04,right: screenWidth*.04),
           child: Column(children: [
-            Container(
-              child: Stack(
-                children: [
-                  Center(
-                    child: CircleAvatar(
-                      radius: 60,
-                    ),
+            Obx((){
+              return Column(children: [
+                Container(
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: CircleAvatar(
+                          radius: 60,
+                        ),
+                      ),
+                      Positioned(
+                          left: screenWidth*.54,top: screenHeight*.095,
+                          child: CircleAvatar(
+                              radius: 14,
+                              backgroundColor: Color(0xff28B446),
+                              child: Center(child: IconButton(
+                                onPressed: (){},
+                                icon: ImageIcon(AssetImage(AppImages.camera,),color: Colors.white,),
+                              ),
+                              )))
+                    ],
                   ),
-                  Positioned(
-                    left: screenWidth*.54,top: screenHeight*.095,
-                    child: CircleAvatar(
-                      radius: 14,
-                      backgroundColor: Color(0xff28B446),
-                      child: Center(child: IconButton(
-                        onPressed: (){},
-                        icon: ImageIcon(AssetImage(AppImages.camera,),color: Colors.white,),
-                    ),
-                  )))
-                ],
-              ),
-            ),
-            SizedBox(height: screenHeight*.01),
-            BlackNormalText(
-              text: "Olivia Austin",
-              fontSize: 15,
-              fontWeight: FontWeight.w600 ,
-            ),
-            SizedBox(height: screenHeight*.01),
-            BlackNormalText(
-              text: "oliviaaustin@gmail.com",
-              fontSize: 12,
-              fontWeight: FontWeight.w400 ,
-              textColor: Colors.grey,
-            ),
+                ),
+                SizedBox(height: screenHeight*.01),
+                BlackNormalText(
+                  text: userDataController.userName.value,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600 ,
+                ),
+               // SizedBox(height: screenHeight*.01),
+                BlackNormalText(
+                  text: userDataController.userEmail.value,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400 ,
+                  textColor: Colors.grey,
+                ),
+              ],);
+            }),
             SizedBox(height: screenHeight*.01),
             ProfileButton(
                 onTap: (){
@@ -116,7 +122,10 @@ class ProfileNavView extends StatelessWidget {
                               Expanded(
                                 child: RedButton(
                                   onTap: ()
-                                  {
+                                  async{
+                                    await FirebaseAuth.instance.signOut();
+                                    Get.offAndToNamed(AppRoutes.signInView);
+                                    //Get.offAll(()=>)
                                     //authController.logout();
                                   },
                                   text: "Logout",

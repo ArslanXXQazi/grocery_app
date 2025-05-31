@@ -30,7 +30,7 @@ class DismissibleWidget extends StatelessWidget {
           color: Colors.red,
           alignment: Alignment.centerRight,
           padding: EdgeInsets.only(right: 20),
-          child: Icon(Icons.delete, color: Colors.white),
+          child: ImageIcon(AssetImage(AppImages.delete),color: Colors.white,),
         ),
         onDismissed: (direction) {
           print("Item deleted");

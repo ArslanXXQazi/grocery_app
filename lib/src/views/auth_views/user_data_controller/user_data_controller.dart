@@ -25,15 +25,13 @@ class UserDataController extends GetxController {
       String? currentUserId = FirebaseAuth.instance.currentUser?.uid;
 
       if (currentUserId != null) {
+        print('------function for fetching user id:${currentUserId}');
         // Agar user logged in hai, toh ID set karen
         userId.value = currentUserId;
+        print('--------------2function for fetching userId.value=${userId.value}');
         getUserData();
       }
-      else {
-        // Agar user logged in nahi hai, toh ID empty rahegi ya aap default set kar sakte hain
-        userId.value = ''; // Ya koi aur default value
-        print('Koi user logged in nahi hai.'); // Debugging ke liye
-      }
+
     }
     catch (e)
     {
@@ -95,7 +93,6 @@ class UserDataController extends GetxController {
 //
 //   void getUserData() async {
 //     try {
-//       // Firestore se userData collection query
 //       var userDoc = await FirebaseFirestore.instance
 //           .collection('userData')
 //           .where('userId', isEqualTo: userId.value)

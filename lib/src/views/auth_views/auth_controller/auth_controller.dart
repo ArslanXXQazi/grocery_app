@@ -24,6 +24,8 @@ class AuthController extends GetxController {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
+      userDataController.getUserId();
+      print('usr id in signin method of auth controlle:====${userDataController.userId}');
       isLoading.value = false;
           clear();
       Get.offAndToNamed(AppRoutes.navBarView);
@@ -74,6 +76,8 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
       print('----------user data function calling-------------------------:::::34342423423423423423');
+      userDataController.getUserId();
+      print('----------user id:${userDataController.userId}');
       await FirebaseFirestore.instance.collection("userData").doc(
           userDataController.userId.value).set({
         'userId':userDataController.userId.value,
@@ -100,6 +104,14 @@ class AuthController extends GetxController {
 
     }
   }
+
+  // update
+  updateData()async{
+
+    userDataController.getUserData();
+
+  }
+
 
   void adduserAddressData() async
   {

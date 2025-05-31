@@ -124,6 +124,9 @@ class ProfileNavView extends StatelessWidget {
                                   onTap: ()
                                   async{
                                     await FirebaseAuth.instance.signOut();
+                                    Get.delete<UserDataController>();
+                                    Get.delete<AuthController>();
+
                                     Get.offAndToNamed(AppRoutes.signInView);
                                     //Get.offAll(()=>)
                                     //authController.logout();

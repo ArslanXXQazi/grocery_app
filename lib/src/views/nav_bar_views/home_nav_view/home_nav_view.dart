@@ -144,9 +144,83 @@ TextEditingController searchController=TextEditingController();
                  price: "22",
                  quantity: "kg34"),
            ],),
-
             const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Stack(
+                  children: [
+                    GestureDetector(
+                    onTap:  (){},
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        width: 181,
+                        margin: EdgeInsets.only(bottom: 20),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              child: Image(image: AssetImage(AppImages.grapes)),
+                            ),
+                            // Image(image: AssetImage(image),width: 60,),
+                            BlackNormalText(
+                              text: "\$23",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              textColor: Colors.green,
+                            ),
+                            BlackNormalText(
+                              text: "Grapes",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                            BlackNormalText(
+                              text: "20 KG",
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                            const SizedBox(height: 10),
+                            Divider(),
+                            const SizedBox(height: 10),
+                            Container(
+                              height: 35,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                IconButton(
+                                    onPressed: (){},
+                                    icon: Icon(Icons.remove,color: AppColors.greenColor,)),
+                                BlackNormalText(text: "1",),
+                                IconButton(
+                                    onPressed: (){},
+                                    icon: Icon(Icons.add,color: AppColors.greenColor,))
+                              ],),
+                            )
 
+                          ],),
+
+                      ),
+                    ),
+                    Positioned(
+                      left: 130,
+                      child: IconButton(
+                          onPressed: (){},
+                          icon: ImageIcon(AssetImage(AppImages.heart),)),
+                    )
+                  ],
+                ),
+                AddCartWidget(addChartOnTap: (){},
+                    image: AppImages.pineapple,
+                    name: "Pine Apple",
+                    price: "212",
+                    quantity: "kg"),
+              ],
+            )
 
           ],),
         ),

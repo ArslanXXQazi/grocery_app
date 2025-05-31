@@ -30,8 +30,12 @@ class _SplashViewState extends State<SplashView> {
   void loginCheck () async
   {
     User? user = await FirebaseAuth.instance.currentUser;
+  print('======curreny manullay id fetching:${user!.uid}');
+    print('-------spalsh screen ${user}');
     if (user!=null)
       {
+        userDataController.getUserId();
+        print('Curret id:${userDataController.userId}');
         userDataController.getUserData();
         Get.toNamed(AppRoutes.navBarView);
       }

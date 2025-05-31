@@ -24,77 +24,82 @@ class AddCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
-      children: [
-        GestureDetector(
-         onTap: (){
-           Get.toNamed(AppRoutes.productDetailView,arguments: {
-             'image': image,
-             'name':name,
-             'price':price,
-             'quantity':quantity,
-           });
-         },
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            width: 181,
-            margin: EdgeInsets.only(bottom: 20),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10)
+    return  Expanded(
+      child: Stack(
+        children: [
+          GestureDetector(
+           onTap: (){
+             Get.toNamed(AppRoutes.productDetailView,arguments: {
+               'image': image,
+               'name':name,
+               'price':price,
+               'quantity':quantity,
+             });
+           },
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              width: 181,
+              margin: EdgeInsets.only(bottom: 20),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10)
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    height: 70,
+                    width: 70,
+                    child: Image(image: AssetImage(image),fit: BoxFit.contain,),
+                  ),
+                 // Image(image: AssetImage(image),width: 60,),
+                  BlackNormalText(
+                    text: "\$$price",
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    textColor: Colors.green,
+                  ),
+                  BlackNormalText(
+                    text: name,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15,
+                  ),
+                  BlackNormalText(
+                    text: quantity,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                  ),
+                  const SizedBox(height: 10),
+                  Divider(),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 40,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ImageIcon(AssetImage(AppImages.shopingBag),color: AppColors.greenColor,),
+                        const SizedBox(width: 5),
+                        BlackNormalText(
+                          onTap: addChartOnTap,
+                          text: "Add to cart",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],),
+                  )
+
+                ],),
+
             ),
-            child: Column(
-              children: [
-                Container(
-                  height: 70,
-                  width: 70,
-                  child: Image(image: AssetImage(image)),
-                ),
-               // Image(image: AssetImage(image),width: 60,),
-                BlackNormalText(
-                  text: "\$$price",
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  textColor: Colors.green,
-                ),
-                BlackNormalText(
-                  text: name,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-                BlackNormalText(
-                  text: quantity,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                ),
-                const SizedBox(height: 10),
-                Divider(),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ImageIcon(AssetImage(AppImages.shopingBag),color: AppColors.greenColor,),
-                    const SizedBox(width: 5),
-                    BlackNormalText(
-                      onTap: addChartOnTap,
-                      text: "Add to cart",
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    )
-                  ],)
-
-              ],),
-
           ),
-        ),
-        Positioned(
-          left: 130,
-          child: IconButton(
-              onPressed: (){},
-              icon: ImageIcon(AssetImage(AppImages.heart),)),
-        )
-      ],
+          Positioned(
+            left: 130,
+            child: IconButton(
+                onPressed: (){},
+                icon: ImageIcon(AssetImage(AppImages.heart),)),
+          )
+        ],
+      ),
     );
   }
 }

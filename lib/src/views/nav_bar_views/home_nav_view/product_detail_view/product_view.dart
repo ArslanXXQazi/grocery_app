@@ -28,6 +28,59 @@ class ProductView extends StatelessWidget {
           ],
         ),
       ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(children: [
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AddCartWidget(addChartOnTap: (){},
+                    image: AppImages.pineapple,
+                    name: "Pine Apple",
+                    price: "212",
+                    quantity: "kg"),
+                AddCartWidget(
+                    addChartOnTap: (){},
+                    image: AppImages.fruits,
+                    name: "Apple",
+                    price: "22",
+                    quantity: "kg34"),
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AddCartWidget(addChartOnTap: (){},
+                    image: AppImages.pineapple,
+                    name: "Pine Apple",
+                    price: "212",
+                    quantity: "kg"),
+                AddCartWidget(
+                    addChartOnTap: (){},
+                    image: AppImages.fruits,
+                    name: "Apple",
+                    price: "22",
+                    quantity: "kg34"),
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AddCartWidget(addChartOnTap: (){},
+                    image: AppImages.pineapple,
+                    name: "Pine Apple",
+                    price: "212",
+                    quantity: "kg"),
+                AddCartWidget(
+                    addChartOnTap: (){},
+                    image: AppImages.fruits,
+                    name: "Apple",
+                    price: "22",
+                    quantity: "kg34"),
+              ],),
+          ],),
+        ),
+      ),
     );
   }
 }

@@ -129,14 +129,15 @@ TextEditingController searchController=TextEditingController();
                 ],),
             ),
 
-            const SizedBox(height: 20),
-            Row(children: [
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
              AddCartWidget(addChartOnTap: (){},
                  image: AppImages.pineapple,
                  name: "Pine Apple",
                  price: "212",
                  quantity: "kg"),
-             SizedBox(width: 5,),
              AddCartWidget(
                  addChartOnTap: (){},
                  image: AppImages.fruits,
@@ -144,7 +145,6 @@ TextEditingController searchController=TextEditingController();
                  price: "22",
                  quantity: "kg34"),
            ],),
-            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -188,7 +188,7 @@ TextEditingController searchController=TextEditingController();
                             Divider(),
                             const SizedBox(height: 10),
                             Container(
-                              height: 35,
+                              height: 40,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
@@ -220,7 +220,22 @@ TextEditingController searchController=TextEditingController();
                     price: "212",
                     quantity: "kg"),
               ],
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AddCartWidget(addChartOnTap: (){},
+                    image: AppImages.pineapple,
+                    name: "Pine Apple",
+                    price: "212",
+                    quantity: "kg"),
+                AddCartWidget(
+                    addChartOnTap: (){},
+                    image: AppImages.fruits,
+                    name: "Apple",
+                    price: "22",
+                    quantity: "kg34"),
+              ],),
 
           ],),
         ),

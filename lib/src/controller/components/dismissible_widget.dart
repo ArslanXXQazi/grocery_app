@@ -2,7 +2,24 @@ import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
 class DismissibleWidget extends StatelessWidget {
-  const DismissibleWidget({super.key});
+
+  VoidCallback addOnTap;
+  VoidCallback removeOnTap;
+  String image;
+  String name;
+  String price;
+  String quantity;
+
+
+   DismissibleWidget({super.key,
+     required this.addOnTap,
+     required this.removeOnTap,
+     required this.image,
+     required this.name,
+     required this.price,
+     required this.quantity,
+
+   });
 
   @override
   Widget build(BuildContext context) {
@@ -16,35 +33,38 @@ class DismissibleWidget extends StatelessWidget {
           child: Icon(Icons.delete, color: Colors.white),
         ),
         onDismissed: (direction) {
-
           print("Item deleted");
         },
         child: Container(
           width: double.infinity,
-          color: Colors.white,
+         margin: const EdgeInsets.only(bottom: 10),
+         decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(5),
+         ),
           child: Row(children: [
             Container(
               height: 100,
               width: 100,
-              child: Image(image: AssetImage(AppImages.avacoda)),
+              child: Image(image: AssetImage(image)),
             ),
             const SizedBox(width: 15),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BlackNormalText(
-                  text: "2.22 x 4",
+                  text: price,
                   fontWeight: FontWeight.w500,
                   fontSize: 12,
                   textColor: AppColors.greenColor,
                 ),
                 BlackNormalText(
-                  text: "Black Grapes",
+                  text: name,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),
                 BlackNormalText(
-                  text: "5.0 lbs",
+                  text: quantity,
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
                   textColor: Colors.grey,
@@ -53,14 +73,16 @@ class DismissibleWidget extends StatelessWidget {
             ),
             Spacer(),
             Column(children: [
-              IconButton(onPressed: (){}, icon: Icon(Icons.add),color: AppColors.greenColor,),
+              IconButton(
+                onPressed: addOnTap,
+                icon: Icon(Icons.add),color: AppColors.greenColor,),
               BlackNormalText(
                 text: "5",
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
                 textColor: Colors.grey,
               ),
-              IconButton(onPressed: (){}, icon: Icon(Icons.remove),color: AppColors.greenColor,)
+              IconButton(onPressed: removeOnTap, icon: Icon(Icons.remove),color: AppColors.greenColor,)
             ],)
           ],),
         )

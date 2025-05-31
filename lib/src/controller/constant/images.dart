@@ -46,6 +46,7 @@ class AppImages {
    static String babyCare='assets/icons/babycare.png';
    static String house='assets/icons/house.png';
    static String oil='assets/icons/oil.png';
+   static String delete='assets/icons/delete.png';
 
 
 

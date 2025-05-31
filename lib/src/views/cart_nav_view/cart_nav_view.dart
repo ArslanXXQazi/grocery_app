@@ -1,3 +1,4 @@
+import 'package:grocery_app/src/controller/components/dismissible_widget.dart';
 import  'package:grocery_app/src/controller/constant/linker.dart';
 class CartNavView extends StatelessWidget {
   const CartNavView({super.key});
@@ -5,6 +6,7 @@ class CartNavView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: AppBar(
@@ -22,9 +24,41 @@ class CartNavView extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(children: [
-        
-      ],),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(children: [
+          const SizedBox(height: 20),
+         DismissibleWidget(
+             addOnTap: (){},
+             removeOnTap: (){},
+             image: AppImages.pineapple,
+             name: "Pine Apple",
+             price: "\$43",
+             quantity: "50 KG"),
+          DismissibleWidget(
+              addOnTap: (){},
+              removeOnTap: (){},
+              image: AppImages.pineapple,
+              name: "Pine Apple",
+              price: "\$43",
+              quantity: "50 KG"),
+          DismissibleWidget(
+              addOnTap: (){},
+              removeOnTap: (){},
+              image: AppImages.pineapple,
+              name: "Pine Apple",
+              price: "\$43",
+              quantity: "50 KG"),
+          DismissibleWidget(
+              addOnTap: (){},
+              removeOnTap: (){},
+              image: AppImages.pineapple,
+              name: "Pine Apple",
+              price: "\$43",
+              quantity: "50 KG"),
+
+        ],),
+      ),
     );
   }
 }

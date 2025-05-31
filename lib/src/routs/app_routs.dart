@@ -1,5 +1,6 @@
 
 import 'package:grocery_app/src/controller/constant/linker.dart';
+import 'package:grocery_app/src/views/cart_nav_view/cart_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_view.dart';
 
 class AppRoutes{
@@ -19,6 +20,7 @@ static String   splash ='/';
   static String productDetailView='/product';
   static String categoriesView='/categories';
   static String productView='/productView';
+  static String shoppingCart='/shoppingCart';
 
 
   static final routes=
@@ -124,7 +126,12 @@ static String   splash ='/';
           final arguments=Get.arguments as Map<String,dynamic>?;
           return ProductView(name: arguments?['name']??'');
         }
-    )
+    ),
+
+    GetPage(
+        name: shoppingCart,
+        page: ()=>CartNavView()
+    ),
 
   ];
 }

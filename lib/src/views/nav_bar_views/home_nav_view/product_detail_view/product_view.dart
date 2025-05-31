@@ -30,7 +30,7 @@ class ProductView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(children: [
             const SizedBox(height: 30),
             Row(

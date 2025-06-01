@@ -1,6 +1,5 @@
-
-
 import  'package:grocery_app/src/controller/constant/linker.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/profile_view_widgets/order_widget.dart';
 
 class MyOrderView extends StatelessWidget {
   const MyOrderView({super.key});
@@ -24,104 +23,230 @@ class MyOrderView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
             child: Container(
-              height: 300,
               width: double.infinity,
               color: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
               child: Column(children: [
-                Container(
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
+                OrderWidget(
+                    orderNumber: "46567",
+                    date: "Placed on Octobar 19 2021",
+                    item: "10",
+                    price: "16"
+                ),
+                Divider(),
+                const SizedBox(height: 10),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 15,
+                          height: 15,
                           decoration: BoxDecoration(
-                            color: AppColors.greenColor.withOpacity(0.2),
+                            color: AppColors.greenColor,
                             shape: BoxShape.circle,
                           ),
-                          padding: EdgeInsets.all(12),
-                          child: ImageIcon(AssetImage(AppImages.box),color: AppColors.greenColor,size: 25,)
-                      ),
-                      SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            BlackNormalText(
-                              text: "Order #90897 ",
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                              textColor: Colors.black,
-                              textAlign: TextAlign.left,
-                            ),
-                            SizedBox(height: 2),
-                            BlackNormalText(
-                              text: "Placed on Octobar 19 2021",
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              textColor: Colors.grey,
-                              textAlign: TextAlign.start,
-                            ),
-                            SizedBox(height: 2),
-                            Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    BlackNormalText(
-                                      text: "item : ",
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      textColor: Colors.black,
-                                      textAlign: TextAlign.left,
-                                    ),
-                                    BlackNormalText(
-                                      text: "10",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12,
-                                      textColor: Colors.black,
-                                      textAlign: TextAlign.left,
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(width: 20),
-                                Row(
-                                  children: [
-                                    BlackNormalText(
-                                      text: "item : ",
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      textColor: Colors.black,
-                                      textAlign: TextAlign.left,
-                                    ),
-                                    BlackNormalText(
-                                      text: "\$16",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12,
-                                      textColor: Colors.black,
-                                      textAlign: TextAlign.left,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
                         ),
+                        Container(
+                          width: 2,
+                          height: 40,
+                          color: AppColors.greenColor,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: BlackNormalText(
+                        text: "Order placed",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        textColor: Colors.black,
+                        textAlign: TextAlign.left,
                       ),
-                      Icon(Icons.arrow_circle_up_outlined, color: AppColors.greenColor),
-                    ],
-                  ),
+                    ),
+                    BlackNormalText(
+                      text: "Oct 19 2021",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
                 ),
-                Divider()
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 15,
+                          height: 15,
+                          decoration: BoxDecoration(
+                            color: AppColors.greenColor,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          width: 2,
+                          height: 40,
+                          color: AppColors.greenColor,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: BlackNormalText(
+                        text: "Order confirmed",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        textColor: Colors.black,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    BlackNormalText(
+                      text: "Oct 19 2021",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 15,
+                          height: 15,
+                          decoration: BoxDecoration(
+                            color: AppColors.greenColor,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          width: 2,
+                          height: 40,
+                          color: AppColors.greenColor,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: BlackNormalText(
+                        text: "Order shipped",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        textColor: Colors.black,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    BlackNormalText(
+                      text: "Oct 19 2021",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 15,
+                          height: 15,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          width: 2,
+                          height: 40,
+                          color: Colors.grey,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: BlackNormalText(
+                        text: "Out for delivery",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        textColor: Colors.grey,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    BlackNormalText(
+                      text: "pending",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: 15,
+                          height: 15,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: BlackNormalText(
+                        text: "Order delivered",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        textColor: Colors.grey,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    BlackNormalText(
+                      text: "pending",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Colors.grey,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
               ],),
-            ),
-          )
-
-
+            ),),
+         Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 10),
+           child: Column(children: [
+             OrderWidget(
+                 orderNumber: "46567",
+                 date: "Placed on Octobar 19 2021",
+                 item: "10",
+                 price: "16"
+             ),
+             SizedBox(height: 20),
+             OrderWidget(
+                 orderNumber: "46567",
+                 date: "Placed on Octobar 19 2021",
+                 item: "10",
+                 price: "16"
+             ),
+           ],),
+         )
         ],),
       ),
     );

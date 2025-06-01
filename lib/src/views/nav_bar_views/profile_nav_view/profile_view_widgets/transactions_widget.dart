@@ -6,17 +6,20 @@ class TransactionsWidget extends StatelessWidget {
   String image;
   String cardName;
   String dateAndTime;
+  String price;
 
    TransactionsWidget({super.key,
      required this.image,
      required this.cardName,
      required this.dateAndTime,
+     required this.price,
    });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
+      margin:  const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -34,7 +37,7 @@ class TransactionsWidget extends StatelessWidget {
           CircleAvatar(
             radius: 33,
             backgroundColor: AppColors.greyColor,
-            child: Image.asset(AppImages.visa),
+            child: Image.asset(image),
           ),
           SizedBox(width: 15),
           Expanded(
@@ -42,7 +45,7 @@ class TransactionsWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BlackNormalText(
-                  text: "cardName",
+                  text: cardName,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                   textColor: Colors.black,
@@ -50,7 +53,7 @@ class TransactionsWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 BlackNormalText(
-                  text: "Dec 12 2021 at 10:00 pm",
+                  text: dateAndTime,
                   fontWeight: FontWeight.w400,
                   fontSize: 10,
                   textColor: Colors.black,
@@ -60,7 +63,7 @@ class TransactionsWidget extends StatelessWidget {
             ),
           ),
           BlackNormalText(
-            text: "\$45",
+            text: "\$$price",
             fontWeight: FontWeight.w600,
             fontSize: 15,
             textColor: AppColors.greenColor,

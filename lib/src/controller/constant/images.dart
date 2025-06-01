@@ -16,6 +16,7 @@ class AppImages {
    static String specail1='assets/images/specail1.png';
    static String visa='assets/images/visa.png';
    static String master='assets/images/master.png';
+   static String emptyImage='assets/images/emptyImage.png';
 
 
 

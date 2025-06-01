@@ -30,6 +30,7 @@ class ProfileNavView extends StatelessWidget {
                       Center(
                         child: CircleAvatar(
                           radius: 60,
+                          backgroundImage: AssetImage(AppImages.emptyImage),
                         ),
                       ),
                       Positioned(

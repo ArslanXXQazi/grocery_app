@@ -147,66 +147,11 @@ class _MyAddressViewState extends State<MyAddressView> {
                   ),
                 ],
               ),
-              SizedBox(height: 18),
-              // Jissca Simpson Card
-              Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 4,
-                      offset: Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xFFD8F1A0),
-                        shape: BoxShape.circle,
-                      ),
-                      padding: EdgeInsets.all(12),
-                      child: Icon(Icons.location_on, color: Color(0xFF6CC51D), size: 28),
-                    ),
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          BlackNormalText(
-                            text: 'Jissca Simpson',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            textColor: Colors.black,
-                            textAlign: TextAlign.left,
-                          ),
-                          SizedBox(height: 2),
-                          BlackNormalText(
-                            text: '28th Crescent Day, LA Port\nCalifornia, United States 77571',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 13,
-                            textColor: Colors.black.withOpacity(0.6),
-                            textAlign: TextAlign.left,
-                          ),
-                          SizedBox(height: 2),
-                          BlackNormalText(
-                            text: '+1 202 555 0142',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 13,
-                            textColor: Colors.black,
-                            textAlign: TextAlign.left,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Icon(Icons.check_circle, color: Color(0xFF6CC51D)),
-                  ],
-                ),
+              SizedBox(height: 15),
+              AddressWidget(
+                  name: "Arslan Qazi",
+                  phone: "+923483424529",
+                  address: "2811 Crescent Day. LA Port California, United States 77571"
               ),
               SizedBox(height: 30),
               GreenButton(

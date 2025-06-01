@@ -23,25 +23,25 @@ class _CartNavViewState extends State<CartNavView> {
       'name': 'Black Grapes',
       'price': '\$3.22',
       'quantity': '1 KG',
-      'image': AppImages.pineapple, // Using pineapple as a placeholder, replace with actual grape image if available
+      'image': AppImages.grapes, // Using pineapple as a placeholder, replace with actual grape image if available
     },
     {
       'name': 'Pine Apple',
       'price': '\$43',
       'quantity': '50 KG',
-      'image': AppImages.pineapple,
+      'image': AppImages.avacoda,
     },
     {
       'name': 'Pine Apple',
       'price': '\$43',
       'quantity': '50 KG',
-      'image': AppImages.pineapple,
+      'image': AppImages.peach,
     },
     {
       'name': 'Pine Apple',
       'price': '\$43',
       'quantity': '50 KG',
-      'image': AppImages.pineapple,
+      'image': AppImages.vegetables,
     },
     {
       'name': 'Pine Apple',

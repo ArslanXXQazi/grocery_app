@@ -55,6 +55,7 @@ class AppImages {
    static String city='assets/icons/city.png';
    static String person='assets/icons/person.png';
    static String zip='assets/icons/zip.png';
+   static String box='assets/icons/box.png';
 
 
 

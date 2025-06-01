@@ -23,9 +23,9 @@ class _MyAddressViewState extends State<MyAddressView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF4F5F9),
+     backgroundColor: AppColors.greyColor,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF4F5F9),
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
@@ -136,7 +136,7 @@ class _MyAddressViewState extends State<MyAddressView> {
                           isDefault = val;
                         });
                       },
-                      activeColor: Color(0xFF6CC51D),
+                      activeColor: AppColors.greenColor,
                     ),
                   ),
                   BlackNormalText(

@@ -3,6 +3,8 @@ import 'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/views/nav_bar_views/cart_nav_view/cart_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/favorite_nav_view/favorite_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/add_credit_card/add_credit_card.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/credit_card_view/credit_card_view.dart';
 
 class AppRoutes{
 
@@ -23,6 +25,8 @@ static String   splash ='/';
   static String productView='/productView';
   static String shoppingCart='/shoppingCart';
   static String favoriteNavView='/favoriteNavView';
+  static String myCard='/myCard';
+  static String addCreditCard='/addCreditCard';
 
 
   static final routes=
@@ -139,6 +143,17 @@ static String   splash ='/';
         name: favoriteNavView,
         page: ()=>FavoriteNavView()
     ),
+
+    GetPage(
+        name: myCard,
+        page: ()=>CreditCardView()
+    ),
+
+    GetPage(
+        name:addCreditCard,
+        page: ()=>AddCreditCard()
+    ),
+
 
   ];
 }

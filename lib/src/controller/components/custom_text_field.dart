@@ -68,13 +68,13 @@ class TextFieldWidget extends StatelessWidget {
             hintStyle: TextStyle(
               color: hintColor ?? Colors.grey,
             ),
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: screenWidth * 0.04,
-              vertical:
-              isPortrait ? screenHeight * 0.015 : screenHeight * 0.025,
-            ),
+            // contentPadding: EdgeInsets.symmetric(
+            //   horizontal: screenWidth * 0.04,
+            //   vertical:
+            //   isPortrait ? screenHeight * 0.015 : screenHeight * 0.025,
+            // ),
             filled: true,
-            fillColor: Colors.white,
+            fillColor: fillColor?? Colors.white,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide(color: borderColor ?? Colors.white),

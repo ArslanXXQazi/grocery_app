@@ -132,13 +132,13 @@ class _AddCreditCardState extends State<AddCreditCard> {
             hintText: "Name on the card",
            prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 5),
           TextFieldWidget(
             controller: carNumberController,
             hintText: "Card number",
             prefixIcon: ImageIcon(AssetImage(AppImages.card),color: Colors.grey,),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 5),
           Row(
             children: [
               Expanded(

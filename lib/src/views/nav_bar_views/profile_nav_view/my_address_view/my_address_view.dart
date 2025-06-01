@@ -76,13 +76,13 @@ class _MyAddressViewState extends State<MyAddressView> {
                 hintText: 'Name',
                 prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 5),
               TextFieldWidget(
                 controller: addressController,
                 hintText: 'Address',
                 prefixIcon: ImageIcon(AssetImage(AppImages.location),color: Colors.grey,),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 5),
               Row(
                 children: [
                   Expanded(
@@ -92,7 +92,7 @@ class _MyAddressViewState extends State<MyAddressView> {
                       prefixIcon: ImageIcon(AssetImage(AppImages.city),color: Colors.grey,),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 5),
                   Expanded(
                     child: TextFieldWidget(
                       controller: zipController,
@@ -102,7 +102,7 @@ class _MyAddressViewState extends State<MyAddressView> {
                   ),
                 ],
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 5),
               // Country field
               CountryFieldWidget(
                 countries: countries,
@@ -113,7 +113,7 @@ class _MyAddressViewState extends State<MyAddressView> {
                   });
                 },
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 5),
               TextFieldWidget(
                 controller: phoneController,
                 hintText: 'Phone number',

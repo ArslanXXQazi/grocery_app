@@ -65,14 +65,14 @@ class _CreditCardViewState extends State<CreditCardView> {
                   prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
                   fillColor: AppColors.greyColor,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 5),
                 TextFieldWidget(
                   controller: carNumberController,
                   hintText: "XXXX  XXXX  XXXX  5678",
                   prefixIcon: ImageIcon(AssetImage(AppImages.card),color: Colors.grey,),
                   fillColor: AppColors.greyColor,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 5),
                 Row(
                   children: [
                     Expanded(
@@ -83,7 +83,7 @@ class _CreditCardViewState extends State<CreditCardView> {
                         fillColor: AppColors.greyColor,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: 5),
                     Expanded(
                       child: TextFieldWidget(
                         controller: cvvController,

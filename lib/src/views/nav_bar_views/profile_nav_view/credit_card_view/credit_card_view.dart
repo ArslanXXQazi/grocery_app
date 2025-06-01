@@ -52,7 +52,7 @@ class _CreditCardViewState extends State<CreditCardView> {
               ),
               child: Column(children: [
                 CreditCardWidget(
-                    image: AppImages.phone,
+                    image: AppImages.master,
                     cardName: "Master Card",
                     cardNumber: "XXXX  XXXX  XXXX  5678",
                     date: '3/4',
@@ -62,14 +62,14 @@ class _CreditCardViewState extends State<CreditCardView> {
                 TextFieldWidget(
                   controller: nameController,
                   hintText: "Arslan Qazi",
-                  prefixIcon: Icon(Icons.person,color: Colors.grey,),
+                  prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
                   fillColor: AppColors.greyColor,
                 ),
                 SizedBox(height: 10),
                 TextFieldWidget(
                   controller: carNumberController,
                   hintText: "XXXX  XXXX  XXXX  5678",
-                  prefixIcon: Icon(Icons.wallet,color: Colors.grey,),
+                  prefixIcon: ImageIcon(AssetImage(AppImages.card),color: Colors.grey,),
                   fillColor: AppColors.greyColor,
                 ),
                 SizedBox(height: 10),
@@ -79,7 +79,7 @@ class _CreditCardViewState extends State<CreditCardView> {
                       child: TextFieldWidget(
                         controller: dateController,
                         hintText: "01/22",
-                        prefixIcon: Icon(Icons.calendar_month,color: Colors.grey,),
+                        prefixIcon: ImageIcon(AssetImage(AppImages.calendar),color: Colors.grey,),
                         fillColor: AppColors.greyColor,
                       ),
                     ),
@@ -88,7 +88,7 @@ class _CreditCardViewState extends State<CreditCardView> {
                       child: TextFieldWidget(
                         controller: cvvController,
                         hintText: "346",
-                        prefixIcon: Icon(Icons.lock_outline_rounded,color: Colors.grey,),
+                        prefixIcon: ImageIcon(AssetImage(AppImages.lock),color: Colors.grey,),
                         fillColor: AppColors.greyColor,
                         keyboardType: TextInputType.number,
                       ),
@@ -106,11 +106,17 @@ class _CreditCardViewState extends State<CreditCardView> {
                             isDefault = val;
                           });
                         },
-                        activeColor: AppColors.greenColor,
+                        activeColor: AppColors.greenColor, // Background green jab on ho
+                        thumbColor: MaterialStateProperty.resolveWith<Color>((states) {
+                          if (states.contains(MaterialState.selected)) {
+                            return Colors.white; // Dot white jab switch on ho
+                          }
+                          return Colors.grey; // Dot grey jab switch off ho
+                        }),
                       ),
                     ),
                     BlackNormalText(
-                      text: 'Make default',
+                      text: 'Make Default',
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                       textColor: Colors.black,
@@ -120,7 +126,7 @@ class _CreditCardViewState extends State<CreditCardView> {
               ],),
             ),
             CreditCardWidget(
-                image: AppImages.phone,
+                image: AppImages.visa,
                 cardName: "Visa Card",
                 cardNumber: "XXXX  XXXX  XXXX  5678",
                 date: '3/4',

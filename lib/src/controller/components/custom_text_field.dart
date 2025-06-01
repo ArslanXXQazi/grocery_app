@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:grocery_app/src/views/auth_views/password_field_controller/password_field_controller.dart';
 
+import '../constant/images.dart';
+
 
 PasswordFieldController passwordFieldController=Get.put(PasswordFieldController());
 
@@ -150,7 +152,7 @@ class CountryFieldWidget extends StatelessWidget {
       dropdownColor: Colors.white,
       decoration: InputDecoration(
         hintText: hintText,
-        prefixIcon: Icon(Icons.public, color: Colors.grey),
+        prefixIcon: ImageIcon(AssetImage(AppImages.country),color: Colors.grey,size: 20,),
         contentPadding: EdgeInsets.symmetric(
           horizontal: screenWidth * 0.04,
           vertical: isPortrait ? screenHeight * 0.015 : screenHeight * 0.025,

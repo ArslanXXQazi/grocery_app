@@ -14,6 +14,8 @@ class AppImages {
    static String splash='assets/images/splash.png';
    static String bigCart='assets/images/bigcart.png';
    static String specail1='assets/images/specail1.png';
+   static String visa='assets/images/visa.png';
+   static String master='assets/images/master.png';
 
 
 
@@ -47,6 +49,12 @@ class AppImages {
    static String house='assets/icons/house.png';
    static String oil='assets/icons/oil.png';
    static String delete='assets/icons/delete.png';
+   static String calendar='assets/icons/calendar.png';
+   static String card='assets/icons/card.png';
+   static String country='assets/icons/country.png';
+   static String city='assets/icons/city.png';
+   static String person='assets/icons/person.png';
+   static String zip='assets/icons/zip.png';
 
 
 

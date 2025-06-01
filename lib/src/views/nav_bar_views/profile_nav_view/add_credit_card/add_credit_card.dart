@@ -1,12 +1,22 @@
 
 import  'package:grocery_app/src/controller/constant/linker.dart';
-class AddCreditCard extends StatelessWidget {
+class AddCreditCard extends StatefulWidget {
   AddCreditCard({super.key});
 
+  @override
+  State<AddCreditCard> createState() => _AddCreditCardState();
+}
+
+class _AddCreditCardState extends State<AddCreditCard> {
   TextEditingController nameController=TextEditingController();
+
   TextEditingController carNumberController=TextEditingController();
+
   TextEditingController dateController=TextEditingController();
+
   TextEditingController cvvController=TextEditingController();
+
+  bool isDefault = true;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +32,6 @@ class AddCreditCard extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),
-          actions: [
-            IconButton(
-                onPressed: (){Get.toNamed(AppRoutes.addCreditCard);},
-                icon: Icon(Icons.add_circle_outline_rounded,color: Colors.black,))
-          ],
         ),
       ),
       body: Padding(
@@ -39,11 +44,19 @@ class AddCreditCard extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   height: 190,
-                  child: Image.asset(AppImages.orders,fit: BoxFit.cover,),
+                 decoration: BoxDecoration(
+                   gradient: LinearGradient(
+                       colors: [
+                         Color(0xffAEDC81),
+                         Color(0xff6CC51D),
+                       ]
+                   ),
+                 ),
+                //  child: Image.asset(AppImages.orders,fit: BoxFit.cover,),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +64,10 @@ class AddCreditCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image(image: AssetImage(AppImages.phone)),
+                        Container(
+                          height: 50,
+                          width: 50,
+                            child: Image(image: AssetImage(AppImages.master))),
                         InkWell(
                             onTap: (){},
                             child: Icon(Icons.more_vert,color: Colors.white,))
@@ -85,7 +101,6 @@ class AddCreditCard extends StatelessWidget {
                               ),
                             ],
                           ),
-
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -105,12 +120,7 @@ class AddCreditCard extends StatelessWidget {
                           ),
 
                         ],),
-                    )
-
-
-
-
-                  ],),
+                    )],),
               )
             ],
           ),
@@ -119,14 +129,14 @@ class AddCreditCard extends StatelessWidget {
 
           TextFieldWidget(
             controller: nameController,
-            hintText: "Arslan Qazi",
-            prefixIcon: Icon(Icons.person,color: Colors.grey,),
+            hintText: "Name on the card",
+           prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
           ),
           SizedBox(height: 10),
           TextFieldWidget(
             controller: carNumberController,
-            hintText: "XXXX  XXXX  XXXX  5678",
-            prefixIcon: Icon(Icons.wallet,color: Colors.grey,),
+            hintText: "Card number",
+            prefixIcon: ImageIcon(AssetImage(AppImages.card),color: Colors.grey,),
           ),
           SizedBox(height: 10),
           Row(
@@ -134,18 +144,46 @@ class AddCreditCard extends StatelessWidget {
               Expanded(
                 child: TextFieldWidget(
                   controller: dateController,
-                  hintText: "01/22",
-                  prefixIcon: Icon(Icons.calendar_month,color: Colors.grey,),
+                  hintText: "Month / Year",
+                  prefixIcon: ImageIcon(AssetImage(AppImages.calendar),color: Colors.grey,),
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               Expanded(
                 child: TextFieldWidget(
                   controller: cvvController,
-                  hintText: "346",
-                  prefixIcon: Icon(Icons.lock_outline_rounded,color: Colors.grey,),
+                  hintText: "CVV",
+                  prefixIcon: ImageIcon(AssetImage(AppImages.lock),color: Colors.grey,),
                   keyboardType: TextInputType.number,
                 ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Transform.scale(
+                scale: 0.8,
+                child: Switch(
+                  value: isDefault,
+                  onChanged: (val) {
+                    setState(() {
+                      isDefault = val;
+                    });
+                  },
+                  activeColor: AppColors.greenColor, // Background green jab on ho
+                  thumbColor: MaterialStateProperty.resolveWith<Color>((states) {
+                    if (states.contains(MaterialState.selected)) {
+                      return Colors.white; // Dot white jab switch on ho
+                    }
+                    return Colors.grey; // Dot grey jab switch off ho
+                  }),
+                ),
+              ),
+              BlackNormalText(
+                text: 'Save this card',
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                textColor: Colors.black,
               ),
             ],
           ),

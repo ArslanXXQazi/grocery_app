@@ -6,6 +6,7 @@ import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/add_credit_card/add_credit_card.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/credit_card_view/credit_card_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/my_address_view/add_address_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/my_order_view/my_order_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/notification_view/notification_view.dart';
 
 class AppRoutes{
@@ -31,6 +32,7 @@ static String   splash ='/';
   static String addCreditCard='/addCreditCard';
   static String addAddress='/addAddress';
   static String notificationView='/notificationView';
+  static String myOrder='/myOrder';
 
 
   static final routes=
@@ -167,6 +169,12 @@ static String   splash ='/';
         name:notificationView,
         page: ()=>NotificationView()
     ),
+
+    GetPage(
+        name:myOrder,
+        page: ()=>MyOrderView()
+    ),
+
 
 
   ];

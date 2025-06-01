@@ -69,7 +69,9 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.aboutMe
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.myOrder);
+                },
                 text: "My Orders",
                 image: AppImages.orders
             ),

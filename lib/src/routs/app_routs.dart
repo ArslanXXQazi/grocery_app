@@ -1,6 +1,6 @@
 
 import 'package:grocery_app/src/controller/constant/linker.dart';
-import 'package:grocery_app/src/views/cart_nav_view/cart_nav_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/cart_nav_view/cart_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_view.dart';
 
 class AppRoutes{

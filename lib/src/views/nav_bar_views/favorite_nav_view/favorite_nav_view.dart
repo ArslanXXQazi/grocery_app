@@ -2,14 +2,14 @@ import 'package:grocery_app/src/controller/components/dismissible_widget.dart';
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
 // Convert to StatefulWidget to manage the list of cart items
-class CartNavView extends StatefulWidget {
-  const CartNavView({super.key});
+class FavoriteNavView extends StatefulWidget {
+  const FavoriteNavView({super.key});
 
   @override
-  _CartNavViewState createState() => _CartNavViewState();
+  _FavoriteNavViewState createState() => _FavoriteNavViewState();
 }
 
-class _CartNavViewState extends State<CartNavView> {
+class _FavoriteNavViewState extends State<FavoriteNavView> {
   // Sample list of cart items
   // In a real app, this data would come from a state management solution or API
   final List<Map<String, dynamic>> _cartItems = [
@@ -27,13 +27,13 @@ class _CartNavViewState extends State<CartNavView> {
     },
     {
       'name': 'Pine Apple',
-      'price': '\\\$43',
+      'price': '\$43',
       'quantity': '50 KG',
       'image': AppImages.pineapple,
     },
     {
       'name': 'Pine Apple',
-      'price': '\\\$43',
+      'price': '\$43',
       'quantity': '50 KG',
       'image': AppImages.pineapple,
     },
@@ -57,7 +57,7 @@ class _CartNavViewState extends State<CartNavView> {
           backgroundColor: Colors.white,
           centerTitle: true,
           title: BlackNormalText(
-            text: "Shopping Cart",
+            text: "Favorites",
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),
@@ -69,7 +69,7 @@ class _CartNavViewState extends State<CartNavView> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
         // Use ListView.builder directly inside Padding
         child: ListView.builder(
           itemCount: _cartItems.length,
@@ -84,10 +84,10 @@ class _CartNavViewState extends State<CartNavView> {
               price: item['price']!,
               quantity: item['quantity']!,
               // Add and remove onTap handlers (you can implement their logic later)
-              addOnTap: () { /* TODO: Implement add item logic */ },
-              removeOnTap: () { /* TODO: Implement remove item logic */ },
+              addOnTap: () {},
+              removeOnTap: () {},
               // Implement the delete logic here
-              onDeleteTap: () {
+              onDismissed: () {
                 _deleteItem(index);
               },
             );

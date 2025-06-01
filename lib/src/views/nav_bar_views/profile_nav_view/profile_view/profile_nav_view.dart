@@ -98,7 +98,9 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.transactions
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.notificationView);
+                },
                 text: "Notifications",
                 image: AppImages.notification
             ),

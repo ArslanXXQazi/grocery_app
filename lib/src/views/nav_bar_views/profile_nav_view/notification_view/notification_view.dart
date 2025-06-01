@@ -30,6 +30,15 @@ class _NotificationViewState extends State<NotificationView> {
           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
           child: Column(children: [
 
+            Container(
+              height: 150,
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(children: [
+                
+              ],),
+            )
+
           ],),
         ),
       ),

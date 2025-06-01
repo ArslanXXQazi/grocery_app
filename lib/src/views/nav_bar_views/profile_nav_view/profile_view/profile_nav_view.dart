@@ -76,7 +76,9 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.orders
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.favoriteNavView);
+                },
                 text: "My Favorites",
                 image: AppImages.favorites
             ),
@@ -95,7 +97,9 @@ class ProfileNavView extends StatelessWidget {
                 image: AppImages.credit
             ),
             ProfileButton(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed(AppRoutes.transactions);
+                },
                 text: "Transactions",
                 image: AppImages.transactions
             ),

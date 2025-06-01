@@ -18,6 +18,11 @@ class MyOrderView extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),
+          actions: [
+            IconButton(
+                onPressed: (){},
+                icon: ImageIcon(AssetImage(AppImages.gear)))
+          ],
         ),
       ),
       body: SingleChildScrollView(

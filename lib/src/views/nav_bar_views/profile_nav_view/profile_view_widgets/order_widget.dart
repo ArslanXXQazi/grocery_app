@@ -28,7 +28,7 @@ class OrderWidget extends StatelessWidget {
         children: [
           Container(
               decoration: BoxDecoration(
-                color: AppColors.greenColor.withOpacity(0.2),
+                color: AppColors.greenColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
               padding: EdgeInsets.all(12),

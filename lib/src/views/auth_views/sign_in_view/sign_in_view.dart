@@ -2,10 +2,17 @@
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
-class SignInView extends StatelessWidget {
+class SignInView extends StatefulWidget {
    SignInView({super.key});
 
+  @override
+  State<SignInView> createState() => _SignInViewState();
+}
+
+class _SignInViewState extends State<SignInView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  bool isDefault=true;
 
   AuthController authController=Get.put(AuthController());
 
@@ -128,11 +135,33 @@ class SignInView extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    BlackNormalText(
-                                      text: "Remember me",
-                                      fontSize: 15,
-                                      textColor: Colors.grey,
-                                      fontWeight: FontWeight.w500,
+                                    Row(
+                                      children: [
+                                        Transform.scale(
+                                          scale: 0.8,
+                                          child: Switch(
+                                            value: isDefault,
+                                            onChanged: (val) {
+                                              setState(() {
+                                                isDefault = val;
+                                              });
+                                            },
+                                            activeColor: AppColors.greenColor, // Background green jab on ho
+                                            thumbColor: MaterialStateProperty.resolveWith<Color>((states) {
+                                              if (states.contains(MaterialState.selected)) {
+                                                return Colors.white; // Dot white jab switch on ho
+                                              }
+                                              return Colors.grey; // Dot grey jab switch off ho
+                                            }),
+                                          ),
+                                        ),
+                                        BlackNormalText(
+                                          text: "Remember me",
+                                          fontSize: 15,
+                                          textColor: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ],
                                     ),
                                   BlackNormalText(
                                     onTap: (){

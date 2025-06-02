@@ -134,7 +134,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             height: 350, // Adjust height as needed
             width: double.infinity,
             fit: BoxFit.contain,
-          ).animate().fade().slideX(duration: 700.ms),
+          ).animate().fade().slideX(duration: 500.ms),
           const SizedBox(height: 40),
           BlackNormalText(
             text: title,

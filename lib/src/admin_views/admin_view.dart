@@ -1,3 +1,4 @@
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:grocery_app/src/controller/constant/linker.dart';
 class AdminView extends StatelessWidget {
   const AdminView({super.key});
@@ -36,7 +37,7 @@ class AdminView extends StatelessWidget {
                       'category':"Fruits"
                      });
                     },
-                     image: AppImages.fruits, name: "Fruits"),
+                     image: AppImages.fruits, name: "Fruits").animate().fadeIn().slide(),
                ),
                const SizedBox(width: 20),
                Expanded(
@@ -49,7 +50,7 @@ class AdminView extends StatelessWidget {
                           });
                       //Get.toNamed(AppRoutes.vegetableView);
                     },
-                     image: AppImages.vegetables, name: "Vegetables"),
+                     image: AppImages.vegetables, name: "Vegetables").animate().fadeIn().slide(),
                ),
              ],),
              Row(
@@ -63,7 +64,7 @@ class AdminView extends StatelessWidget {
                             'category':"Beverages"
                           });
                     },
-                     image: AppImages.beverages, name: "Beverages"),
+                     image: AppImages.beverages, name: "Beverages").animate().fadeIn().slide(),
                ),
                const SizedBox(width: 20),
                Expanded(
@@ -75,7 +76,7 @@ class AdminView extends StatelessWidget {
                             'category':"Grocery"
                           });
                     },
-                     image: AppImages.grocery, name: "Grocery"),
+                     image: AppImages.grocery, name: "Grocery").animate().fadeIn().slide(),
                ),
              ],),
              Row(
@@ -91,7 +92,7 @@ class AdminView extends StatelessWidget {
                         }
                       );
                     },
-                     image: AppImages.edibleOil, name: "Edible Oil"),
+                     image: AppImages.edibleOil, name: "Edible Oil").animate().fadeIn().saturate(),
                ),
                const SizedBox(width: 20),
                Expanded(
@@ -105,7 +106,7 @@ class AdminView extends StatelessWidget {
                           }
                       );
                     },
-                     image: AppImages.household, name: "House hold"),
+                     image: AppImages.household, name: "House hold").animate().fadeIn().slide(),
                ),
              ],),
             ]

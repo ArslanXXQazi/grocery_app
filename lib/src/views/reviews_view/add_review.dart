@@ -29,7 +29,15 @@ class AddReview extends StatelessWidget {
               text: "What do you think ?",
               fontSize: 20,
               fontWeight: FontWeight.w600,
-            )
+            ),
+            const SizedBox(height: 20),
+            BlackNormalText(
+              text: "please give your rating by clicking on\nthe stars below",
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              textColor: Colors.grey,
+            ),
+              const SizedBox(height: 20),
           ],),
         ),
       ),

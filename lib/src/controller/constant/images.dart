@@ -17,6 +17,9 @@ class AppImages {
    static String visa='assets/images/visa.png';
    static String master='assets/images/master.png';
    static String emptyImage='assets/images/emptyImage.png';
+   static String onboarding1='assets/images/onboarding1.png';
+   static String onboarding2='assets/images/onboarding2.png';
+   static String onboarding3='assets/images/onboarding3.png';
 
 
 

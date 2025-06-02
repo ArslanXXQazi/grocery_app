@@ -6,6 +6,7 @@ import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_up_view/sign_up_view.dart';
 import 'package:grocery_app/src/views/reviews_view/review_view.dart';
+import 'package:grocery_app/src/views/starting_views/on_boarding_view.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
       // initialRoute: AppRoutes.splash,
       // getPages: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
-     home: ReviewView(),
+     home: OnBoardingView()
+      //ReviewView(),
       //SignUpView()
     );
   }

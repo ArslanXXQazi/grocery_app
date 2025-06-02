@@ -21,6 +21,7 @@ class TextFieldWidget extends StatelessWidget {
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
   final int? maxLength;
+  final int? maxLine;
   final Color? textColor;
   final Color? hintColor;
   final Color? borderColor;
@@ -39,6 +40,7 @@ class TextFieldWidget extends StatelessWidget {
     this.keyboardType,
     this.onChanged,
     this.maxLength,
+    this.maxLine,
     this.textColor,
     this.borderColor,
     this.focusBorderColor,
@@ -62,6 +64,7 @@ class TextFieldWidget extends StatelessWidget {
           validator: validator,
           onChanged: onChanged,
           maxLength: maxLength,
+          maxLines: maxLine,
           style: TextStyle(
             color: textColor ?? Colors.black,
           ),

@@ -3,8 +3,8 @@ import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
 class AddReview extends StatelessWidget {
-  const AddReview({super.key});
-
+  AddReview({super.key});
+  final TextEditingController reviewController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +22,8 @@ class AddReview extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 40),
-        child: Center(
+        padding: const EdgeInsets.only(top: 40,left: 15,right: 15),
+        child: SingleChildScrollView(
           child: Column(
             children: [
             BlackNormalText(
@@ -31,17 +31,16 @@ class AddReview extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
-            const SizedBox(height: 20),
-            BlackNormalText(
+            const SizedBox(height: 10),
+              BlackNormalText(
               text: "please give your rating by clicking on\nthe stars below",
               fontSize: 15,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w400,
               textColor: Colors.grey,
             ),
               const SizedBox(height: 20),
               AnimatedRatingStars(
                 onChanged: (double rating) {
-                  // Handle the rating change here
                   print('Rating: $rating');
                 },
                   customFilledIcon: Icons.star,
@@ -51,6 +50,17 @@ class AddReview extends StatelessWidget {
                   emptyColor: Colors.white,
               ),
               const SizedBox(height: 20),
+              TextFieldWidget(
+                  controller: reviewController,
+                  hintText: "Tell us about your experience",
+                  maxLine: 5,
+              ),
+              const SizedBox(height: 30),
+              GreenButton(
+                  onTap: (){},
+                  text: "Add Review"
+              )
+
           ],),
         ),
       ),

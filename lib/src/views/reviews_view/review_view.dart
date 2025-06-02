@@ -1,4 +1,5 @@
 import  'package:grocery_app/src/controller/constant/linker.dart';
+import 'package:grocery_app/src/views/reviews_view/add_review.dart';
 import 'package:grocery_app/src/views/reviews_view/reviews_widget/review_widget.dart';
 
 
@@ -21,7 +22,9 @@ class ReviewView extends StatelessWidget {
           ),
           actions: [
             IconButton(
-                onPressed: (){},
+                onPressed: (){
+                  Get.to(AddReview());
+                },
                 icon: Icon(Icons.add_circle_outline_rounded)),
           ],
         ),

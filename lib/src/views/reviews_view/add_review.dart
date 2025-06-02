@@ -1,3 +1,4 @@
+import 'package:animated_rating_stars/animated_rating_stars.dart';
 import  'package:grocery_app/src/controller/constant/linker.dart';
 
 
@@ -37,6 +38,18 @@ class AddReview extends StatelessWidget {
               fontWeight: FontWeight.w500,
               textColor: Colors.grey,
             ),
+              const SizedBox(height: 20),
+              AnimatedRatingStars(
+                onChanged: (double rating) {
+                  // Handle the rating change here
+                  print('Rating: $rating');
+                },
+                  customFilledIcon: Icons.star,
+                  customEmptyIcon: Icons.star,
+                  customHalfFilledIcon: Icons.star_half,
+                  starSize: 50,
+                  emptyColor: Colors.white,
+              ),
               const SizedBox(height: 20),
           ],),
         ),

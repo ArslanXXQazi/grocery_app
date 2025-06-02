@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  animated_rating_stars
   cloud_firestore
   firebase_auth
   firebase_core

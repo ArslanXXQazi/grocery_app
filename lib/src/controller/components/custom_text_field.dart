@@ -64,7 +64,7 @@ class TextFieldWidget extends StatelessWidget {
           validator: validator,
           onChanged: onChanged,
           maxLength: maxLength,
-          maxLines: maxLine,
+          maxLines: maxLine??1,
           style: TextStyle(
             color: textColor ?? Colors.black,
           ),

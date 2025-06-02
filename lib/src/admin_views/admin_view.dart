@@ -7,7 +7,7 @@ class AdminView extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.greyColor,
         appBar: AppBar(
-          backgroundColor: AppColors.greyColor,
+          backgroundColor: Colors.white,
           centerTitle: true,
           title: BlackNormalText(
             text: "Admin Controls",

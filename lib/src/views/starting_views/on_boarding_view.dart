@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart'; // Get for navigation
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Smooth page indicator
 import 'package:grocery_app/src/controller/constant/linker.dart';// Smooth page indicator
@@ -133,7 +134,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             height: 350, // Adjust height as needed
             width: double.infinity,
             fit: BoxFit.contain,
-          ),
+          ).animate().fade().slideX(duration: 700.ms),
           const SizedBox(height: 40),
           BlackNormalText(
             text: title,

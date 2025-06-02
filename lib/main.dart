@@ -42,10 +42,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      // initialRoute: AppRoutes.splash,
-      // getPages: AppRoutes.routes,
+      initialRoute: AppRoutes.splash,
+      getPages: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
-     home: OnBoardingView()
+     // home: OnBoardingView()
       //ReviewView(),
       //SignUpView()
     );

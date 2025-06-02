@@ -11,6 +11,7 @@ import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/notificatio
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/transactions_view/transactions_view.dart';
 import 'package:grocery_app/src/views/reviews_view/add_review.dart';
 import 'package:grocery_app/src/views/reviews_view/review_view.dart';
+import 'package:grocery_app/src/views/starting_views/on_boarding_view.dart';
 
 class AppRoutes{
 
@@ -39,6 +40,7 @@ static String   splash ='/';
   static String transactions='/transactions';
   static String reviewsView='/reviewsView';
   static String addReviews='/addReviews';
+  static String onBoardingView='/onBoarding';
 
 
   static final routes=
@@ -194,6 +196,11 @@ static String   splash ='/';
     GetPage(
         name:addReviews,
         page: ()=>AddReview()
+    ),
+
+    GetPage(
+        name:onBoardingView,
+        page: ()=>OnBoardingView()
     ),
 
 

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:grocery_app/src/controller/components/black_text.dart';
@@ -27,23 +28,21 @@ class _SplashViewState extends State<SplashView> {
     });
   }
 
-  void loginCheck () async
-  {
-    User? user = await FirebaseAuth.instance.currentUser;
-  print('======curreny manullay id fetching:${user!.uid}');
-    print('-------spalsh screen ${user}');
-    if (user!=null)
-      {
-        userDataController.getUserId();
-        print('Curret id:${userDataController.userId}');
-        userDataController.getUserData();
-        Get.toNamed(AppRoutes.navBarView);
-      }
-    else
-      {
-        Get.offAndToNamed(AppRoutes.signInView);
-      }
+  void loginCheck () async {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      print('====== current manually fetched id: ${user.uid}');
+      print('------- splash screen $user');
+      userDataController.getUserId();
+      print('Current id: ${userDataController.userId}');
+      userDataController.getUserData();
+      Get.toNamed(AppRoutes.navBarView);
+    } else {
+      Get.offAndToNamed(AppRoutes.onBoardingView);
+    }
   }
+
 
 
   Widget build(BuildContext context) {
@@ -65,14 +64,15 @@ class _SplashViewState extends State<SplashView> {
                 text: "Welcome to",
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
-              ),
-              Image(image: AssetImage('assets/images/bigcart.png')),
+              ).animate().fade().slideY(),
+              Image(image: AssetImage('assets/images/bigcart.png'))
+                  .animate().fade(delay: 300.ms).scale(),
               BlackNormalText(
                 text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
                 textColor: Colors.grey,
-              )
+              ).animate().fade(delay: 600.ms).slideY(),
              ],),
            ),
          )

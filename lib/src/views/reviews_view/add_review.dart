@@ -20,15 +20,19 @@ class AddReview extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-        BlackNormalText(
-          text: "What do you think ?",
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        )
-      ],),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 40),
+        child: Center(
+          child: Column(
+            children: [
+            BlackNormalText(
+              text: "What do you think ?",
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            )
+          ],),
+        ),
+      ),
     );
   }
 }

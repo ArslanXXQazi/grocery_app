@@ -20,6 +20,9 @@ class AddReview extends StatelessWidget {
           ),
         ),
       ),
+      body: Column(children: [
+        
+      ],),
     );
   }
 }

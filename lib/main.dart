@@ -5,6 +5,7 @@ import 'package:grocery_app/firebase_options.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_up_view/sign_up_view.dart';
+import 'package:grocery_app/src/views/reviews_view/review_view.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,10 +41,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.splash,
-      getPages: AppRoutes.routes,
+      // initialRoute: AppRoutes.splash,
+      // getPages: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
-     // home: SignInView()
+     home: ReviewView(),
       //SignUpView()
     );
   }

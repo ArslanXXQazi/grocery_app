@@ -80,7 +80,7 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.nameController,
               hintText: 'Name',
-              prefixIcon: Icon(Icons.person_outline, color: Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey),
             ),
             const SizedBox(height: 15),
             TextFieldWidget(

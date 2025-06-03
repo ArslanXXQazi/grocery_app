@@ -80,20 +80,20 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.nameController,
               hintText: 'Name',
-              prefixIcon: ImageIcon(AssetImage(AppImages.person),color:Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.person),color:Colors.grey[900]),
             ),
             const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.emailController,
               hintText: 'Email',
-              prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey[900]),
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.phoneController,
               hintText: 'Phone',
-              prefixIcon: ImageIcon(AssetImage(AppImages.phone),color:Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.phone),color:Colors.grey[900]),
               keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 5),

@@ -100,7 +100,7 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.ageController,
               hintText: 'user age',
-              prefixIcon: Icon(Icons.person_2_outlined, color: Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.age),color: Colors.grey),
               keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 15),

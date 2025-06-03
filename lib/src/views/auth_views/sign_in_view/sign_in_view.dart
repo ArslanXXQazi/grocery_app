@@ -92,9 +92,7 @@ class _SignInViewState extends State<SignInView> {
                                 TextFieldWidget(
                                   controller: authController.emailController,
                                   hintText: "Email",
-                                  prefixIcon: Image(
-                                    image: AssetImage("assets/icons/email.png"),
-                                  ),
+                                  prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey,),
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return "Please enter a email";
@@ -107,9 +105,7 @@ class _SignInViewState extends State<SignInView> {
                                   return  TextFieldWidget(
                                     controller:authController.passwordController,
                                     hintText: "Password",
-                                    prefixIcon: Image(
-                                      image: AssetImage(AppImages.lock),
-                                    ),
+                                    prefixIcon: ImageIcon(AssetImage(AppImages.phone),color: Colors.grey,),
                                     isPassword: passwordFieldController.isPasswordVisible.value,
                                     suffixIcon:  IconButton(onPressed: (){
                                       passwordFieldController.togglePasswordVisibility();},

@@ -93,7 +93,7 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.phoneController,
               hintText: 'Phone',
-              prefixIcon: Icon(Icons.phone_outlined, color: Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.phone),color: Colors.grey),
               keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 15),

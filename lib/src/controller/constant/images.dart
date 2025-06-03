@@ -60,6 +60,7 @@ class AppImages {
    static String person='assets/icons/person.png';
    static String zip='assets/icons/zip.png';
    static String box='assets/icons/box.png';
+   static String age='assets/icons/age.png';
 
 
 

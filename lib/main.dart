@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/firebase_options.dart';
+import 'package:grocery_app/gender.dart';
 import 'package:grocery_app/src/routs/app_routs.dart';
 import 'package:grocery_app/src/views/auth_views/sign_in_view/sign_in_view.dart';
 import 'package:grocery_app/src/views/auth_views/sign_up_view/sign_up_view.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.splash,
       getPages: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
-     // home: OnBoardingView()
+     //home: GenderSelection()//OnBoardingView()
       //ReviewView(),
       //SignUpView()
     );

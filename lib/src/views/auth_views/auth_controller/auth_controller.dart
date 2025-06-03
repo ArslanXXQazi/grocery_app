@@ -81,22 +81,17 @@ class AuthController extends GetxController {
       await FirebaseFirestore.instance.collection("userData").doc(
           userDataController.userId.value).set({
         'userId':userDataController.userId.value,
-        'userName': nameController.text,
-        'userEmail': emailController.text.trim(),
-        'userAge': ageController.text,
-        'userPhone': phoneController.text,
+        'userName':"",
+        'userEmail':emailController.text,
+        'userAge': "",
+        'userPhone':phoneController.text,
         'userImage': "",
-        'userBankAccount': userBankAccountController.text,
-        'userAccountName': userBankAccountNameController.text,
-        'userGender': genderController.text,
+        'userBankAccount':"",
+        'userAccountName': "",
+        'userGender': "",
       });
       userDataController.getUserData();
-      //sadduserAddressData();
       clear();
-      NotificationMessage.show(
-        title: "Success",
-        description: "Data Updated Successfully",
-      );
       isLoading.value = false;
     }
     catch (e) {
@@ -104,14 +99,6 @@ class AuthController extends GetxController {
 
     }
   }
-
-  // update
-  updateData()async{
-
-    userDataController.getUserData();
-
-  }
-
 
   void adduserAddressData() async
   {

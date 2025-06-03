@@ -3,6 +3,7 @@ import 'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/views/nav_bar_views/cart_nav_view/cart_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/favorite_nav_view/favorite_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/about_me/about_me.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/add_credit_card/add_credit_card.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/credit_card_view/credit_card_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/my_address_view/add_address_view.dart';
@@ -41,6 +42,7 @@ static String   splash ='/';
   static String reviewsView='/reviewsView';
   static String addReviews='/addReviews';
   static String onBoardingView='/onBoarding';
+  static String aboutMe='/aboutMe';
 
 
   static final routes=
@@ -116,6 +118,23 @@ static String   splash ='/';
             collection: arguments?['collection'] ?? '',
           );
       },),
+
+
+    GetPage(
+        name:aboutMe ,
+        page: (){
+          final arguments = Get.arguments as Map<String, dynamic>?;
+          return AboutMe(
+              name: arguments?['name'],
+              email: arguments?['email'],
+              phone: arguments?['phone'],
+              age: arguments?['age'],
+              bankAccountName: arguments?['bankAccountName'],
+              bankAccountNumber: arguments?['bankAccountNumber'],
+              gender:  arguments?['gender']);
+        }),
+
+
 
     GetPage(
        name: homeNavView,

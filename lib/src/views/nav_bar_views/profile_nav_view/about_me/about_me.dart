@@ -86,7 +86,7 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.emailController,
               hintText: 'Email',
-              prefixIcon: Icon(Icons.email_outlined, color: Colors.grey[600]),
+              prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey),
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 15),

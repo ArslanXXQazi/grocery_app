@@ -89,9 +89,7 @@ class SignUpView extends StatelessWidget {
                                 TextFieldWidget(
                                   controller: authController.emailController,
                                   hintText: "Email",
-                                  prefixIcon: Image(
-                                    image: AssetImage(AppImages.email),
-                                  ),
+                                  prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey,),
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return "Please enter a Email";
@@ -103,9 +101,7 @@ class SignUpView extends StatelessWidget {
                                 TextFieldWidget(
                                   controller:authController.phoneController,
                                   hintText: "Phone number",
-                                  prefixIcon: Image(
-                                    image: AssetImage(AppImages.phone),
-                                  ),
+                                  prefixIcon: ImageIcon(AssetImage(AppImages.phone),color: Colors.grey,),
                                   keyboardType: TextInputType.phone,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
@@ -120,9 +116,7 @@ class SignUpView extends StatelessWidget {
                                   return  TextFieldWidget(
                                     controller:authController.passwordController,
                                     hintText: "Password",
-                                    prefixIcon: Image(
-                                      image: AssetImage(AppImages.lock),
-                                    ),
+                                    prefixIcon: ImageIcon(AssetImage(AppImages.lock),color: Colors.grey,),
                                     isPassword: passwordFieldController.isPasswordVisible.value,
                                     suffixIcon:  IconButton(onPressed: (){
                                       passwordFieldController.togglePasswordVisibility();},

@@ -145,13 +145,9 @@ class ProfileNavView extends StatelessWidget {
                                   child: RedButton(
                                     onTap: ()
                                     async{
-                                      await FirebaseAuth.instance.signOut();
                                       Get.delete<UserDataController>();
                                       Get.delete<AuthController>();
-
-                                      Get.offAndToNamed(AppRoutes.signInView);
-                                      //Get.offAll(()=>)
-                                      //authController.logout();
+                                      authController.logout();
                                     },
                                     text: "Logout",
                                   ),

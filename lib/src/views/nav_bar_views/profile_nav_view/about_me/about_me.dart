@@ -80,49 +80,49 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.nameController,
               hintText: 'Name',
-              prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey),
+              prefixIcon: ImageIcon(AssetImage(AppImages.person),color:Colors.grey[600]),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.emailController,
               hintText: 'Email',
-              prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey),
+              prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey[600]),
               keyboardType: TextInputType.emailAddress,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.phoneController,
               hintText: 'Phone',
-              prefixIcon: ImageIcon(AssetImage(AppImages.phone),color: Colors.grey),
+              prefixIcon: ImageIcon(AssetImage(AppImages.phone),color:Colors.grey[600]),
               keyboardType: TextInputType.phone,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.ageController,
               hintText: 'user age',
-              prefixIcon: Icon(Icons.cake_outlined, color: Colors.grey),
+              prefixIcon: Icon(Icons.cake_outlined, color: Colors.grey[600]),
               keyboardType: TextInputType.phone,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.userBankAccountController,
               hintText: 'userBankAccount',
-              prefixIcon: Icon(Icons.calculate_outlined, color: Colors.grey),
+              prefixIcon: Icon(Icons.calculate_outlined, color: Colors.grey[600]),
               keyboardType: TextInputType.phone,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             TextFieldWidget(
               controller: profileNavController.userBankAccountNameController,
               hintText: 'userBankAccountName',
               prefixIcon: Icon(Icons.account_balance_outlined, color: Colors.grey[600]),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             BlackNormalText(
               text: 'Select Gender',
               fontWeight: FontWeight.w600,
               fontSize: 16,
             ),
-          Obx((){
+           Obx((){
             return  Row(children: [
               Row(children: [
                 Text('Male:'),
@@ -153,12 +153,7 @@ class _AboutMeState extends State<AboutMe> {
               ],),
             ],);
           }),
-            // TextFieldWidget(
-            //   controller: profileNavController.genderController,
-            //   hintText: 'gender',
-            //   prefixIcon: Icon(Icons.transgender, color: Colors.grey[600]),
-            // ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             Obx((){
              return profileNavController.isLoading.value ? Apploader2():
              GreenButton(

@@ -1,4 +1,5 @@
 import  'package:grocery_app/src/controller/constant/linker.dart';
+import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/profile_nav_controller/profile_nav_controller.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/profile_view_widgets/address_widget.dart';
 
 class AddAddressView extends StatefulWidget {
@@ -9,12 +10,8 @@ class AddAddressView extends StatefulWidget {
 }
 
 class _AddAddressViewState extends State<AddAddressView> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController addressController = TextEditingController();
-  TextEditingController cityController = TextEditingController();
-  TextEditingController zipController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+
+  ProfileNavController profileNavController= Get.put(ProfileNavController());
   bool isDefault = true;
   String? selectedCountry;
   final List<String> countries = [
@@ -45,51 +42,51 @@ class _AddAddressViewState extends State<AddAddressView> {
             children: [
               // TextFields
               TextFieldWidget(
-                controller: nameController,
+                controller: profileNavController.nameController,
                 hintText: 'Name',
                 prefixIcon: ImageIcon(AssetImage(AppImages.person),color: Colors.grey,),
               ),
               SizedBox(height: 5),
               TextFieldWidget(
-                controller: emailController,
+                controller: profileNavController.emailController,
                 hintText: 'Email Adress',
                 prefixIcon: ImageIcon(AssetImage(AppImages.email),color: Colors.grey,),
               ),
               SizedBox(height: 5),
               TextFieldWidget(
-                controller: addressController,
+                controller: profileNavController.addressController,
                 hintText: 'Address',
                 prefixIcon: ImageIcon(AssetImage(AppImages.location),color: Colors.grey,),
               ),
               SizedBox(height: 5),
               TextFieldWidget(
-                controller: cityController,
+                controller: profileNavController.cityController,
                 hintText: 'City',
                 prefixIcon: ImageIcon(AssetImage(AppImages.city),color: Colors.grey,),
               ),
               SizedBox(height: 5),
               TextFieldWidget(
-                controller: zipController,
+                controller: profileNavController.zipController,
                 hintText: 'Zip code',
                 prefixIcon: ImageIcon(AssetImage(AppImages.zip),color: Colors.grey,),
               ),
               SizedBox(height: 5),
               TextFieldWidget(
-                controller: phoneController,
+                controller: profileNavController.phoneController,
                 hintText: 'Phone number',
                 prefixIcon: ImageIcon(AssetImage(AppImages.phone),color: Colors.grey,),
                 keyboardType: TextInputType.phone,
               ),
               SizedBox(height: 5),
-              CountryFieldWidget(
-                countries: countries,
-                selectedCountry: selectedCountry,
-                onChanged: (val) {
-                  setState(() {
-                    selectedCountry = val;
-                  });
-                },
-              ),
+              Obx(() {
+                return CountryFieldWidget(
+                  countries: countries,
+                  selectedCountry: profileNavController.selectedCountry.value, // Use RxString value
+                  onChanged: (val) {
+                    profileNavController.selectedCountry.value = val ?? "";
+                  },
+                );
+              }),
               SizedBox(height: 5),
               Row(
                 children: [
@@ -120,13 +117,18 @@ class _AddAddressViewState extends State<AddAddressView> {
                 ],
               ),
               SizedBox(height: 20),
-              GreenButton(
-                text: 'Save settings',
-                onTap: () {},
-                height: 55,
-                fontSize: 17,
-                borderRadius: 10,
-              ),
+              Obx((){
+                return profileNavController.isLoading.value ? Apploader2():
+                GreenButton(
+                  text: 'Save settings',
+                  onTap: () {
+                    profileNavController.addUserAddress();
+                  },
+                  height: 55,
+                  fontSize: 17,
+                  borderRadius: 10,
+                );
+              })
             ],
           ),
         ),

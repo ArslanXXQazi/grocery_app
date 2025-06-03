@@ -100,21 +100,21 @@ class _AboutMeState extends State<AboutMe> {
             TextFieldWidget(
               controller: profileNavController.ageController,
               hintText: 'user age',
-              prefixIcon: ImageIcon(AssetImage(AppImages.age),color: Colors.grey),
+              prefixIcon: Icon(Icons.cake_outlined, color: Colors.grey),
               keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 15),
             TextFieldWidget(
               controller: profileNavController.userBankAccountController,
               hintText: 'userBankAccount',
-              prefixIcon: Icon(Icons.account_balance, color: Colors.grey[600]),
+              prefixIcon: Icon(Icons.calculate_outlined, color: Colors.grey),
               keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 15),
             TextFieldWidget(
               controller: profileNavController.userBankAccountNameController,
               hintText: 'userBankAccountName',
-              prefixIcon: Icon(Icons.apartment_outlined, color: Colors.grey[600]),
+              prefixIcon: Icon(Icons.account_balance_outlined, color: Colors.grey[600]),
             ),
             const SizedBox(height: 15),
             BlackNormalText(

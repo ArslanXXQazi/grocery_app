@@ -24,6 +24,8 @@ class _ProductDetailViewState extends State<ProductDetailView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
+
+        //=================================>> 1st Container For Images
         Container(
           height: 400,
           width: double.infinity,

@@ -167,6 +167,24 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       ],),
                     ),
                   ),
+                  const SizedBox(height: 10),
+                  //=============================== Row For Total Amount
+                  Row(
+                    children: [
+                      BlackNormalText(
+                        text: "Total :",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
+                      const SizedBox(width: 10),
+                      BlackNormalText(
+                        text: widget.price,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        textColor: AppColors.greenColor,
+                      ),
+                    ],
+                  ),
 
                   //============================ Button For Add To Cart
                   const SizedBox(height: 20),

@@ -20,6 +20,7 @@ class ProductDetailView extends StatefulWidget {
 
 class _ProductDetailViewState extends State<ProductDetailView> {
   int itemCount=1;
+  double get totalPrice => double.parse(widget.price)*itemCount;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

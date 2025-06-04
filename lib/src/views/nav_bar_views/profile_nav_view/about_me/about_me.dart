@@ -42,7 +42,7 @@ class _AboutMeState extends State<AboutMe> {
     profileNavController.ageController.text=widget.age;
     profileNavController.userBankAccountNameController.text=widget.bankAccountName;
     profileNavController.userBankAccountController.text=widget.bankAccountNumber;
-    profileNavController.genderController.text=widget.gender;
+    profileNavController.groupValue.value=widget.gender;
   }
 //String groupValue='';
   @override

@@ -14,8 +14,7 @@ TextEditingController searchController=TextEditingController();
         padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
         child: SingleChildScrollView(
           child: Column(children: [
-
-
+            //==========================================>> Search TextField
             TextFieldWidget(
               controller: searchController,
               hintText: "Search keywords..",
@@ -23,6 +22,7 @@ TextEditingController searchController=TextEditingController();
               suffixIcon: ImageIcon( AssetImage(AppImages.gear)),
             ),
             const SizedBox(height: 10),
+            //======================================>> Special Offer Container
             Container(
               height: 283,
               width: double.infinity,
@@ -64,6 +64,8 @@ TextEditingController searchController=TextEditingController();
             ),
 
             const SizedBox(height: 20),
+
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

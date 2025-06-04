@@ -179,7 +179,7 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       ),
                       const SizedBox(width: 10),
                       BlackNormalText(
-                        text: widget.price,
+                        text: "\$${totalPrice.toStringAsFixed(2)}",
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
                         textColor: AppColors.greenColor,

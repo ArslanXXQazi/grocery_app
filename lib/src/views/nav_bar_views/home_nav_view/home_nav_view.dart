@@ -88,43 +88,36 @@ TextEditingController searchController=TextEditingController();
               child: Row(
                 children: [
                   CategoriesRow(
-                      onTap: (){},
                       name: "Vegetables",
                       image: AppImages.vegetables,
                       color: Colors.green
                   ),
                   CategoriesRow(
-                      onTap: (){},
                       name: "Beverages",
                       image: AppImages.beverages,
                       color: Colors.orange
                   ),
                   CategoriesRow(
-                      onTap: (){},
                       name: "Fruits",
                       image: AppImages.fruits,
                       color: Colors.red
                   ),
                   CategoriesRow(
-                      onTap: (){},
                       name: "Grocery",
                       image: AppImages.grocery,
                       color: Colors.purple
                   ),
                   CategoriesRow(
-                    onTap: (){},
                     name: "Edible oil",
                     image: AppImages.oil,
                     color: Colors.blueAccent,
                   ),
                   CategoriesRow(
-                    onTap: (){},
                     name: "House Hold",
                     image: AppImages.house,
                     color: Colors.pinkAccent,
                   ),
                   CategoriesRow(
-                    onTap: (){},
                     name: "Baby care",
                     image: AppImages.babyCare,
                     color: Colors.blueAccent,

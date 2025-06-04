@@ -112,6 +112,8 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                     textAlign: TextAlign.start,
                   ),
                   const SizedBox(height: 20),
+
+                  //=============>> Container for Add AnD Remove Button
                   Container(
                     height: 60,
                     width: double.infinity,
@@ -165,6 +167,8 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       ],),
                     ),
                   ),
+
+                  //============================ Button For Add To Cart
                   const SizedBox(height: 20),
                   GreenButton(onTap: (){}, text: "Add to cart"),
               ],),

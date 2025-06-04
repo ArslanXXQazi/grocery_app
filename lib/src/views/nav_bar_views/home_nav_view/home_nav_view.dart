@@ -80,8 +80,9 @@ TextEditingController searchController=TextEditingController();
                     },
                     child: Icon(Icons.arrow_forward_ios_outlined)),
               ],),
-
             const SizedBox(height: 20),
+
+            //===================================>> Row For Categories
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

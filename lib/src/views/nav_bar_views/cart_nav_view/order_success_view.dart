@@ -7,6 +7,25 @@ class OrderSuccessView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: BlackNormalText(
+            text: "Order Success",
+            fontWeight: FontWeight.w500,
+            fontSize: 18,
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: ImageIcon(AssetImage(AppImages.gear), color: Colors.black),
+            ),
+          ],
+        ),
+      ),
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

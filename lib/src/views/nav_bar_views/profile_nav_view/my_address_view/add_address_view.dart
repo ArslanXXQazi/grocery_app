@@ -81,9 +81,11 @@ class _AddAddressViewState extends State<AddAddressView> {
               Obx(() {
                 return CountryFieldWidget(
                   countries: countries,
-                  selectedCountry: profileNavController.selectedCountry.value, // Use RxString value
+                  selectedCountry: profileNavController.selectedCountry.value.isEmpty
+                      ? null
+                      : profileNavController.selectedCountry.value,
                   onChanged: (val) {
-                    profileNavController.selectedCountry.value = val ?? "";
+                    profileNavController.selectedCountry.value = val ?? '';
                   },
                 );
               }),

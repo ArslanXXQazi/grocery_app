@@ -6,7 +6,8 @@ class ProfileNavController extends GetxController
   UserDataController userDataController = Get.put(UserDataController());
   var isLoading=false.obs;
   var groupValue=''.obs;
-  var selectedCountry = ''.obs;
+  var selectedCountry = RxString('');
+  var isDefault = true.obs;
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();

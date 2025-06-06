@@ -133,7 +133,7 @@ class CountryFieldWidget extends StatelessWidget {
     required this.countries,
     this.selectedCountry,
     this.onChanged,
-    this.hintText = 'Country',
+    this.hintText = 'Select Country',
     this.borderColor,
     this.focusBorderColor,
     this.fillColor,

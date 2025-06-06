@@ -75,17 +75,12 @@ class _FavoriteNavViewState extends State<FavoriteNavView> {
         child: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
+          automaticallyImplyLeading: false,
           title: BlackNormalText(
             text: "Favorites",
             fontWeight: FontWeight.w500,
             fontSize: 18,
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: ImageIcon(AssetImage(AppImages.gear), color: Colors.black),
-            ),
-          ],
         ),
       ),
       body: Padding(

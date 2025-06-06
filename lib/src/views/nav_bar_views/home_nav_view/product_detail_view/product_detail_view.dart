@@ -194,6 +194,14 @@ class _ProductDetailViewState extends State<ProductDetailView> {
             ),
           ),
         ),
+        Positioned(
+          top: 40,
+          left: 10,
+          child: IconButton(onPressed: (){
+            Get.back();
+          },
+              icon: Icon(Icons.arrow_back_rounded)),
+        )
       ],),
     );
   }

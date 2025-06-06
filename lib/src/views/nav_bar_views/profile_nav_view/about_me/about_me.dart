@@ -127,6 +127,7 @@ class _AboutMeState extends State<AboutMe> {
               Row(children: [
                 Text('Male:'),
                 Radio(
+                    activeColor: AppColors.greenColor,
                     value: 'male',
                     groupValue: profileNavController.groupValue.value,
                     onChanged: (value){
@@ -134,8 +135,9 @@ class _AboutMeState extends State<AboutMe> {
                     }),
               ],),
               Row(children: [
-                Text('female:'),
+                Text('Female:'),
                 Radio(
+                    activeColor: AppColors.greenColor,
                     value: 'female',
                     groupValue: profileNavController.groupValue.value,
                     onChanged: (value){
@@ -143,8 +145,9 @@ class _AboutMeState extends State<AboutMe> {
                     }),
               ],),
               Row(children: [
-                Text('other:'),
+                Text('Other:'),
                 Radio(
+                    activeColor: AppColors.greenColor,
                     value: 'other',
                     groupValue: profileNavController.groupValue.value,
                     onChanged: (value){

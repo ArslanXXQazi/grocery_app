@@ -90,34 +90,34 @@ class _AddAddressViewState extends State<AddAddressView> {
                 );
               }),
               SizedBox(height: 5),
-              Row(
-                children: [
-                  Transform.scale(
-                    scale: 0.8,
-                    child: Switch(
-                      value: isDefault,
-                      onChanged: (val) {
-                        setState(() {
-                          isDefault = val;
-                        });
-                      },
-                      activeColor: AppColors.greenColor, // Background green jab on ho
-                      thumbColor: MaterialStateProperty.resolveWith<Color>((states) {
-                        if (states.contains(MaterialState.selected)) {
-                          return Colors.white; // Dot white jab switch on ho
-                        }
-                        return Colors.grey; // Dot grey jab switch off ho
-                      }),
+              Obx((){
+                return Row(
+                  children: [
+                    Transform.scale(
+                      scale: 0.8,
+                      child: Switch(
+                        value: profileNavController.isDefault.value,
+                        onChanged: (val) {
+                         profileNavController.isDefault.value=val;
+                        },
+                        activeColor: AppColors.greenColor, // Background green jab on ho
+                        thumbColor: MaterialStateProperty.resolveWith<Color>((states) {
+                          if (states.contains(MaterialState.selected)) {
+                            return Colors.white; // Dot white jab switch on ho
+                          }
+                          return Colors.grey; // Dot grey jab switch off ho
+                        }),
+                      ),
                     ),
-                  ),
-                  BlackNormalText(
-                    text: 'Make Default',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    textColor: Colors.black,
-                  ),
-                ],
-              ),
+                    BlackNormalText(
+                      text: 'Make Default',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      textColor: Colors.black,
+                    ),
+                  ],
+                );
+              }),
               SizedBox(height: 20),
               Obx((){
                 return profileNavController.isLoading.value ? Apploader2():

@@ -211,7 +211,9 @@ class _CartNavViewState extends State<CartNavView> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    GreenButton(onTap: () {}, text: "Checkout"),
+                    GreenButton(onTap: () {
+                      Get.toNamed(AppRoutes.orderSuccess);
+                    }, text: "Checkout"),
                   ],
                 ),
               ),

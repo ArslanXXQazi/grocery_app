@@ -1,6 +1,7 @@
 
 import 'package:grocery_app/src/controller/constant/linker.dart';
 import 'package:grocery_app/src/views/nav_bar_views/cart_nav_view/cart_nav_view.dart';
+import 'package:grocery_app/src/views/nav_bar_views/cart_nav_view/order_success_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/favorite_nav_view/favorite_nav_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/home_nav_view/product_detail_view/product_view.dart';
 import 'package:grocery_app/src/views/nav_bar_views/profile_nav_view/about_me/about_me.dart';
@@ -43,6 +44,7 @@ static String   splash ='/';
   static String addReviews='/addReviews';
   static String onBoardingView='/onBoarding';
   static String aboutMe='/aboutMe';
+  static String orderSuccess='/orderSuccess';
 
 
   static final routes=
@@ -220,6 +222,11 @@ static String   splash ='/';
     GetPage(
         name:onBoardingView,
         page: ()=>OnBoardingView()
+    ),
+
+    GetPage(
+        name:orderSuccess,
+        page: ()=>OrderSuccessView()
     ),
 
 

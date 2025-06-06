@@ -11,41 +11,41 @@ class CartNavView extends StatefulWidget {
 
 class _CartNavViewState extends State<CartNavView> {
   final List<Map<String, dynamic>> _cartItems = [
-    // {
-    //   'name': 'Fresh Broccoli',
-    //   'price': 2.25,
-    //   'quantity': '150 gm',
-    //   'image': AppImages.pineapple,
-    //   'itemCount': 1,
-    // },
-    // {
-    //   'name': 'Black Grapes',
-    //   'price': 3.22,
-    //   'quantity': '1 KG',
-    //   'image': AppImages.grapes,
-    //   'itemCount': 1,
-    // },
-    // {
-    //   'name': 'Pine Apple',
-    //   'price': 43.0,
-    //   'quantity': '50 KG',
-    //   'image': AppImages.avacoda,
-    //   'itemCount': 1,
-    // },
-    // {
-    //   'name': 'Fresh Broccoli',
-    //   'price': 2.25,
-    //   'quantity': '150 gm',
-    //   'image': AppImages.pineapple,
-    //   'itemCount': 1,
-    // },
-    // {
-    //   'name': 'Black Grapes',
-    //   'price': 3.22,
-    //   'quantity': '1 KG',
-    //   'image': AppImages.grapes,
-    //   'itemCount': 1,
-    // },
+    {
+      'name': 'Fresh Broccoli',
+      'price': 2.25,
+      'quantity': '150 gm',
+      'image': AppImages.pineapple,
+      'itemCount': 1,
+    },
+    {
+      'name': 'Black Grapes',
+      'price': 3.22,
+      'quantity': '1 KG',
+      'image': AppImages.grapes,
+      'itemCount': 1,
+    },
+    {
+      'name': 'Pine Apple',
+      'price': 43.0,
+      'quantity': '50 KG',
+      'image': AppImages.avacoda,
+      'itemCount': 1,
+    },
+    {
+      'name': 'Fresh Broccoli',
+      'price': 2.25,
+      'quantity': '150 gm',
+      'image': AppImages.pineapple,
+      'itemCount': 1,
+    },
+    {
+      'name': 'Black Grapes',
+      'price': 3.22,
+      'quantity': '1 KG',
+      'image': AppImages.grapes,
+      'itemCount': 1,
+    },
   ];
 
   // Calculate subtotal

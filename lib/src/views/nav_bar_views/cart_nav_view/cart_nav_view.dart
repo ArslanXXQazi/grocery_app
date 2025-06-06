@@ -11,27 +11,41 @@ class CartNavView extends StatefulWidget {
 
 class _CartNavViewState extends State<CartNavView> {
   final List<Map<String, dynamic>> _cartItems = [
-    {
-      'name': 'Fresh Broccoli',
-      'price': 2.25,
-      'quantity': '150 gm',
-      'image': AppImages.pineapple,
-      'itemCount': 1,
-    },
-    {
-      'name': 'Black Grapes',
-      'price': 3.22,
-      'quantity': '1 KG',
-      'image': AppImages.grapes,
-      'itemCount': 1,
-    },
-    {
-      'name': 'Pine Apple',
-      'price': 43.0,
-      'quantity': '50 KG',
-      'image': AppImages.avacoda,
-      'itemCount': 1,
-    },
+    // {
+    //   'name': 'Fresh Broccoli',
+    //   'price': 2.25,
+    //   'quantity': '150 gm',
+    //   'image': AppImages.pineapple,
+    //   'itemCount': 1,
+    // },
+    // {
+    //   'name': 'Black Grapes',
+    //   'price': 3.22,
+    //   'quantity': '1 KG',
+    //   'image': AppImages.grapes,
+    //   'itemCount': 1,
+    // },
+    // {
+    //   'name': 'Pine Apple',
+    //   'price': 43.0,
+    //   'quantity': '50 KG',
+    //   'image': AppImages.avacoda,
+    //   'itemCount': 1,
+    // },
+    // {
+    //   'name': 'Fresh Broccoli',
+    //   'price': 2.25,
+    //   'quantity': '150 gm',
+    //   'image': AppImages.pineapple,
+    //   'itemCount': 1,
+    // },
+    // {
+    //   'name': 'Black Grapes',
+    //   'price': 3.22,
+    //   'quantity': '1 KG',
+    //   'image': AppImages.grapes,
+    //   'itemCount': 1,
+    // },
   ];
 
   // Calculate subtotal
@@ -85,11 +99,18 @@ class _CartNavViewState extends State<CartNavView> {
       ),
       body: _cartItems.isEmpty
           ? Center(
-        child: BlackNormalText(
-          text: "Cart is Empty",
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          textColor: Colors.grey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(image: AssetImage(AppImages.bag)),
+            const SizedBox(height: 20),
+            BlackNormalText(
+              text: "Your cart is empty !",
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
+
+          ],
         ),
       )
           : Column(
